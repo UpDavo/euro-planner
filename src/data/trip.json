@@ -1,0 +1,1451 @@
+{
+  "trip": {
+    "title": "España 2026",
+    "subtitle": "Madrid · Barcelona · Roma",
+    "startDate": "2026-10-01",
+    "endDate": "2026-10-12",
+    "currency": "EUR"
+  },
+  "cities": [
+    {
+      "id": "madrid",
+      "name": "Madrid",
+      "country": "España",
+      "accent": "#C8102E",
+      "center": [
+        40.4168,
+        -3.7038
+      ],
+      "zoom": 13,
+      "arrival": "2026-10-01",
+      "departure": "2026-10-08",
+      "stay": {
+        "name": "Airbnb Madrid centro",
+        "address": "Calle del Pez 22, Malasaña, 28004 Madrid",
+        "coords": [
+          40.4243,
+          -3.7062
+        ],
+        "checkIn": "2026-10-01T11:00",
+        "checkOut": "2026-10-08T08:00",
+        "pricePerNight": 95,
+        "nights": 7,
+        "notes": "Base fija del viaje, incluida la noche del viernes que pasan en Barcelona. Salen de aquí a Segovia, Toledo y Barcelona.",
+        "host": "Por confirmar"
+      },
+      "days": [
+        {
+          "day": 1,
+          "date": "2026-10-01",
+          "label": "Llegada y Toledo",
+          "summary": "Aterrizan a las 05:00 tras noche en avión. Maletas en casa y Toledo con el día entero por delante. Si el cuerpo no da, Toledo se mueve al domingo y hoy se duerme.",
+          "stops": [
+            {
+              "id": "mad-d1-s1",
+              "time": "05:00",
+              "endTime": "06:30",
+              "name": "Llegada UX40 · Barajas T1",
+              "type": "transport",
+              "coords": [
+                40.4917,
+                -3.5931
+              ],
+              "price": 0,
+              "duration": 90,
+              "walkToNext": 0,
+              "note": "Vuelo desde Guayaquil, 11 h. Control de pasaportes y recogida de equipaje: 1 maleta de 23 kg facturada.",
+              "booking": "UX40 · localizador UX/7KK56V"
+            },
+            {
+              "id": "mad-d1-s2",
+              "time": "06:30",
+              "endTime": "07:15",
+              "name": "Taxi al Airbnb",
+              "type": "transport",
+              "coords": [
+                40.4243,
+                -3.7062
+              ],
+              "price": 33,
+              "duration": 45,
+              "walkToNext": 0,
+              "note": "Tarifa fija de 33 € desde el aeropuerto al centro. A esta hora no hay tráfico."
+            },
+            {
+              "id": "mad-d1-s3",
+              "time": "07:15",
+              "endTime": "09:30",
+              "name": "Dejar maletas y descansar",
+              "type": "stay",
+              "coords": [
+                40.4243,
+                -3.7062
+              ],
+              "price": 0,
+              "duration": 135,
+              "walkToNext": 12,
+              "note": "El check-in normal es a las 15:00: avisar al anfitrión de la llegada de madrugada. Ducha y un par de horas de sueño antes de Toledo."
+            },
+            {
+              "id": "mad-d1-s4",
+              "time": "10:20",
+              "endTime": "10:55",
+              "name": "Tren Atocha → Toledo",
+              "type": "transport",
+              "coords": [
+                40.4065,
+                -3.6895
+              ],
+              "price": 15,
+              "duration": 35,
+              "walkToNext": 20,
+              "note": "Avant de 33 min. Comprar ida y vuelta con antelación.",
+              "booking": "Renfe · ida y vuelta"
+            },
+            {
+              "id": "mad-d1-s5",
+              "time": "11:30",
+              "endTime": "13:30",
+              "name": "Catedral de Toledo",
+              "type": "sight",
+              "coords": [
+                39.8572,
+                -4.0238
+              ],
+              "price": 12,
+              "duration": 120,
+              "walkToNext": 8,
+              "note": "El Transparente y la sacristía con El Greco. Hacerla antes de comer, con energía."
+            },
+            {
+              "id": "mad-d1-s6",
+              "time": "13:45",
+              "endTime": "15:15",
+              "name": "Comida: carcamusas",
+              "type": "food",
+              "coords": [
+                39.8586,
+                -4.0245
+              ],
+              "price": 22,
+              "duration": 90,
+              "walkToNext": 10,
+              "note": "Plato local. Mazapán de postre."
+            },
+            {
+              "id": "mad-d1-s7",
+              "time": "15:30",
+              "endTime": "17:30",
+              "name": "Alcázar y casco antiguo",
+              "type": "walk",
+              "coords": [
+                39.8575,
+                -4.0203
+              ],
+              "price": 5,
+              "duration": 120,
+              "walkToNext": 25,
+              "note": "Callejear sin mapa. Judería y Sinagoga del Tránsito."
+            },
+            {
+              "id": "mad-d1-s8",
+              "time": "18:15",
+              "endTime": "19:30",
+              "name": "Mirador del Valle",
+              "type": "sight",
+              "coords": [
+                39.8498,
+                -4.0184
+              ],
+              "price": 10,
+              "duration": 75,
+              "walkToNext": 15,
+              "note": "La postal de Toledo. Taxi de subida 10 €, con el día encima no se sube andando."
+            },
+            {
+              "id": "mad-d1-s9",
+              "time": "20:25",
+              "endTime": "21:00",
+              "name": "Tren Toledo → Atocha",
+              "type": "transport",
+              "coords": [
+                39.8628,
+                -4.0161
+              ],
+              "price": 0,
+              "duration": 35,
+              "walkToNext": null,
+              "note": "Incluido en el billete de ida y vuelta. Dormir temprano: llevan 40 h despiertos."
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "date": "2026-10-04",
+          "label": "Segovia",
+          "summary": "Acueducto, alcázar y cochinillo. Domingo tranquilo, 30 min en AVE desde Chamartín.",
+          "stops": [
+            {
+              "id": "mad-d4-s1",
+              "time": "08:45",
+              "endTime": "09:15",
+              "name": "AVE Chamartín → Segovia",
+              "type": "transport",
+              "coords": [
+                40.4722,
+                -3.6828
+              ],
+              "price": 15,
+              "duration": 30,
+              "walkToNext": 0,
+              "note": "Sale de Chamartín, no de Atocha. La estación Guiomar está a 6 km del centro.",
+              "booking": "Renfe · ida y vuelta"
+            },
+            {
+              "id": "mad-d4-s2",
+              "time": "09:25",
+              "endTime": "09:45",
+              "name": "Bus 11 al Acueducto",
+              "type": "transport",
+              "coords": [
+                40.9481,
+                -4.1187
+              ],
+              "price": 2,
+              "duration": 20,
+              "walkToNext": 3,
+              "note": "El bus 11 espera a la llegada del AVE y deja junto al Acueducto. 2 € en efectivo."
+            },
+            {
+              "id": "mad-d4-s3",
+              "time": "09:50",
+              "endTime": "11:00",
+              "name": "Acueducto de Segovia",
+              "type": "sight",
+              "coords": [
+                40.9481,
+                -4.1176
+              ],
+              "price": 0,
+              "duration": 70,
+              "walkToNext": 12,
+              "note": "Gratis. Subir por la escalera lateral al mirador del Postigo para verlo desde arriba."
+            },
+            {
+              "id": "mad-d4-s4",
+              "time": "11:15",
+              "endTime": "12:30",
+              "name": "Catedral de Segovia",
+              "type": "sight",
+              "coords": [
+                40.9503,
+                -4.125
+              ],
+              "price": 4,
+              "duration": 75,
+              "walkToNext": 10,
+              "note": "La última catedral gótica de España. Plaza Mayor justo al lado."
+            },
+            {
+              "id": "mad-d4-s5",
+              "time": "12:45",
+              "endTime": "14:15",
+              "name": "Alcázar de Segovia",
+              "type": "sight",
+              "coords": [
+                40.9526,
+                -4.132
+              ],
+              "price": 10,
+              "duration": 90,
+              "walkToNext": 12,
+              "note": "Torre de Juan II aparte, 2,50 € y 152 escalones. La vista del valle lo justifica."
+            },
+            {
+              "id": "mad-d4-s6",
+              "time": "14:30",
+              "endTime": "16:30",
+              "name": "Cochinillo asado",
+              "type": "food",
+              "coords": [
+                40.9481,
+                -4.1183
+              ],
+              "price": 35,
+              "duration": 120,
+              "walkToNext": 10,
+              "note": "El plato de Segovia. Reservar con antelación un domingo, los asadores del Acueducto se llenan."
+            },
+            {
+              "id": "mad-d4-s7",
+              "time": "16:45",
+              "endTime": "18:30",
+              "name": "Judería y muralla",
+              "type": "walk",
+              "coords": [
+                40.9498,
+                -4.1287
+              ],
+              "price": 0,
+              "duration": 105,
+              "walkToNext": 25,
+              "note": "Bajar por la puerta de San Andrés. Mirador de la Pradera de San Marcos si quedan fuerzas."
+            },
+            {
+              "id": "mad-d4-s8",
+              "time": "19:15",
+              "endTime": "19:45",
+              "name": "AVE Segovia → Chamartín",
+              "type": "transport",
+              "coords": [
+                40.9074,
+                -4.0946
+              ],
+              "price": 0,
+              "duration": 30,
+              "walkToNext": null,
+              "note": "Incluido en el billete de vuelta. Coger el bus 11 al menos 40 min antes de la salida."
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "date": "2026-10-05",
+          "label": "Madrid en transporte público",
+          "summary": "Recorrer la ciudad en metro y bus. Sacar la tarjeta multi el primer día y olvidarse del taxi.",
+          "stops": [
+            {
+              "id": "mad-d5-s1",
+              "time": "09:00",
+              "endTime": "09:30",
+              "name": "Tarjeta Multi en el metro",
+              "type": "transport",
+              "coords": [
+                40.4243,
+                -3.7062
+              ],
+              "price": 15,
+              "duration": 30,
+              "walkToNext": 5,
+              "note": "2,50 € la tarjeta más saldo. Una por persona. Válida en metro, bus y cercanías."
+            },
+            {
+              "id": "mad-d5-s2",
+              "time": "09:45",
+              "endTime": "11:15",
+              "name": "Mercado de San Miguel y Plaza Mayor",
+              "type": "walk",
+              "coords": [
+                40.4155,
+                -3.709
+              ],
+              "price": 12,
+              "duration": 90,
+              "walkToNext": 8,
+              "note": "Metro Sol o Ópera. Desayuno de pie en el mercado, el edificio vale más que la comida."
+            },
+            {
+              "id": "mad-d5-s3",
+              "time": "11:30",
+              "endTime": "13:00",
+              "name": "Catedral de la Almudena y Plaza de Oriente",
+              "type": "sight",
+              "coords": [
+                40.4158,
+                -3.7144
+              ],
+              "price": 1,
+              "duration": 90,
+              "walkToNext": 6,
+              "note": "Donativo de 1 €. El Palacio Real queda para el martes, hoy solo la plaza."
+            },
+            {
+              "id": "mad-d5-s4",
+              "time": "13:15",
+              "endTime": "15:00",
+              "name": "Comida en La Latina",
+              "type": "food",
+              "coords": [
+                40.4118,
+                -3.7095
+              ],
+              "price": 24,
+              "duration": 105,
+              "walkToNext": 15,
+              "note": "Cava Baja. Menú del día entre semana por 15-20 €."
+            },
+            {
+              "id": "mad-d5-s5",
+              "time": "15:30",
+              "endTime": "17:30",
+              "name": "Parque del Retiro y Palacio de Cristal",
+              "type": "walk",
+              "coords": [
+                40.4139,
+                -3.6857
+              ],
+              "price": 0,
+              "duration": 120,
+              "walkToNext": 12,
+              "note": "Metro Retiro, línea 2. Barca en el estanque 6 € por 45 min."
+            },
+            {
+              "id": "mad-d5-s6",
+              "time": "17:45",
+              "endTime": "19:15",
+              "name": "Gran Vía y Callao",
+              "type": "walk",
+              "coords": [
+                40.42,
+                -3.7058
+              ],
+              "price": 0,
+              "duration": 90,
+              "walkToNext": 14,
+              "note": "Metro Gran Vía. Azotea del Círculo de Bellas Artes 5 € si quieren la vista."
+            },
+            {
+              "id": "mad-d5-s7",
+              "time": "19:30",
+              "endTime": "21:00",
+              "name": "Templo de Debod al atardecer",
+              "type": "sight",
+              "coords": [
+                40.424,
+                -3.7178
+              ],
+              "price": 0,
+              "duration": 90,
+              "walkToNext": null,
+              "note": "Gratis. Metro Plaza de España. En octubre el ocaso es sobre las 19:45, llegar con margen."
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "date": "2026-10-06",
+          "label": "Fruit Attraction y palacios",
+          "summary": "Feria por la mañana, palacios por la tarde y paella en el restaurante de la tía. Verificar las fechas oficiales de la feria.",
+          "stops": [
+            {
+              "id": "mad-d6-s1",
+              "time": "09:00",
+              "endTime": "09:40",
+              "name": "Metro a IFEMA",
+              "type": "transport",
+              "coords": [
+                40.4655,
+                -3.6156
+              ],
+              "price": 3,
+              "duration": 40,
+              "walkToNext": 5,
+              "note": "Línea 8 hasta Feria de Madrid. Desde el centro hay que transbordar en Nuevos Ministerios."
+            },
+            {
+              "id": "mad-d6-s2",
+              "time": "09:45",
+              "endTime": "14:30",
+              "name": "Fruit Attraction · día 1",
+              "type": "sight",
+              "coords": [
+                40.4655,
+                -3.6156
+              ],
+              "price": 55,
+              "duration": 285,
+              "walkToNext": 40,
+              "note": "Feria profesional en IFEMA. Registro online anticipado, en puerta sale más caro. Fechas 2026 sin confirmar: verificar antes de comprar vuelos.",
+              "booking": "Registro profesional · fruitattraction.com"
+            },
+            {
+              "id": "mad-d6-s3",
+              "time": "15:30",
+              "endTime": "17:30",
+              "name": "Palacio Real",
+              "type": "sight",
+              "coords": [
+                40.418,
+                -3.7143
+              ],
+              "price": 14,
+              "duration": 120,
+              "walkToNext": 8,
+              "note": "Entrada online con franja horaria. Incluye la Cocina Real. Última entrada sobre las 17:00.",
+              "booking": "Franja de tarde · patrimonionacional.es"
+            },
+            {
+              "id": "mad-d6-s4",
+              "time": "17:45",
+              "endTime": "19:15",
+              "name": "Jardines de Sabatini y Plaza de Oriente",
+              "type": "walk",
+              "coords": [
+                40.4203,
+                -3.7135
+              ],
+              "price": 0,
+              "duration": 90,
+              "walkToNext": 12,
+              "note": "Gratis. La fachada norte del palacio desde los jardines es la mejor foto del viaje."
+            },
+            {
+              "id": "mad-d6-s5",
+              "time": "20:00",
+              "endTime": "22:30",
+              "name": "Paella en el restaurante de la tía",
+              "type": "food",
+              "coords": [
+                40.418,
+                -3.702
+              ],
+              "price": 0,
+              "duration": 150,
+              "walkToNext": null,
+              "note": "Cena en familia. Ajustar la ubicación en el JSON cuando confirmes la dirección exacta."
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "date": "2026-10-07",
+          "label": "Fruit Attraction y Madrid centro",
+          "summary": "Segundo día de feria y el resto del centro: Prado, Letras y Sol. Último día antes de Roma.",
+          "stops": [
+            {
+              "id": "mad-d7-s1",
+              "time": "09:00",
+              "endTime": "09:40",
+              "name": "Metro a IFEMA",
+              "type": "transport",
+              "coords": [
+                40.4655,
+                -3.6156
+              ],
+              "price": 3,
+              "duration": 40,
+              "walkToNext": 5,
+              "note": "Misma ruta que ayer. Línea 8, Feria de Madrid."
+            },
+            {
+              "id": "mad-d7-s2",
+              "time": "09:45",
+              "endTime": "14:00",
+              "name": "Fruit Attraction · día 2",
+              "type": "sight",
+              "coords": [
+                40.4655,
+                -3.6156
+              ],
+              "price": 0,
+              "duration": 255,
+              "walkToNext": 40,
+              "note": "La acreditación del día anterior sirve para todos los días de feria."
+            },
+            {
+              "id": "mad-d7-s3",
+              "time": "15:00",
+              "endTime": "16:15",
+              "name": "Comida en Barrio de las Letras",
+              "type": "food",
+              "coords": [
+                40.4142,
+                -3.6975
+              ],
+              "price": 22,
+              "duration": 75,
+              "walkToNext": 9,
+              "note": "Metro Antón Martín. Calle Huertas y alrededores."
+            },
+            {
+              "id": "mad-d7-s4",
+              "time": "16:30",
+              "endTime": "19:00",
+              "name": "Museo del Prado",
+              "type": "museum",
+              "coords": [
+                40.4138,
+                -3.6921
+              ],
+              "price": 15,
+              "duration": 150,
+              "walkToNext": 10,
+              "note": "Velázquez, Goya y El Bosco. Gratis de 18:00 a 20:00 pero con cola larga y lleno.",
+              "booking": "Entrada online · museodelprado.es"
+            },
+            {
+              "id": "mad-d7-s5",
+              "time": "19:15",
+              "endTime": "21:00",
+              "name": "Puerta del Sol y última vuelta",
+              "type": "walk",
+              "coords": [
+                40.4169,
+                -3.7035
+              ],
+              "price": 0,
+              "duration": 105,
+              "walkToNext": 10,
+              "note": "Kilómetro cero, el oso y el madroño. Cerrar por Gran Vía hacia el Airbnb."
+            },
+            {
+              "id": "mad-d7-s6",
+              "time": "21:15",
+              "endTime": "22:30",
+              "name": "Cena de despedida y maletas",
+              "type": "food",
+              "coords": [
+                40.4243,
+                -3.7062
+              ],
+              "price": 25,
+              "duration": 75,
+              "walkToNext": null,
+              "note": "Cerca de casa. Maletas listas esta noche, mañana el vuelo a Roma sale temprano."
+            }
+          ]
+        },
+        {
+          "day": 8,
+          "date": "2026-10-08",
+          "label": "Vuelo a Roma",
+          "summary": "UX1043 sale a las 07:00 desde Barajas T2. Madrugón: salir de casa a las 04:15.",
+          "stops": [
+            {
+              "id": "mad-d8-s1",
+              "time": "04:00",
+              "endTime": "04:15",
+              "name": "Check-out del Airbnb",
+              "type": "stay",
+              "coords": [
+                40.4243,
+                -3.7062
+              ],
+              "price": 0,
+              "duration": 15,
+              "walkToNext": 0,
+              "note": "Maletas hechas la noche anterior. Dejar llaves donde indique el anfitrión."
+            },
+            {
+              "id": "mad-d8-s2",
+              "time": "04:15",
+              "endTime": "05:00",
+              "name": "Taxi a Barajas T2",
+              "type": "transport",
+              "coords": [
+                40.4936,
+                -3.5668
+              ],
+              "price": 33,
+              "duration": 45,
+              "walkToNext": 0,
+              "note": "T2, no T1. A esa hora no hay metro: el primero sale sobre las 06:00 y no llega a tiempo."
+            },
+            {
+              "id": "mad-d8-s3",
+              "time": "07:00",
+              "endTime": "09:30",
+              "name": "Vuelo UX1043 → Roma Fiumicino",
+              "type": "transport",
+              "coords": [
+                41.8003,
+                12.2389
+              ],
+              "price": 0,
+              "duration": 150,
+              "walkToNext": null,
+              "note": "2 h 30 de vuelo, operado por Air Europa Express. Llega a FCO T1 a las 09:30 hora de Roma, una hora por delante de Madrid.",
+              "booking": "UX1043 · localizador UX/7KK56V"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "barcelona",
+      "name": "Barcelona",
+      "country": "España",
+      "accent": "#1E6B8C",
+      "center": [
+        41.3874,
+        2.1686
+      ],
+      "zoom": 13,
+      "arrival": "2026-10-02",
+      "departure": "2026-10-03",
+      "stay": {
+        "name": "Torres Venecianas · Plaça d'Espanya",
+        "address": "Zona Plaça d'Espanya / Fira, Barcelona",
+        "coords": [
+          41.374006,
+          2.159481
+        ],
+        "checkIn": "2026-10-02T15:00",
+        "checkOut": "2026-10-03T11:00",
+        "pricePerNight": 130,
+        "nights": 1,
+        "notes": "Reservado para 6 personas, solo la noche del viernes. El Airbnb de Madrid sigue reservado: llevar mochila de una noche, no las maletas grandes. Junto a Plaça d'Espanya, con la Font Màgica y Montjuïc al lado.",
+        "host": "Airbnb · 6 huéspedes",
+        "url": "https://www.airbnb.com.ec/rooms/1091849156695870502?check_in=2026-10-02&check_out=2026-10-03&guests=6&adults=6&s=67&unique_share_id=f7027f09-a533-45a1-aa54-6063f2696524"
+      },
+      "days": [
+        {
+          "day": 2,
+          "date": "2026-10-02",
+          "label": "AVE y Camp Nou",
+          "summary": "AVE temprano desde Atocha. Camp Nou por la tarde: entran dos, el resto tiene plan aparte a pie.",
+          "stops": [
+            {
+              "id": "bcn-d2-s1",
+              "time": "06:30",
+              "endTime": "09:15",
+              "name": "AVE Atocha → Barcelona Sants",
+              "type": "transport",
+              "coords": [
+                40.4065,
+                -3.6895
+              ],
+              "price": 75,
+              "duration": 165,
+              "walkToNext": 10,
+              "note": "2 h 45 de viaje. Estar en Atocha 30 min antes por el control de equipaje. Comprar con meses de antelación baja mucho el precio.",
+              "booking": "Renfe · ida 02 oct, vuelta 03 oct"
+            },
+            {
+              "id": "bcn-d2-s2",
+              "time": "09:30",
+              "endTime": "10:30",
+              "name": "Dejar mochilas en el Airbnb",
+              "type": "stay",
+              "coords": [
+                41.374006,
+                2.159481
+              ],
+              "price": 0,
+              "duration": 60,
+              "walkToNext": 18,
+              "note": "Plaça d'Espanya. La habitación no estará lista a esa hora, pero se puede dejar el equipaje. Metro L1/L3 y FGC a un paso."
+            },
+            {
+              "id": "bcn-d2-s3",
+              "time": "10:45",
+              "endTime": "12:30",
+              "name": "Passeig de Gràcia: Casa Batlló y La Pedrera",
+              "type": "walk",
+              "coords": [
+                41.3917,
+                2.165
+              ],
+              "price": 0,
+              "duration": 105,
+              "walkToNext": 12,
+              "note": "Solo fachadas. Entrar a Casa Batlló son 35 € y una hora larga, no cabe con el Camp Nou hoy."
+            },
+            {
+              "id": "bcn-d2-s4",
+              "time": "12:45",
+              "endTime": "14:15",
+              "name": "Comida antes del estadio",
+              "type": "food",
+              "coords": [
+                41.386,
+                2.142
+              ],
+              "price": 24,
+              "duration": 90,
+              "walkToNext": 12,
+              "note": "Comer en Les Corts, cerca del estadio. Los sitios pegados al Camp Nou son caros y flojos."
+            },
+            {
+              "id": "bcn-d2-s5",
+              "time": "14:30",
+              "endTime": "17:30",
+              "name": "Camp Nou · entran dos",
+              "type": "sight",
+              "coords": [
+                41.3809,
+                2.1228
+              ],
+              "price": 60,
+              "duration": 180,
+              "walkToNext": 0,
+              "note": "Tour y museo, unas 2 h 30 dentro. Entrada con franja horaria y nominativa. Punto de reencuentro: la salida de la tienda oficial.",
+              "booking": "Franja 14:30 · 2 entradas"
+            },
+            {
+              "id": "bcn-d2-s6",
+              "time": "14:30",
+              "endTime": "17:30",
+              "name": "Plan del grupo: Les Corts a pie",
+              "type": "walk",
+              "coords": [
+                41.3846,
+                2.13
+              ],
+              "price": 12,
+              "duration": 180,
+              "walkToNext": 20,
+              "note": "Sin metro, todo caminable desde el estadio: Jardins de la Maternitat, plaça de la Concòrdia y cafés del barrio. A 15 min andando del punto de reencuentro."
+            },
+            {
+              "id": "bcn-d2-s7",
+              "time": "18:00",
+              "endTime": "19:30",
+              "name": "Búnkers del Carmel",
+              "type": "sight",
+              "coords": [
+                41.4194,
+                2.162
+              ],
+              "price": 0,
+              "duration": 90,
+              "walkToNext": 25,
+              "note": "Gratis y la mejor vista de la ciudad. Subida dura, llevar agua. Si el grupo viene cansado, saltarlo."
+            },
+            {
+              "id": "bcn-d2-s8",
+              "time": "20:30",
+              "endTime": "22:30",
+              "name": "Font Màgica y cena en Plaça d'Espanya",
+              "type": "food",
+              "coords": [
+                41.3711,
+                2.1518
+              ],
+              "price": 30,
+              "duration": 120,
+              "walkToNext": null,
+              "note": "El espectáculo de la fuente es gratis y está a 5 min del alojamiento. Verificar horario, no funciona todo el año. Cenar por la zona después."
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "date": "2026-10-03",
+          "label": "Barcelona completo",
+          "summary": "Sagrada Família, Park Güell y gótico. AVE de regreso a Madrid por la noche.",
+          "stops": [
+            {
+              "id": "bcn-d3-s1",
+              "time": "08:00",
+              "endTime": "09:00",
+              "name": "Check-out y mochilas a consigna",
+              "type": "stay",
+              "coords": [
+                41.374006,
+                2.159481
+              ],
+              "price": 0,
+              "duration": 60,
+              "walkToNext": 20,
+              "note": "Dejar las mochilas en consigna o en Sants, que está a 10 min. Hoy se anda todo el día."
+            },
+            {
+              "id": "bcn-d3-s2",
+              "time": "09:15",
+              "endTime": "11:15",
+              "name": "Sagrada Família",
+              "type": "sight",
+              "coords": [
+                41.4036,
+                2.1744
+              ],
+              "price": 26,
+              "duration": 120,
+              "walkToNext": 8,
+              "note": "Entrada con franja horaria, se agota semanas antes. Torre de la Natividad +10 €.",
+              "booking": "Franja 09:15 · sagradafamilia.org"
+            },
+            {
+              "id": "bcn-d3-s3",
+              "time": "11:30",
+              "endTime": "12:15",
+              "name": "Desayuno tardío cerca de Sant Pau",
+              "type": "food",
+              "coords": [
+                41.4109,
+                2.1743
+              ],
+              "price": 12,
+              "duration": 45,
+              "walkToNext": 22,
+              "note": "El Recinte Modernista de Sant Pau está enfrente, 16 € aparte si hay ganas."
+            },
+            {
+              "id": "bcn-d3-s4",
+              "time": "12:45",
+              "endTime": "15:00",
+              "name": "Park Güell",
+              "type": "sight",
+              "coords": [
+                41.4145,
+                2.1527
+              ],
+              "price": 18,
+              "duration": 135,
+              "walkToNext": 30,
+              "note": "Zona monumental con cita previa. La parte de arriba es libre y gratis.",
+              "booking": "Franja 12:45 · parkguell.barcelona"
+            },
+            {
+              "id": "bcn-d3-s5",
+              "time": "15:45",
+              "endTime": "17:00",
+              "name": "Comida en el Born",
+              "type": "food",
+              "coords": [
+                41.3839,
+                2.1819
+              ],
+              "price": 26,
+              "duration": 75,
+              "walkToNext": 6,
+              "note": "Metro desde Park Güell, unos 30 min. Santa Maria del Mar está al lado."
+            },
+            {
+              "id": "bcn-d3-s6",
+              "time": "17:15",
+              "endTime": "19:00",
+              "name": "Barri Gòtic y Catedral",
+              "type": "walk",
+              "coords": [
+                41.3839,
+                2.1763
+              ],
+              "price": 9,
+              "duration": 105,
+              "walkToNext": 20,
+              "note": "Plaça del Rei y Pont del Bisbe. Catedral 9 € con acceso a la terraza."
+            },
+            {
+              "id": "bcn-d3-s7",
+              "time": "21:00",
+              "endTime": "23:45",
+              "name": "AVE Sants → Atocha",
+              "type": "transport",
+              "coords": [
+                41.3792,
+                2.14
+              ],
+              "price": 0,
+              "duration": 165,
+              "walkToNext": null,
+              "note": "Incluido en el billete de ida y vuelta. Llegar a Sants 30 min antes. Verificar la hora del último AVE, no hay margen si se pierde."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "roma",
+      "name": "Roma",
+      "country": "Italia",
+      "accent": "#B08240",
+      "center": [
+        41.9028,
+        12.4964
+      ],
+      "zoom": 13,
+      "arrival": "2026-10-08",
+      "departure": "2026-10-11",
+      "stay": {
+        "name": "Airbnb Roma · Monti",
+        "address": "Zona Monti / Esquilino, cerca de San Pietro in Vincoli, Roma",
+        "coords": [
+          41.892499,
+          12.505376
+        ],
+        "checkIn": "2026-10-08T15:00",
+        "checkOut": "2026-10-11T11:00",
+        "pricePerNight": 105,
+        "nights": 3,
+        "notes": "Reservado del 8 al 11 de octubre para 3 personas. Entre Monti y Esquilino: Coliseo a 10 min andando, Termini a 12 min. Zona ZTL, entrar en taxi tiene recargo.",
+        "host": "Airbnb · 3 huéspedes",
+        "url": "https://www.airbnb.com.ec/rooms/1594300622093226793?check_in=2026-10-08&check_out=2026-10-11&guests=1&adults=3&s=67&unique_share_id=e6dcd913-e52e-4779-b80d-dd279c8d1f6f"
+      },
+      "days": [
+        {
+          "day": 8,
+          "date": "2026-10-08",
+          "label": "Llegada y Roma antigua",
+          "summary": "Aterrizan 09:30 en FCO. Tren al centro, maletas y el Coliseo la misma tarde. Con 3 noches no sobra ningún día.",
+          "stops": [
+            {
+              "id": "rom-d1-s1",
+              "time": "09:30",
+              "endTime": "10:15",
+              "name": "Llegada UX1043 · Fiumicino T1",
+              "type": "transport",
+              "coords": [
+                41.8003,
+                12.2389
+              ],
+              "price": 0,
+              "duration": 45,
+              "walkToNext": 0,
+              "note": "Roma va una hora por delante de Madrid. Ajustar relojes al aterrizar.",
+              "booking": "UX1043 · localizador UX/7KK56V"
+            },
+            {
+              "id": "rom-d1-s2",
+              "time": "10:30",
+              "endTime": "11:10",
+              "name": "Leonardo Express a Termini",
+              "type": "transport",
+              "coords": [
+                41.901,
+                12.5015
+              ],
+              "price": 14,
+              "duration": 40,
+              "walkToNext": 12,
+              "note": "Tren directo cada 15 min, 32 min de viaje. Más fiable que el taxi, que son 50 € y depende del tráfico."
+            },
+            {
+              "id": "rom-d1-s3",
+              "time": "11:30",
+              "endTime": "12:30",
+              "name": "Dejar maletas en el Airbnb",
+              "type": "stay",
+              "coords": [
+                41.892499,
+                12.505376
+              ],
+              "price": 0,
+              "duration": 60,
+              "walkToNext": 10,
+              "note": "El check-in es a las 15:00, pero casi siempre dejan guardar el equipaje antes. Confirmarlo con el anfitrión por chat."
+            },
+            {
+              "id": "rom-d1-s4",
+              "time": "12:45",
+              "endTime": "14:00",
+              "name": "Comida en Monti",
+              "type": "food",
+              "coords": [
+                41.8938,
+                12.502
+              ],
+              "price": 25,
+              "duration": 75,
+              "walkToNext": 10,
+              "note": "Cacio e pepe y carciofi. Monti está al lado del Airbnb y tiene precios de barrio, no de Coliseo."
+            },
+            {
+              "id": "rom-d1-s5",
+              "time": "14:30",
+              "endTime": "16:30",
+              "name": "Coliseo",
+              "type": "sight",
+              "coords": [
+                41.8902,
+                12.4922
+              ],
+              "price": 18,
+              "duration": 120,
+              "walkToNext": 6,
+              "note": "Entrada combinada de 24 h con Foro y Palatino. Reservar franja de tarde con semanas de antelación. Arena +6 €.",
+              "booking": "Franja 14:30 · coopculture.it"
+            },
+            {
+              "id": "rom-d1-s6",
+              "time": "16:45",
+              "endTime": "18:45",
+              "name": "Foro Romano y Palatino",
+              "type": "sight",
+              "coords": [
+                41.8925,
+                12.4853
+              ],
+              "price": 0,
+              "duration": 120,
+              "walkToNext": 13,
+              "note": "Incluido en la combinada, y se aprovecha el mismo día. Jardines Farnesio con vista al Circo Máximo."
+            },
+            {
+              "id": "rom-d1-s7",
+              "time": "19:00",
+              "endTime": "20:30",
+              "name": "Altare della Patria al atardecer",
+              "type": "sight",
+              "coords": [
+                41.8947,
+                12.4831
+              ],
+              "price": 12,
+              "duration": 90,
+              "walkToNext": 10,
+              "note": "El ascensor a la terraza cuesta 12 € y vale cada euro. La mejor vista del centro con luz de tarde."
+            },
+            {
+              "id": "rom-d1-s8",
+              "time": "20:45",
+              "endTime": "22:30",
+              "name": "Cena y Fontana di Trevi de noche",
+              "type": "food",
+              "coords": [
+                41.9009,
+                12.4833
+              ],
+              "price": 30,
+              "duration": 105,
+              "walkToNext": null,
+              "note": "La fuente está llena a toda hora, pero de noche iluminada compensa. Cenar por la zona de Trevi o volver a Monti."
+            }
+          ]
+        },
+        {
+          "day": 9,
+          "date": "2026-10-09",
+          "label": "Vaticano",
+          "summary": "Museos, Capilla Sixtina y San Pedro en un bloque. Tarde en Castel Sant'Angelo y Trastevere.",
+          "stops": [
+            {
+              "id": "rom-d2-s1",
+              "time": "08:00",
+              "endTime": "12:00",
+              "name": "Museos Vaticanos y Capilla Sixtina",
+              "type": "museum",
+              "coords": [
+                41.9065,
+                12.4536
+              ],
+              "price": 25,
+              "duration": 240,
+              "walkToNext": 15,
+              "note": "Reserva obligatoria con semanas de antelación. Hombros y rodillas cubiertos o no dejan entrar.",
+              "booking": "Franja 08:00 · museivaticani.va"
+            },
+            {
+              "id": "rom-d2-s2",
+              "time": "12:15",
+              "endTime": "14:00",
+              "name": "Basílica de San Pedro",
+              "type": "sight",
+              "coords": [
+                41.9022,
+                12.4539
+              ],
+              "price": 0,
+              "duration": 105,
+              "walkToNext": 18,
+              "note": "Entrada gratis pero la cola de seguridad es larga. Cúpula 10 € a pie, 13 € con ascensor."
+            },
+            {
+              "id": "rom-d2-s3",
+              "time": "14:15",
+              "endTime": "15:30",
+              "name": "Comida en Prati",
+              "type": "food",
+              "coords": [
+                41.907,
+                12.465
+              ],
+              "price": 26,
+              "duration": 75,
+              "walkToNext": 18,
+              "note": "Barrio de romanos, precios normales a 10 min del Vaticano."
+            },
+            {
+              "id": "rom-d2-s4",
+              "time": "16:00",
+              "endTime": "18:00",
+              "name": "Castel Sant'Angelo",
+              "type": "sight",
+              "coords": [
+                41.9031,
+                12.4663
+              ],
+              "price": 16,
+              "duration": 120,
+              "walkToNext": 22,
+              "note": "Terraza superior al atardecer, con el puente de Bernini abajo."
+            },
+            {
+              "id": "rom-d2-s5",
+              "time": "18:30",
+              "endTime": "22:30",
+              "name": "Trastevere",
+              "type": "walk",
+              "coords": [
+                41.8892,
+                12.4694
+              ],
+              "price": 30,
+              "duration": 240,
+              "walkToNext": null,
+              "note": "Santa Maria in Trastevere y cena tardía. El presupuesto es la cena."
+            }
+          ]
+        },
+        {
+          "day": 10,
+          "date": "2026-10-10",
+          "label": "Centro barroco",
+          "summary": "Panteón, plazas, Ghetto y Borghese. Último día completo en Roma.",
+          "stops": [
+            {
+              "id": "rom-d3-s1",
+              "time": "08:30",
+              "endTime": "10:30",
+              "name": "Galería Borghese",
+              "type": "museum",
+              "coords": [
+                41.9142,
+                12.4922
+              ],
+              "price": 15,
+              "duration": 120,
+              "walkToNext": 12,
+              "note": "Cupo de 2 h estricto y reserva obligatoria con semanas de antelación. Bernini y Caravaggio.",
+              "booking": "Franja 09:00 · galleriaborghese.it"
+            },
+            {
+              "id": "rom-d3-s2",
+              "time": "10:45",
+              "endTime": "12:00",
+              "name": "Villa Borghese y terraza del Pincio",
+              "type": "walk",
+              "coords": [
+                41.9109,
+                12.4823
+              ],
+              "price": 0,
+              "duration": 75,
+              "walkToNext": 9,
+              "note": "Bajar por el Pincio hasta Piazza del Popolo. Gratis y la mejor vista del centro norte."
+            },
+            {
+              "id": "rom-d3-s3",
+              "time": "12:15",
+              "endTime": "13:30",
+              "name": "Piazza di Spagna y Via del Corso",
+              "type": "walk",
+              "coords": [
+                41.9058,
+                12.4823
+              ],
+              "price": 0,
+              "duration": 75,
+              "walkToNext": 14,
+              "note": "Prohibido sentarse en la escalinata, multa de 250 €."
+            },
+            {
+              "id": "rom-d3-s4",
+              "time": "13:45",
+              "endTime": "15:00",
+              "name": "Comida cerca del Panteón",
+              "type": "food",
+              "coords": [
+                41.8986,
+                12.4769
+              ],
+              "price": 26,
+              "duration": 75,
+              "walkToNext": 3,
+              "note": "Evitar cualquier sitio con foto de la comida en la carta."
+            },
+            {
+              "id": "rom-d3-s5",
+              "time": "15:15",
+              "endTime": "16:30",
+              "name": "Panteón",
+              "type": "sight",
+              "coords": [
+                41.8986,
+                12.4769
+              ],
+              "price": 5,
+              "duration": 75,
+              "walkToNext": 5,
+              "note": "Desde 2023 cuesta 5 €. El óculo con sol directo es a mediodía."
+            },
+            {
+              "id": "rom-d3-s6",
+              "time": "16:40",
+              "endTime": "18:00",
+              "name": "Piazza Navona y Campo de' Fiori",
+              "type": "walk",
+              "coords": [
+                41.8992,
+                12.4731
+              ],
+              "price": 0,
+              "duration": 80,
+              "walkToNext": 12,
+              "note": "Fuente de los Cuatro Ríos de Bernini. No sentarse a comer en Navona."
+            },
+            {
+              "id": "rom-d3-s7",
+              "time": "18:15",
+              "endTime": "19:30",
+              "name": "Ghetto judío",
+              "type": "walk",
+              "coords": [
+                41.8925,
+                12.478
+              ],
+              "price": 0,
+              "duration": 75,
+              "walkToNext": 16,
+              "note": "Pórtico de Octavia y Teatro de Marcelo. Barrio corto pero denso."
+            },
+            {
+              "id": "rom-d3-s8",
+              "time": "20:00",
+              "endTime": "22:30",
+              "name": "Cena de despedida en Monti",
+              "type": "food",
+              "coords": [
+                41.8938,
+                12.502
+              ],
+              "price": 35,
+              "duration": 150,
+              "walkToNext": null,
+              "note": "Último tiramisú. Maletas listas esta noche, mañana se sale del Airbnb a las 11:00."
+            }
+          ]
+        },
+        {
+          "day": 11,
+          "date": "2026-10-11",
+          "label": "Última mañana y vuelo",
+          "summary": "Check-out a las 11:00 y una última vuelta. UX1048 sale de FCO a las 18:25.",
+          "stops": [
+            {
+              "id": "rom-d4-s1",
+              "time": "09:00",
+              "endTime": "10:45",
+              "name": "Última vuelta por Monti",
+              "type": "walk",
+              "coords": [
+                41.892499,
+                12.505376
+              ],
+              "price": 15,
+              "duration": 105,
+              "walkToNext": 0,
+              "note": "Desayuno largo y compras de última hora. Nada que requiera entrada ni cola."
+            },
+            {
+              "id": "rom-d4-s2",
+              "time": "11:00",
+              "endTime": "11:30",
+              "name": "Check-out del Airbnb",
+              "type": "stay",
+              "coords": [
+                41.892499,
+                12.505376
+              ],
+              "price": 0,
+              "duration": 30,
+              "walkToNext": 12,
+              "note": "Revisar cajones y cargadores. Se puede dejar el equipaje si el anfitrión lo permite, o en consigna de Termini, que está a 12 min andando."
+            },
+            {
+              "id": "rom-d4-s3",
+              "time": "11:45",
+              "endTime": "14:30",
+              "name": "Comida y tiempo libre en el centro",
+              "type": "food",
+              "coords": [
+                41.8955,
+                12.4823
+              ],
+              "price": 28,
+              "duration": 165,
+              "walkToNext": 15,
+              "note": "Con el equipaje guardado. No alejarse del centro, a las 15:00 hay que estar en Termini."
+            },
+            {
+              "id": "rom-d4-s4",
+              "time": "15:00",
+              "endTime": "15:45",
+              "name": "Leonardo Express a Fiumicino",
+              "type": "transport",
+              "coords": [
+                41.901,
+                12.5015
+              ],
+              "price": 14,
+              "duration": 45,
+              "walkToNext": 0,
+              "note": "Recoger equipaje y salir desde Termini. Estar en FCO T1 tres horas antes del vuelo internacional."
+            },
+            {
+              "id": "rom-d4-s5",
+              "time": "18:25",
+              "endTime": "21:05",
+              "name": "Vuelo UX1048 → Madrid T2",
+              "type": "transport",
+              "coords": [
+                40.4936,
+                -3.5668
+              ],
+              "price": 0,
+              "duration": 160,
+              "walkToNext": null,
+              "note": "2 h 40 de vuelo. Llega a Barajas T2 a las 21:05. Ojo: el vuelo a Guayaquil sale de T1 a la 01:40, hay que cambiar de terminal.",
+              "booking": "UX1048 · localizador UX/7KK56V"
+            }
+          ]
+        },
+        {
+          "day": 12,
+          "date": "2026-10-12",
+          "label": "Regreso a Guayaquil",
+          "summary": "Escala nocturna en Barajas. UX39 sale a la 01:40 desde T1.",
+          "stops": [
+            {
+              "id": "rom-d5-s1",
+              "time": "21:05",
+              "endTime": "22:15",
+              "name": "Llegada a Barajas T2 y cambio a T1",
+              "type": "transport",
+              "coords": [
+                40.4917,
+                -3.5931
+              ],
+              "price": 0,
+              "duration": 70,
+              "walkToNext": 0,
+              "note": "Recoger maletas en T2 y pasar a T1 en el bus lanzadera gratuito, unos 15 min. Volver a facturar para el vuelo a Guayaquil."
+            },
+            {
+              "id": "rom-d5-s2",
+              "time": "22:15",
+              "endTime": "01:40",
+              "name": "Espera en Barajas T1",
+              "type": "transport",
+              "coords": [
+                40.4917,
+                -3.5931
+              ],
+              "price": 20,
+              "duration": 205,
+              "walkToNext": 0,
+              "note": "Más de 3 h de escala. Cenar algo en la terminal. A esa hora casi todo está cerrado, llevar algo de casa."
+            },
+            {
+              "id": "rom-d5-s3",
+              "time": "01:40",
+              "endTime": "06:10",
+              "name": "Vuelo UX39 → Guayaquil",
+              "type": "transport",
+              "coords": [
+                -2.1574,
+                -79.8836
+              ],
+              "price": 0,
+              "duration": 690,
+              "walkToNext": null,
+              "note": "11 h 30 de vuelo. Llega a Guayaquil el mismo 12 de octubre a las 06:10, hora local.",
+              "booking": "UX39 · localizador UX/7KK56V"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
