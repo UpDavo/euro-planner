@@ -968,7 +968,7 @@
           "day": 8,
           "date": "2026-10-08",
           "label": "Llegada y Roma antigua",
-          "summary": "Aterrizan 09:30 en FCO. Tren al centro, maletas y el Coliseo la misma tarde. Con 3 noches no sobra ningún día.",
+          "summary": "Aterrizan 09:30 en FCO. Maletas en casa y toda la tarde para el Coliseo, el Foro y el Palatino. Se cierra el día cruzando a Trastevere y volviendo por el Circo Máximo.",
           "stops": [
             {
               "id": "rom-d1-s1",
@@ -977,13 +977,13 @@
               "name": "Llegada UX1043 · Fiumicino T1",
               "type": "transport",
               "coords": [
-                41.8003,
-                12.2389
+                41.800277,
+                12.246667
               ],
               "price": 0,
               "duration": 45,
-              "walkToNext": 0,
-              "note": "Roma va una hora por delante de Madrid. Ajustar relojes al aterrizar.",
+              "walkToNext": 12,
+              "note": "Vuelo desde Madrid. Control de pasaportes ya hecho en Barajas: es vuelo interior Schengen, sólo hay que recoger la maleta facturada.",
               "booking": "UX1043 · localizador UX/7KK56V"
             },
             {
@@ -993,13 +993,14 @@
               "name": "Leonardo Express a Termini",
               "type": "transport",
               "coords": [
-                41.901,
-                12.5015
+                41.900979,
+                12.501454
               ],
               "price": 14,
               "duration": 40,
               "walkToNext": 12,
-              "note": "Tren directo cada 15 min, 32 min de viaje. Más fiable que el taxi, que son 50 € y depende del tráfico."
+              "note": "Sale cada 15 min desde la propia terminal, sin paradas hasta Termini. El billete se compra en la máquina o en la app; hay que validarlo antes de subir.",
+              "booking": ""
             },
             {
               "id": "rom-d1-s3",
@@ -1014,7 +1015,8 @@
               "price": 0,
               "duration": 60,
               "walkToNext": 10,
-              "note": "El check-in es a las 15:00, pero casi siempre dejan guardar el equipaje antes. Confirmarlo con el anfitrión por chat."
+              "note": "El check-in es a las 15:00, pero se puede dejar el equipaje antes avisando al anfitrión. Zona ZTL: entrar en taxi lleva recargo.",
+              "booking": ""
             },
             {
               "id": "rom-d1-s4",
@@ -1023,287 +1025,414 @@
               "name": "Comida en Monti",
               "type": "food",
               "coords": [
-                41.8938,
-                12.502
+                41.894536,
+                12.491276
               ],
               "price": 25,
               "duration": 75,
               "walkToNext": 10,
-              "note": "Cacio e pepe y carciofi. Monti está al lado del Airbnb y tiene precios de barrio, no de Coliseo."
+              "note": "Comer cerca de casa antes de empezar: a partir de aquí el día no para hasta la noche. En Monti hay trattorias de barrio a dos calles del Coliseo.",
+              "booking": ""
             },
             {
               "id": "rom-d1-s5",
               "time": "14:30",
-              "endTime": "16:30",
-              "name": "Coliseo",
+              "endTime": "17:00",
+              "name": "Coliseo · arena y subterráneos",
               "type": "sight",
               "coords": [
-                41.8902,
-                12.4922
+                41.89021,
+                12.492231
               ],
-              "price": 18,
-              "duration": 120,
-              "walkToNext": 6,
-              "note": "Entrada combinada de 24 h con Foro y Palatino. Reservar franja de tarde con semanas de antelación. Arena +6 €.",
-              "booking": "Franja 14:30 · coopculture.it"
+              "price": 24,
+              "duration": 150,
+              "walkToNext": 4,
+              "note": "Dos horas y media largas: gradas 1 y 2, el suelo de la arena y los subterráneos donde esperaban las fieras. La entrada con arena y subterráneos es un billete distinto del normal y se agota con semanas de antelación.",
+              "booking": "Franja 14:30 · 'Colosseo Arena e Sotterranei' en coopculture.it · reservar en cuanto abran octubre 2026"
             },
             {
               "id": "rom-d1-s6",
-              "time": "16:45",
-              "endTime": "18:45",
-              "name": "Foro Romano y Palatino",
+              "time": "17:05",
+              "endTime": "17:25",
+              "name": "Arco de Constantino",
               "type": "sight",
               "coords": [
-                41.8925,
-                12.4853
+                41.889765,
+                12.490524
               ],
               "price": 0,
-              "duration": 120,
-              "walkToNext": 13,
-              "note": "Incluido en la combinada, y se aprovecha el mismo día. Jardines Farnesio con vista al Circo Máximo."
+              "duration": 20,
+              "walkToNext": 5,
+              "note": "El arco de triunfo mejor conservado de Roma, justo al salir del Coliseo. Se ve desde fuera y es gratis: veinte minutos bastan.",
+              "booking": ""
             },
             {
               "id": "rom-d1-s7",
-              "time": "19:00",
-              "endTime": "20:30",
-              "name": "Altare della Patria al atardecer",
+              "time": "17:30",
+              "endTime": "19:15",
+              "name": "Foro Romano y Palatino",
               "type": "sight",
               "coords": [
-                41.8947,
-                12.4831
+                41.892426,
+                12.485325
               ],
-              "price": 12,
-              "duration": 90,
-              "walkToNext": 10,
-              "note": "El ascensor a la terraza cuesta 12 € y vale cada euro. La mejor vista del centro con luz de tarde."
+              "price": 0,
+              "duration": 105,
+              "walkToNext": 12,
+              "note": "Entra con el mismo billete del Coliseo. Ruta corta: templo de Saturno, basílica Emilia, arco de Tito y Santa Maria Antiqua abajo; arriba, en el Palatino, los Dominios Flavios, la casa de Augusto y la de Livia. El recinto cierra al atardecer, así que hay que entrar antes de las 18:00.",
+              "booking": "Incluido en el billete del Coliseo"
             },
             {
               "id": "rom-d1-s8",
+              "time": "19:30",
+              "endTime": "20:00",
+              "name": "Piazza del Campidoglio",
+              "type": "sight",
+              "coords": [
+                41.893333,
+                12.482778
+              ],
+              "price": 0,
+              "duration": 30,
+              "walkToNext": 6,
+              "note": "La plaza que diseñó Miguel Ángel, subiendo por la Cordonata. De noche está iluminada y desde el lateral hay una vista del Foro sin pagar entrada. Los Museos Capitolinos ya están cerrados a esta hora.",
+              "booking": ""
+            },
+            {
+              "id": "rom-d1-s9",
+              "time": "20:06",
+              "endTime": "20:25",
+              "name": "Teatro de Marcelo",
+              "type": "sight",
+              "coords": [
+                41.892072,
+                12.479881
+              ],
+              "price": 0,
+              "duration": 19,
+              "walkToNext": 18,
+              "note": "Un teatro romano del siglo I con pisos renacentistas construidos encima y gente viviendo dentro. Se ve desde la calle, de camino al río.",
+              "booking": ""
+            },
+            {
+              "id": "rom-d1-s10",
               "time": "20:45",
-              "endTime": "22:30",
-              "name": "Cena y Fontana di Trevi de noche",
+              "endTime": "22:45",
+              "name": "Cena en Trastevere",
               "type": "food",
               "coords": [
-                41.9009,
-                12.4833
+                41.88929,
+                12.4697
               ],
-              "price": 30,
-              "duration": 105,
+              "price": 32,
+              "duration": 120,
+              "walkToNext": 22,
+              "note": "Se cruza el Tíber por la Isla Tiberina. Callejear por Santa Maria in Trastevere y cenar ahí: es el barrio de la noche romana. Evitar las terrazas de la plaza principal, que cobran el doble.",
+              "booking": ""
+            },
+            {
+              "id": "rom-d1-s11",
+              "time": "23:10",
+              "endTime": "23:45",
+              "name": "Circo Máximo y vuelta a casa",
+              "type": "walk",
+              "coords": [
+                41.886111,
+                12.485278
+              ],
+              "price": 0,
+              "duration": 35,
               "walkToNext": null,
-              "note": "La fuente está llena a toda hora, pero de noche iluminada compensa. Cenar por la zona de Trevi o volver a Monti."
+              "note": "Se vuelve por la orilla del Tíber y se cruza el Circo Máximo de noche: no queda casi nada en pie, pero el hueco del estadio y el Palatino iluminado al fondo cierran bien el día. Desde aquí, 20 min andando al Airbnb.",
+              "booking": ""
             }
           ]
         },
         {
           "day": 9,
           "date": "2026-10-09",
-          "label": "Vaticano",
-          "summary": "Museos, Capilla Sixtina y San Pedro en un bloque. Tarde en Castel Sant'Angelo y Trastevere.",
+          "label": "Centro histórico",
+          "summary": "El día 2 de la ruta: del Vittoriano al Ghetto, Navona, el Panteón y las plazas barrocas. Termina de noche en la Fontana di Trevi.",
           "stops": [
             {
               "id": "rom-d2-s1",
-              "time": "08:00",
-              "endTime": "12:00",
-              "name": "Museos Vaticanos y Capilla Sixtina",
-              "type": "museum",
+              "time": "09:00",
+              "endTime": "10:45",
+              "name": "Monumento a Vittorio Emanuele II",
+              "type": "sight",
               "coords": [
-                41.9065,
-                12.4536
+                41.89475,
+                12.483194
               ],
-              "price": 25,
-              "duration": 240,
-              "walkToNext": 15,
-              "note": "Reserva obligatoria con semanas de antelación. Hombros y rodillas cubiertos o no dejan entrar.",
-              "booking": "Franja 08:00 · museivaticani.va"
+              "price": 12,
+              "duration": 105,
+              "walkToNext": 9,
+              "note": "El edificio de mármol blanco que domina Piazza Venezia. Subir al ascensor panorámico de la terraza (12 €) da la mejor vista del centro, y desde ahí se entiende el plano de la ciudad antes de meterse en ella.",
+              "booking": ""
             },
             {
               "id": "rom-d2-s2",
-              "time": "12:15",
-              "endTime": "14:00",
-              "name": "Basílica de San Pedro",
-              "type": "sight",
+              "time": "10:55",
+              "endTime": "12:15",
+              "name": "Antiguo barrio judío",
+              "type": "walk",
               "coords": [
-                41.9022,
-                12.4539
+                41.892536,
+                12.47815
               ],
               "price": 0,
-              "duration": 105,
-              "walkToNext": 18,
-              "note": "Entrada gratis pero la cola de seguridad es larga. Cúpula 10 € a pie, 13 € con ascensor."
+              "duration": 80,
+              "walkToNext": 11,
+              "note": "El Ghetto: el Portico d'Ottavia, la Gran Sinagoga y las calles estrechas del barrio más antiguo en pie de Roma. Es también donde se come el carciofo alla giudia, si sobra hambre a media mañana.",
+              "booking": ""
             },
             {
               "id": "rom-d2-s3",
-              "time": "14:15",
-              "endTime": "15:30",
-              "name": "Comida en Prati",
-              "type": "food",
+              "time": "12:30",
+              "endTime": "13:45",
+              "name": "Piazza Navona y la Fuente de los Cuatro Ríos",
+              "type": "sight",
               "coords": [
-                41.907,
-                12.465
+                41.89906,
+                12.47308
               ],
-              "price": 26,
+              "price": 0,
               "duration": 75,
-              "walkToNext": 18,
-              "note": "Barrio de romanos, precios normales a 10 min del Vaticano."
+              "walkToNext": 2,
+              "note": "La plaza conserva la forma del estadio de Domiciano que hay enterrado debajo. En el centro, la fuente de Bernini con los cuatro ríos; a los lados, Sant'Agnese in Agone y San Giacomo degli Spagnoli, ambas gratis.",
+              "booking": ""
             },
             {
               "id": "rom-d2-s4",
-              "time": "16:00",
-              "endTime": "18:00",
-              "name": "Castel Sant'Angelo",
-              "type": "sight",
+              "time": "13:45",
+              "endTime": "15:00",
+              "name": "Comida en Piazza Navona",
+              "type": "food",
               "coords": [
-                41.9031,
-                12.4663
+                41.8983,
+                12.4729
               ],
-              "price": 16,
-              "duration": 120,
-              "walkToNext": 22,
-              "note": "Terraza superior al atardecer, con el puente de Bernini abajo."
+              "price": 28,
+              "duration": 75,
+              "walkToNext": 6,
+              "note": "Comer en la plaza se paga caro. Una calle hacia dentro, por Via del Governo Vecchio, hay lo mismo por la mitad.",
+              "booking": ""
             },
             {
               "id": "rom-d2-s5",
-              "time": "18:30",
-              "endTime": "22:30",
-              "name": "Trastevere",
-              "type": "walk",
+              "time": "15:10",
+              "endTime": "16:30",
+              "name": "Panteón de Agripa",
+              "type": "sight",
               "coords": [
-                41.8892,
-                12.4694
+                41.89861,
+                12.476873
+              ],
+              "price": 5,
+              "duration": 80,
+              "walkToNext": 5,
+              "note": "Visita interior con la cúpula: sigue siendo la mayor de hormigón sin armar del mundo y el óculo está abierto al cielo, así que si llueve, llueve dentro. Desde 2023 se paga entrada y conviene reservar franja.",
+              "booking": "Franja 15:15 · museiitaliani.it"
+            },
+            {
+              "id": "rom-d2-s6",
+              "time": "16:35",
+              "endTime": "17:15",
+              "name": "Templo de Adriano",
+              "type": "sight",
+              "coords": [
+                41.8997,
+                12.4796
+              ],
+              "price": 0,
+              "duration": 40,
+              "walkToNext": 4,
+              "note": "En Piazza di Pietra: once columnas corintias de quince metros incrustadas en la fachada de un edificio posterior. Se ve desde la plaza, sin entrada.",
+              "booking": ""
+            },
+            {
+              "id": "rom-d2-s7",
+              "time": "17:20",
+              "endTime": "18:00",
+              "name": "Piazza Colonna",
+              "type": "sight",
+              "coords": [
+                41.9008,
+                12.4798
+              ],
+              "price": 0,
+              "duration": 40,
+              "walkToNext": 8,
+              "note": "La columna de Marco Aurelio, treinta metros de relieves en espiral contando sus campañas. Detrás, el Palazzo Chigi, sede del gobierno italiano.",
+              "booking": ""
+            },
+            {
+              "id": "rom-d2-s8",
+              "time": "18:10",
+              "endTime": "19:15",
+              "name": "Fontana di Trevi",
+              "type": "sight",
+              "coords": [
+                41.900932,
+                12.483313
+              ],
+              "price": 0,
+              "duration": 65,
+              "walkToNext": 14,
+              "note": "La última parada del día, ya con luz de tarde y las farolas encendidas. Está siempre llena: la foto sin gente no existe. La moneda se tira de espaldas con la mano derecha por encima del hombro izquierdo.",
+              "booking": ""
+            },
+            {
+              "id": "rom-d2-s9",
+              "time": "19:40",
+              "endTime": "21:40",
+              "name": "Cena en Monti",
+              "type": "food",
+              "coords": [
+                41.894536,
+                12.491276
               ],
               "price": 30,
-              "duration": 240,
+              "duration": 120,
               "walkToNext": null,
-              "note": "Santa Maria in Trastevere y cena tardía. El presupuesto es la cena."
+              "note": "De Trevi a Monti son 15 min andando. Cenar en el barrio y dormir cerca: mañana o toca madrugón del Vaticano o tren a Florencia.",
+              "booking": ""
             }
           ]
         },
         {
           "day": 10,
           "date": "2026-10-10",
-          "label": "Centro barroco",
-          "summary": "Panteón, plazas, Ghetto y Borghese. Último día completo en Roma.",
+          "label": "Vaticano",
+          "summary": "Madrugón: museos a las 8, Capilla Sixtina, San Pedro y la cúpula. Por la tarde se cruza el Tíber por el puente Umberto I hasta la Via del Corso.",
           "stops": [
             {
               "id": "rom-d3-s1",
-              "time": "08:30",
-              "endTime": "10:30",
-              "name": "Galería Borghese",
+              "time": "08:00",
+              "endTime": "11:30",
+              "name": "Museos Vaticanos",
               "type": "museum",
               "coords": [
-                41.9142,
-                12.4922
+                41.906487,
+                12.453601
               ],
-              "price": 15,
-              "duration": 120,
-              "walkToNext": 12,
-              "note": "Cupo de 2 h estricto y reserva obligatoria con semanas de antelación. Bernini y Caravaggio.",
-              "booking": "Franja 09:00 · galleriaborghese.it"
+              "price": 25,
+              "duration": 210,
+              "walkToNext": 2,
+              "note": "Tres horas y media y aun así hay que elegir. Lo imprescindible: la galería de los Mapas, las Estancias de Rafael, la escalera de Bramante, el museo Pío Clementino con sus doce salas de escultura griega y romana, y la Pinacoteca con Leonardo, Rafael y Caravaggio.",
+              "booking": "Franja 08:00 · museivaticani.va · reserva obligatoria, se agota con meses"
             },
             {
               "id": "rom-d3-s2",
-              "time": "10:45",
-              "endTime": "12:00",
-              "name": "Villa Borghese y terraza del Pincio",
-              "type": "walk",
+              "time": "11:30",
+              "endTime": "12:15",
+              "name": "Capilla Sixtina",
+              "type": "museum",
               "coords": [
-                41.9109,
-                12.4823
+                41.902946,
+                12.454519
               ],
               "price": 0,
-              "duration": 75,
-              "walkToNext": 9,
-              "note": "Bajar por el Pincio hasta Piazza del Popolo. Gratis y la mejor vista del centro norte."
+              "duration": 45,
+              "walkToNext": 8,
+              "note": "El final del recorrido de los museos, incluida en la entrada. Prohibido hablar y hacer fotos, y lo hacen cumplir. Desde la Sixtina hay un paso directo a San Pedro que ahorra media hora de cola, aunque no siempre lo dejan usar a los que van por libre.",
+              "booking": "Incluida en los Museos Vaticanos"
             },
             {
               "id": "rom-d3-s3",
-              "time": "12:15",
-              "endTime": "13:30",
-              "name": "Piazza di Spagna y Via del Corso",
-              "type": "walk",
+              "time": "12:25",
+              "endTime": "14:00",
+              "name": "Basílica de San Pedro",
+              "type": "sight",
               "coords": [
-                41.9058,
-                12.4823
+                41.902168,
+                12.453937
               ],
               "price": 0,
-              "duration": 75,
-              "walkToNext": 14,
-              "note": "Prohibido sentarse en la escalinata, multa de 250 €."
+              "duration": 95,
+              "walkToNext": 2,
+              "note": "El templo más grande de la cristiandad y la entrada es gratis; lo que cuesta es el control de seguridad. Dentro, el baldaquino de Bernini sobre la tumba de San Pedro y la Piedad de Miguel Ángel, a la derecha nada más entrar, tras un cristal. Hombros y rodillas cubiertos o no se pasa.",
+              "booking": ""
             },
             {
               "id": "rom-d3-s4",
-              "time": "13:45",
-              "endTime": "15:00",
-              "name": "Comida cerca del Panteón",
-              "type": "food",
+              "time": "14:05",
+              "endTime": "15:15",
+              "name": "Cúpula de San Pedro",
+              "type": "sight",
               "coords": [
-                41.8986,
-                12.4769
+                41.9024,
+                12.4536
               ],
-              "price": 26,
-              "duration": 75,
-              "walkToNext": 3,
-              "note": "Evitar cualquier sitio con foto de la comida en la carta."
+              "price": 10,
+              "duration": 70,
+              "walkToNext": 5,
+              "note": "551 escalones, u 8 € y 320 escalones si se coge el ascensor hasta la terraza. El tramo final va entre las dos capas de la cúpula y la pared se inclina: estrecho y no apto para claustrofobia. Arriba, toda Roma y la plaza de Bernini desde el eje.",
+              "booking": "Se compra allí mismo, a la derecha del atrio"
             },
             {
               "id": "rom-d3-s5",
-              "time": "15:15",
-              "endTime": "16:30",
-              "name": "Panteón",
-              "type": "sight",
+              "time": "15:25",
+              "endTime": "16:40",
+              "name": "Comida en Prati",
+              "type": "food",
               "coords": [
-                41.8986,
-                12.4769
+                41.907243,
+                12.463832
               ],
-              "price": 5,
+              "price": 26,
               "duration": 75,
-              "walkToNext": 5,
-              "note": "Desde 2023 cuesta 5 €. El óculo con sol directo es a mediodía."
+              "walkToNext": 12,
+              "note": "Barrio residencial a dos calles del Vaticano: precios normales y clientela local. Huir de las terrazas de Via della Conciliazione.",
+              "booking": ""
             },
             {
               "id": "rom-d3-s6",
-              "time": "16:40",
-              "endTime": "18:00",
-              "name": "Piazza Navona y Campo de' Fiori",
+              "time": "16:55",
+              "endTime": "17:25",
+              "name": "Puente Umberto I",
               "type": "walk",
               "coords": [
-                41.8992,
-                12.4731
+                41.9014,
+                12.4692
               ],
               "price": 0,
-              "duration": 80,
-              "walkToNext": 12,
-              "note": "Fuente de los Cuatro Ríos de Bernini. No sentarse a comer en Navona."
+              "duration": 30,
+              "walkToNext": 10,
+              "note": "Se vuelve al centro cruzando el Tíber. Desde el puente, la vista del Castel Sant'Angelo río arriba y la cúpula de San Pedro al fondo: es la postal clásica de Roma con el río.",
+              "booking": ""
             },
             {
               "id": "rom-d3-s7",
-              "time": "18:15",
-              "endTime": "19:30",
-              "name": "Ghetto judío",
+              "time": "17:35",
+              "endTime": "18:45",
+              "name": "Via del Corso",
               "type": "walk",
               "coords": [
-                41.8925,
-                12.478
+                41.9017,
+                12.4796
               ],
               "price": 0,
-              "duration": 75,
+              "duration": 70,
               "walkToNext": 16,
-              "note": "Pórtico de Octavia y Teatro de Marcelo. Barrio corto pero denso."
+              "note": "La calle comercial que atraviesa el centro en línea recta. Un kilómetro y medio de tiendas y palacios para bajar la comida y comprar lo que falte.",
+              "booking": ""
             },
             {
               "id": "rom-d3-s8",
-              "time": "20:00",
-              "endTime": "22:30",
+              "time": "19:15",
+              "endTime": "21:45",
               "name": "Cena de despedida en Monti",
               "type": "food",
               "coords": [
-                41.8938,
-                12.502
+                41.894536,
+                12.491276
               ],
               "price": 35,
               "duration": 150,
               "walkToNext": null,
-              "note": "Último tiramisú. Maletas listas esta noche, mañana se sale del Airbnb a las 11:00."
+              "note": "Última noche entera en Roma. Reservar: en Monti las trattorias buenas se llenan los sábados.",
+              "booking": ""
             }
           ]
         },
@@ -1442,6 +1571,659 @@
               "walkToNext": null,
               "note": "11 h 30 de vuelo. Llega a Guayaquil el mismo 12 de octubre a las 06:10, hora local.",
               "booking": "UX39 · localizador UX/7KK56V"
+            }
+          ]
+        }
+      ],
+      "plans": [
+        {
+          "id": "clasica",
+          "name": "Roma clásica",
+          "tagline": "Los 3 días completos en la ciudad",
+          "description": "La ruta de referencia, sin salir de Roma: Roma antigua el primer día, el centro histórico el segundo y el Vaticano con la cúpula el tercero. Es la que más cosas mete y la que más camina.",
+          "days": []
+        },
+        {
+          "id": "florencia",
+          "name": "Roma + Florencia",
+          "tagline": "El día 2 se va a la Toscana",
+          "description": "Igual que la clásica, pero el viernes se cambia el centro histórico por una excursión de día completo a Florencia en alta velocidad. Se gana una ciudad y se pierden Navona, el Panteón y Trevi.",
+          "days": [
+            {
+              "day": 9,
+              "date": "2026-10-09",
+              "label": "Florencia",
+              "variantNote": "El centro histórico de Roma se cae de la ruta: no hay otro hueco donde meterlo.",
+              "summary": "Excursión de día completo a Florencia en alta velocidad. Salen de Termini al amanecer y vuelven en el último tren de la noche. Duomo, Uffizi, Ponte Vecchio y Piazzale Michelangelo al atardecer.",
+              "stops": [
+                {
+                  "id": "rom-fi-s1",
+                  "time": "06:20",
+                  "endTime": "06:50",
+                  "name": "Termini · andén del Frecciarossa",
+                  "type": "transport",
+                  "coords": [
+                    41.900979,
+                    12.501454
+                  ],
+                  "price": 0,
+                  "duration": 30,
+                  "walkToNext": 12,
+                  "note": "Andén a 12 min a pie desde el Airbnb. Billete en el móvil, no hace falta validar. Desayuno en la estación o en el tren.",
+                  "booking": "Comprar en trenitalia.com o italotreno.it con 2-3 meses de antelación: 29-39 € por persona. A última hora sube a 90 €."
+                },
+                {
+                  "id": "rom-fi-s2",
+                  "time": "06:50",
+                  "endTime": "08:25",
+                  "name": "Frecciarossa Roma → Firenze S.M.N.",
+                  "type": "transport",
+                  "coords": [
+                    43.776432,
+                    11.248201
+                  ],
+                  "price": 35,
+                  "duration": 95,
+                  "walkToNext": 10,
+                  "note": "1 h 35 min a 300 km/h. Firenze Santa Maria Novella deja en el centro: el Duomo está a 10 min andando.",
+                  "booking": "Frecciarossa 9509 o similar · trenitalia.com"
+                },
+                {
+                  "id": "rom-fi-s3",
+                  "time": "08:35",
+                  "endTime": "10:30",
+                  "name": "Duomo, Campanile y Battistero",
+                  "type": "sight",
+                  "coords": [
+                    43.773254,
+                    11.256777
+                  ],
+                  "price": 30,
+                  "duration": 115,
+                  "walkToNext": 8,
+                  "note": "Entrar a la catedral es gratis pero la cola es larga; el pase Brunelleschi (30 €) cubre cúpula, campanile, baptisterio y museo. La cúpula exige reserva de hora exacta y son 463 escalones sin ascensor.",
+                  "booking": "Pase Brunelleschi con franja para la cúpula · duomo.firenze.it"
+                },
+                {
+                  "id": "rom-fi-s4",
+                  "time": "10:40",
+                  "endTime": "13:00",
+                  "name": "Galería Uffizi",
+                  "type": "museum",
+                  "coords": [
+                    43.76846,
+                    11.255415
+                  ],
+                  "price": 25,
+                  "duration": 140,
+                  "walkToNext": 5,
+                  "note": "Botticelli, Leonardo, Caravaggio. Con reserva se entra por la puerta 3 sin cola. Dos horas largas es el mínimo honesto.",
+                  "booking": "Franja 10:45 · uffizi.it · reserva obligatoria en temporada"
+                },
+                {
+                  "id": "rom-fi-s5",
+                  "time": "13:10",
+                  "endTime": "14:30",
+                  "name": "Comida junto al Ponte Vecchio",
+                  "type": "food",
+                  "coords": [
+                    43.768013,
+                    11.253156
+                  ],
+                  "price": 28,
+                  "duration": 80,
+                  "walkToNext": 4,
+                  "note": "Trattoria en Oltrarno, cruzando el puente: mismo plato, la mitad de precio que en la orilla de los Uffizi. Bistecca alla fiorentina si el hambre acompaña.",
+                  "booking": ""
+                },
+                {
+                  "id": "rom-fi-s6",
+                  "time": "14:35",
+                  "endTime": "15:30",
+                  "name": "Ponte Vecchio y Oltrarno",
+                  "type": "walk",
+                  "coords": [
+                    43.767961,
+                    11.253216
+                  ],
+                  "price": 0,
+                  "duration": 55,
+                  "walkToNext": 9,
+                  "note": "El puente con las joyerías y el corredor vasariano encima. Al otro lado, los talleres de artesanos de Santo Spirito.",
+                  "booking": ""
+                },
+                {
+                  "id": "rom-fi-s7",
+                  "time": "15:40",
+                  "endTime": "17:00",
+                  "name": "Piazza della Signoria y Palazzo Vecchio",
+                  "type": "sight",
+                  "coords": [
+                    43.76956,
+                    11.255814
+                  ],
+                  "price": 12,
+                  "duration": 80,
+                  "walkToNext": 10,
+                  "note": "La Loggia dei Lanzi es un museo de escultura al aire libre y gratis. El David de la plaza es copia; el original está en la Accademia, que hoy no da tiempo.",
+                  "booking": ""
+                },
+                {
+                  "id": "rom-fi-s8",
+                  "time": "17:10",
+                  "endTime": "18:15",
+                  "name": "Santa Croce y mercado de cuero",
+                  "type": "walk",
+                  "coords": [
+                    43.768711,
+                    11.262167
+                  ],
+                  "price": 0,
+                  "duration": 65,
+                  "walkToNext": 25,
+                  "note": "Las tumbas de Miguel Ángel, Galileo y Maquiavelo están dentro (8 €, opcional). Alrededor, los puestos de cuero.",
+                  "booking": ""
+                },
+                {
+                  "id": "rom-fi-s9",
+                  "time": "18:40",
+                  "endTime": "20:10",
+                  "name": "Piazzale Michelangelo al atardecer",
+                  "type": "sight",
+                  "coords": [
+                    43.762932,
+                    11.265059
+                  ],
+                  "price": 0,
+                  "duration": 90,
+                  "walkToNext": 20,
+                  "note": "La postal de Florencia. Son 25 min de subida a pie o el bus 12/13 desde Santa Croce. El sol se pone hacia las 18:45 en octubre: llegar antes.",
+                  "booking": ""
+                },
+                {
+                  "id": "rom-fi-s10",
+                  "time": "20:30",
+                  "endTime": "21:35",
+                  "name": "Cena rápida y vuelta a la estación",
+                  "type": "food",
+                  "coords": [
+                    43.774678,
+                    11.249126
+                  ],
+                  "price": 22,
+                  "duration": 65,
+                  "walkToNext": 5,
+                  "note": "Algo cerca de Santa Maria Novella para no jugársela con el tren. Un panino de lampredotto o pizza al taglio sirve.",
+                  "booking": ""
+                },
+                {
+                  "id": "rom-fi-s11",
+                  "time": "21:47",
+                  "endTime": "23:20",
+                  "name": "Último Frecciarossa Firenze → Roma Termini",
+                  "type": "transport",
+                  "coords": [
+                    41.900979,
+                    12.501454
+                  ],
+                  "price": 35,
+                  "duration": 93,
+                  "walkToNext": 12,
+                  "note": "Es el último tren directo de la noche. Perderlo significa hotel en Florencia: estar en el andén 15 min antes.",
+                  "booking": "Frecciarossa 9660 o similar · comprar la vuelta a la vez que la ida"
+                },
+                {
+                  "id": "rom-fi-s12",
+                  "time": "23:20",
+                  "endTime": "23:45",
+                  "name": "Vuelta al Airbnb en Monti",
+                  "type": "stay",
+                  "coords": [
+                    41.892499,
+                    12.505376
+                  ],
+                  "price": 0,
+                  "duration": 25,
+                  "walkToNext": null,
+                  "note": "Andando por Via Cavour. De noche la zona está transitada; si el cuerpo no da, taxi desde la parada oficial de Termini (recargo ZTL).",
+                  "booking": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "suave",
+          "name": "Roma sin prisa",
+          "tagline": "Menos paradas, más tiempo en cada una",
+          "description": "Para llegar vivos al final. El día de la llegada no se fuerza, la Roma antigua se reparte con calma y suma los Museos Capitolinos, y el Vaticano se hace sin subir la cúpula para dejar la tarde libre.",
+          "days": [
+            {
+              "day": 8,
+              "date": "2026-10-08",
+              "label": "Llegada y nada más",
+              "variantNote": "Tras la noche en avión y la escala en Madrid, el primer día no pelea: Coliseo por fuera y a dormir.",
+              "summary": "Llegan rotos de un vuelo de once horas más la escala. Maletas, comida, una vuelta corta por el barrio con el Coliseo de fondo y dormir pronto.",
+              "stops": [
+                {
+                  "id": "rom-s8-s1",
+                  "time": "09:30",
+                  "endTime": "10:15",
+                  "name": "Llegada UX1043 · Fiumicino T1",
+                  "type": "transport",
+                  "coords": [
+                    41.800277,
+                    12.246667
+                  ],
+                  "price": 0,
+                  "duration": 45,
+                  "walkToNext": 12,
+                  "note": "Vuelo interior Schengen desde Madrid: sólo queda recoger la maleta facturada.",
+                  "booking": "UX1043 · localizador UX/7KK56V"
+                },
+                {
+                  "id": "rom-s8-s2",
+                  "time": "10:30",
+                  "endTime": "11:10",
+                  "name": "Leonardo Express a Termini",
+                  "type": "transport",
+                  "coords": [
+                    41.900979,
+                    12.501454
+                  ],
+                  "price": 14,
+                  "duration": 40,
+                  "walkToNext": 12,
+                  "note": "Cada 15 min desde la terminal, directo a Termini. Validar el billete antes de subir.",
+                  "booking": ""
+                },
+                {
+                  "id": "rom-s8-s3",
+                  "time": "11:30",
+                  "endTime": "13:00",
+                  "name": "Airbnb: maletas y descanso",
+                  "type": "stay",
+                  "coords": [
+                    41.892499,
+                    12.505376
+                  ],
+                  "price": 0,
+                  "duration": 90,
+                  "walkToNext": 10,
+                  "note": "Dejar el equipaje y parar de verdad un rato. El check-in formal es a las 15:00, pero el anfitrión suele dejar entrar antes si está libre.",
+                  "booking": ""
+                },
+                {
+                  "id": "rom-s8-s4",
+                  "time": "13:15",
+                  "endTime": "14:45",
+                  "name": "Comida larga en Monti",
+                  "type": "food",
+                  "coords": [
+                    41.894536,
+                    12.491276
+                  ],
+                  "price": 25,
+                  "duration": 90,
+                  "walkToNext": 10,
+                  "note": "Sin prisa. Monti es el barrio de casa: trattorias de siempre a dos calles del Coliseo.",
+                  "booking": ""
+                },
+                {
+                  "id": "rom-s8-s5",
+                  "time": "15:00",
+                  "endTime": "16:30",
+                  "name": "Siesta",
+                  "type": "stay",
+                  "coords": [
+                    41.892499,
+                    12.505376
+                  ],
+                  "price": 0,
+                  "duration": 90,
+                  "walkToNext": 10,
+                  "note": "Hora y media de cama. Suena a tiempo perdido, pero es lo que salva los dos días siguientes.",
+                  "booking": ""
+                },
+                {
+                  "id": "rom-s8-s6",
+                  "time": "16:45",
+                  "endTime": "18:15",
+                  "name": "Coliseo y Arco de Constantino por fuera",
+                  "type": "walk",
+                  "coords": [
+                    41.89021,
+                    12.492231
+                  ],
+                  "price": 0,
+                  "duration": 90,
+                  "walkToNext": 12,
+                  "note": "Sin entrar: dar la vuelta completa al anfiteatro, el Arco de Constantino al lado y la vista desde Via Nicola Salvi. La visita de dentro es mañana, con el cuerpo entero.",
+                  "booking": ""
+                },
+                {
+                  "id": "rom-s8-s7",
+                  "time": "18:30",
+                  "endTime": "19:30",
+                  "name": "Paseo por Monti",
+                  "type": "walk",
+                  "coords": [
+                    41.8949,
+                    12.49
+                  ],
+                  "price": 0,
+                  "duration": 60,
+                  "walkToNext": 5,
+                  "note": "Via del Boschetto, Piazza della Madonna dei Monti y sus escalones, que a esta hora son el salón del barrio.",
+                  "booking": ""
+                },
+                {
+                  "id": "rom-s8-s8",
+                  "time": "19:45",
+                  "endTime": "21:15",
+                  "name": "Cena temprana y a dormir",
+                  "type": "food",
+                  "coords": [
+                    41.894536,
+                    12.491276
+                  ],
+                  "price": 28,
+                  "duration": 90,
+                  "walkToNext": null,
+                  "note": "Cenar pronto y acostarse pronto: mañana hay Coliseo a primera hora.",
+                  "booking": ""
+                }
+              ]
+            },
+            {
+              "day": 9,
+              "date": "2026-10-09",
+              "label": "Roma antigua sin prisa",
+              "variantNote": "El día 1 de la ruta clásica, repartido con calma y sin cruzar a Trastevere de noche.",
+              "summary": "Coliseo por la mañana con arena y subterráneos, Foro y Palatino con tiempo, y la tarde en el Campidoglio y el Circo Máximo sin correr.",
+              "stops": [
+                {
+                  "id": "rom-s9-s1",
+                  "time": "09:00",
+                  "endTime": "11:30",
+                  "name": "Coliseo · arena y subterráneos",
+                  "type": "sight",
+                  "coords": [
+                    41.89021,
+                    12.492231
+                  ],
+                  "price": 24,
+                  "duration": 150,
+                  "walkToNext": 4,
+                  "note": "A primera hora, con el cuerpo descansado y menos gente que por la tarde. Gradas 1 y 2, el suelo de la arena y los subterráneos.",
+                  "booking": "Franja 09:00 · 'Colosseo Arena e Sotterranei' en coopculture.it"
+                },
+                {
+                  "id": "rom-s9-s2",
+                  "time": "11:35",
+                  "endTime": "12:00",
+                  "name": "Arco de Constantino",
+                  "type": "sight",
+                  "coords": [
+                    41.889765,
+                    12.490524
+                  ],
+                  "price": 0,
+                  "duration": 25,
+                  "walkToNext": 5,
+                  "note": "Al salir del Coliseo, a pie de calle y gratis.",
+                  "booking": ""
+                },
+                {
+                  "id": "rom-s9-s3",
+                  "time": "12:05",
+                  "endTime": "14:15",
+                  "name": "Foro Romano y Palatino",
+                  "type": "sight",
+                  "coords": [
+                    41.892426,
+                    12.485325
+                  ],
+                  "price": 0,
+                  "duration": 130,
+                  "walkToNext": 12,
+                  "note": "Con el mismo billete del Coliseo y más de dos horas por delante: templo de Saturno, basílica Emilia, arco de Tito, Santa Maria Antiqua, y arriba los Dominios Flavios, la casa de Augusto y la de Livia. Sombra escasa: gorra y agua.",
+                  "booking": "Incluido en el billete del Coliseo"
+                },
+                {
+                  "id": "rom-s9-s4",
+                  "time": "14:30",
+                  "endTime": "16:00",
+                  "name": "Comida larga cerca del Campidoglio",
+                  "type": "food",
+                  "coords": [
+                    41.894,
+                    12.482
+                  ],
+                  "price": 28,
+                  "duration": 90,
+                  "walkToNext": 6,
+                  "note": "Hora y media sentados después de una mañana entera de pie.",
+                  "booking": ""
+                },
+                {
+                  "id": "rom-s9-s5",
+                  "time": "16:10",
+                  "endTime": "18:30",
+                  "name": "Piazza del Campidoglio y Museos Capitolinos",
+                  "type": "museum",
+                  "coords": [
+                    41.893333,
+                    12.482778
+                  ],
+                  "price": 16,
+                  "duration": 140,
+                  "walkToNext": 6,
+                  "note": "La plaza de Miguel Ángel y, dentro, el museo público más antiguo del mundo: la loba capitolina, el Marco Aurelio original y la galería subterránea que cruza al Tabularium, con la mejor vista del Foro que existe. En la ruta clásica esto se cae por falta de horas.",
+                  "booking": "museicapitolini.org"
+                },
+                {
+                  "id": "rom-s9-s6",
+                  "time": "18:40",
+                  "endTime": "19:05",
+                  "name": "Teatro de Marcelo",
+                  "type": "sight",
+                  "coords": [
+                    41.892072,
+                    12.479881
+                  ],
+                  "price": 0,
+                  "duration": 25,
+                  "walkToNext": 14,
+                  "note": "Un teatro romano del siglo I con pisos renacentistas encima y vecinos dentro. Desde la calle.",
+                  "booking": ""
+                },
+                {
+                  "id": "rom-s9-s7",
+                  "time": "19:20",
+                  "endTime": "20:00",
+                  "name": "Circo Máximo al atardecer",
+                  "type": "walk",
+                  "coords": [
+                    41.886111,
+                    12.485278
+                  ],
+                  "price": 0,
+                  "duration": 40,
+                  "walkToNext": 18,
+                  "note": "No queda casi nada en pie, pero el hueco del estadio con el Palatino encima a contraluz vale la parada.",
+                  "booking": ""
+                },
+                {
+                  "id": "rom-s9-s8",
+                  "time": "20:20",
+                  "endTime": "22:20",
+                  "name": "Cena en Monti",
+                  "type": "food",
+                  "coords": [
+                    41.894536,
+                    12.491276
+                  ],
+                  "price": 30,
+                  "duration": 120,
+                  "walkToNext": null,
+                  "note": "Vuelta al barrio en vez de cruzar a Trastevere: 20 min menos de caminata y la cama al lado.",
+                  "booking": ""
+                }
+              ]
+            },
+            {
+              "day": 10,
+              "date": "2026-10-10",
+              "label": "Vaticano y centro",
+              "variantNote": "Sin los 551 escalones de la cúpula: el día cunde igual y las piernas terminan enteras.",
+              "summary": "Museos a las 9, Sixtina y San Pedro sin subir a la cúpula. La tarde queda libre para el Panteón, Navona y la Fontana di Trevi.",
+              "stops": [
+                {
+                  "id": "rom-s10-s1",
+                  "time": "09:00",
+                  "endTime": "12:00",
+                  "name": "Museos Vaticanos",
+                  "type": "museum",
+                  "coords": [
+                    41.906487,
+                    12.453601
+                  ],
+                  "price": 25,
+                  "duration": 180,
+                  "walkToNext": 2,
+                  "note": "Una hora más tarde que en la ruta clásica, a cambio de algo más de cola. Lo imprescindible: galería de los Mapas, Estancias de Rafael, escalera de Bramante, Pío Clementino y Pinacoteca.",
+                  "booking": "Franja 09:00 · museivaticani.va · reserva obligatoria"
+                },
+                {
+                  "id": "rom-s10-s2",
+                  "time": "12:00",
+                  "endTime": "12:45",
+                  "name": "Capilla Sixtina",
+                  "type": "museum",
+                  "coords": [
+                    41.902946,
+                    12.454519
+                  ],
+                  "price": 0,
+                  "duration": 45,
+                  "walkToNext": 8,
+                  "note": "Final del recorrido, incluida en la entrada. Ni fotos ni conversación, y lo hacen cumplir.",
+                  "booking": "Incluida en los Museos Vaticanos"
+                },
+                {
+                  "id": "rom-s10-s3",
+                  "time": "12:55",
+                  "endTime": "14:30",
+                  "name": "Basílica de San Pedro",
+                  "type": "sight",
+                  "coords": [
+                    41.902168,
+                    12.453937
+                  ],
+                  "price": 0,
+                  "duration": 95,
+                  "walkToNext": 12,
+                  "note": "Gratis; la cola es el control de seguridad. El baldaquino de Bernini y la Piedad de Miguel Ángel, a la derecha nada más entrar. Hombros y rodillas cubiertos.",
+                  "booking": ""
+                },
+                {
+                  "id": "rom-s10-s4",
+                  "time": "14:45",
+                  "endTime": "16:00",
+                  "name": "Comida en Prati",
+                  "type": "food",
+                  "coords": [
+                    41.907243,
+                    12.463832
+                  ],
+                  "price": 26,
+                  "duration": 75,
+                  "walkToNext": 14,
+                  "note": "A dos calles del Vaticano y con precios de barrio.",
+                  "booking": ""
+                },
+                {
+                  "id": "rom-s10-s5",
+                  "time": "16:15",
+                  "endTime": "16:45",
+                  "name": "Puente Umberto I",
+                  "type": "walk",
+                  "coords": [
+                    41.9014,
+                    12.4692
+                  ],
+                  "price": 0,
+                  "duration": 30,
+                  "walkToNext": 9,
+                  "note": "De vuelta al centro cruzando el Tíber, con Castel Sant'Angelo río arriba.",
+                  "booking": ""
+                },
+                {
+                  "id": "rom-s10-s6",
+                  "time": "16:55",
+                  "endTime": "18:05",
+                  "name": "Piazza Navona",
+                  "type": "sight",
+                  "coords": [
+                    41.89906,
+                    12.47308
+                  ],
+                  "price": 0,
+                  "duration": 70,
+                  "walkToNext": 7,
+                  "note": "La Fuente de los Cuatro Ríos de Bernini y las dos iglesias de la plaza, gratis las dos.",
+                  "booking": ""
+                },
+                {
+                  "id": "rom-s10-s7",
+                  "time": "18:15",
+                  "endTime": "19:20",
+                  "name": "Panteón de Agripa",
+                  "type": "sight",
+                  "coords": [
+                    41.89861,
+                    12.476873
+                  ],
+                  "price": 5,
+                  "duration": 65,
+                  "walkToNext": 8,
+                  "note": "Visita interior. Al caer la tarde la luz entra por el óculo en diagonal y es cuando mejor se ve la cúpula.",
+                  "booking": "Franja 18:15 · museiitaliani.it"
+                },
+                {
+                  "id": "rom-s10-s8",
+                  "time": "19:30",
+                  "endTime": "20:20",
+                  "name": "Fontana di Trevi de noche",
+                  "type": "sight",
+                  "coords": [
+                    41.900932,
+                    12.483313
+                  ],
+                  "price": 0,
+                  "duration": 50,
+                  "walkToNext": 14,
+                  "note": "Iluminada y a reventar, como siempre. La moneda, de espaldas y con la derecha por encima del hombro izquierdo.",
+                  "booking": ""
+                },
+                {
+                  "id": "rom-s10-s9",
+                  "time": "20:40",
+                  "endTime": "22:40",
+                  "name": "Cena de despedida en Monti",
+                  "type": "food",
+                  "coords": [
+                    41.894536,
+                    12.491276
+                  ],
+                  "price": 35,
+                  "duration": 120,
+                  "walkToNext": null,
+                  "note": "Última noche entera en Roma. Reservar: los sábados Monti se llena.",
+                  "booking": ""
+                }
+              ]
             }
           ]
         }

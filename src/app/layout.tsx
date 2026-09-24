@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,10 +8,10 @@ const inter = Inter({
   display: "swap",
 });
 
-const instrument = Instrument_Serif({
-  variable: "--font-instrument",
+const grotesk = Space_Grotesk({
+  variable: "--font-grotesk",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["500", "600", "700"],
   display: "swap",
 });
 
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport = {
-  themeColor: "#fbfaf7",
+  themeColor: "#f1f2f0",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover" as const,
@@ -32,7 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="es"
-      className={`${inter.variable} ${instrument.variable} h-full antialiased`}
+      className={`${inter.variable} ${grotesk.variable} h-full antialiased`}
     >
       <body className="min-h-full">{children}</body>
     </html>

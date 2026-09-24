@@ -1,7 +1,14 @@
 "use client";
 
 import type { City, Stop } from "@/lib/types";
-import { dollars, durationLabel, euros, stopMeta } from "@/lib/utils";
+import {
+  accentVars,
+  cn,
+  dollars,
+  durationLabel,
+  euros,
+  stopMeta,
+} from "@/lib/utils";
 
 interface Props {
   stop: Stop;
@@ -21,25 +28,36 @@ export default function StopDetail({
   const meta = stopMeta[stop.type];
 
   return (
-    <div>
-      <p className="text-[11px] tracking-wide text-ink-mute tnum">
-        Parada {index} de {total} · {meta.label}
-      </p>
+    <div style={accentVars(city.accent)}>
+      <div className="flex flex-wrap items-center gap-2 pr-10">
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-accent-soft py-1 pl-1 pr-3 text-[12px] font-medium text-accent-ink">
+          <span
+            className="flex h-6 w-6 items-center justify-center rounded-full bg-accent-solid text-white"
+            aria-hidden
+          >
+            <i className={cn(meta.icon, "text-[13px]")} />
+          </span>
+          {meta.label}
+        </span>
+        <span className="rounded-full bg-well px-3 py-1 text-[12px] font-medium text-ink-soft tnum">
+          Parada {index} de {total}
+        </span>
+      </div>
 
-      <h2 className="mt-2 font-display text-[1.75rem] leading-[1.15] text-ink">
+      <h2 className="mt-4 font-display text-[1.75rem] font-semibold leading-[1.1] tracking-tight text-ink">
         {stop.name}
       </h2>
 
-      <p className="mt-4 font-display text-4xl leading-none text-ink tnum">
+      <p className="mt-3 font-display text-[2.5rem] font-semibold leading-none tracking-tight text-ink tnum">
         {stop.time}
         <span className="text-ink-mute"> — {stop.endTime}</span>
       </p>
 
-      <dl className="mt-6 border-t border-rule text-sm">
-        <div className="flex items-baseline justify-between border-b border-rule py-3">
+      <dl className="mt-6 rounded-2xl bg-well px-4 text-sm">
+        <div className="flex items-baseline justify-between border-b border-line py-3">
           <dt className="text-ink-soft">Precio aprox.</dt>
           <dd className="text-right">
-            <span className="tnum font-medium text-ink">
+            <span className="tnum font-semibold text-accent-ink">
               {dollars(stop.price)}
             </span>
             {stop.price > 0 ? (
@@ -49,12 +67,19 @@ export default function StopDetail({
             ) : null}
           </dd>
         </div>
-        <div className="flex items-baseline justify-between border-b border-rule py-3">
+        <div className="flex items-baseline justify-between border-b border-line py-3">
           <dt className="text-ink-soft">Tiempo allí</dt>
-          <dd className="tnum text-ink">{durationLabel(stop.duration)}</dd>
+          <dd className="tnum font-medium text-ink">
+            {durationLabel(stop.duration)}
+          </dd>
         </div>
         {stop.walkToNext !== null && nextStop ? (
-          <div className="flex items-baseline justify-between gap-6 border-b border-rule py-3">
+          <div
+            className={cn(
+              "flex items-baseline justify-between gap-6 py-3",
+              stop.booking && "border-b border-line",
+            )}
+          >
             <dt className="text-ink-soft">Andando hasta</dt>
             <dd className="text-right text-ink">
               <span className="tnum font-medium">{stop.walkToNext} min</span>
@@ -64,15 +89,20 @@ export default function StopDetail({
             </dd>
           </div>
         ) : (
-          <div className="flex items-baseline justify-between border-b border-rule py-3">
+          <div
+            className={cn(
+              "flex items-baseline justify-between py-3",
+              stop.booking && "border-b border-line",
+            )}
+          >
             <dt className="text-ink-soft">Después</dt>
-            <dd className="text-ink">Fin del día</dd>
+            <dd className="font-medium text-ink">Fin del día</dd>
           </div>
         )}
         {stop.booking ? (
-          <div className="flex items-baseline justify-between gap-6 border-b border-rule py-3">
+          <div className="flex items-baseline justify-between gap-6 py-3">
             <dt className="text-ink-soft">Reserva</dt>
-            <dd className="text-right text-ink">{stop.booking}</dd>
+            <dd className="text-right font-medium text-ink">{stop.booking}</dd>
           </div>
         ) : null}
       </dl>
@@ -85,8 +115,7 @@ export default function StopDetail({
         href={`https://www.google.com/maps/dir/?api=1&destination=${stop.coords[0]},${stop.coords[1]}&travelmode=walking`}
         target="_blank"
         rel="noreferrer"
-        className="mt-6 inline-flex items-center gap-2 border-b pb-0.5 text-sm font-medium transition-opacity hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
-        style={{ color: city.accent, borderColor: city.accent }}
+        className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent-deep px-5 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
       >
         <i className="ri-navigation-line text-base" aria-hidden />
         Cómo llegar andando

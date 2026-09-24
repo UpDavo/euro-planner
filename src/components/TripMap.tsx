@@ -11,39 +11,45 @@ import {
 } from "react-leaflet";
 import L from "leaflet";
 import type { City, Day, Stop } from "@/lib/types";
+import { accentPalette } from "@/lib/utils";
 
 function pinIcon(label: string, accent: string, active: boolean) {
+  const p = accentPalette(accent);
+  const size = active ? 32 : 26;
   return L.divIcon({
     className: "trip-pin",
     html: `<div style="
       display:flex;align-items:center;justify-content:center;
-      width:${active ? 30 : 24}px;height:${active ? 30 : 24}px;
+      width:${size}px;height:${size}px;
       border-radius:999px;
-      background:${active ? accent : "#fbfaf7"};
-      color:${active ? "#fbfaf7" : "#16181d"};
-      border:2px solid ${accent};
-      font:600 ${active ? 13 : 11}px/1 var(--font-inter, system-ui);
+      background:${active ? p.solid : "#ffffff"};
+      color:${active ? "#ffffff" : p.ink};
+      font:700 ${active ? 13 : 12}px/1 var(--font-grotesk, var(--font-inter, system-ui));
       font-variant-numeric:tabular-nums;
-      box-shadow:0 1px 4px rgba(22,24,29,.35);
+      box-shadow:${
+        active
+          ? `0 0 0 5px color-mix(in oklab, ${accent} 28%, transparent), 0 6px 16px -4px rgba(20,23,26,.35)`
+          : `0 1px 2px rgba(20,23,26,.08), 0 6px 16px -6px rgba(20,23,26,.25)`
+      };
       transition:width .15s,height .15s;
     ">${label}</div>`,
-    iconSize: [active ? 30 : 24, active ? 30 : 24],
-    iconAnchor: [active ? 15 : 12, active ? 15 : 12],
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size / 2],
   });
 }
 
 function stayIcon(accent: string) {
+  const p = accentPalette(accent);
   return L.divIcon({
     className: "trip-pin",
     html: `<div style="
       display:flex;align-items:center;justify-content:center;
-      width:28px;height:28px;border-radius:4px;
-      background:#16181d;color:#fbfaf7;
-      border:2px solid ${accent};
-      box-shadow:0 1px 4px rgba(22,24,29,.4);
-    "><span style="font-size:14px" class="ri-home-4-fill"></span></div>`,
-    iconSize: [28, 28],
-    iconAnchor: [14, 14],
+      width:30px;height:30px;border-radius:10px;
+      background:${p.deep};color:#ffffff;
+      box-shadow:0 1px 2px rgba(20,23,26,.08), 0 6px 16px -6px rgba(20,23,26,.3);
+    "><span style="font-size:15px" class="ri-home-4-fill"></span></div>`,
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
   });
 }
 
@@ -118,11 +124,12 @@ export default function TripMap({
         Math.abs(lng - city.center[1]) < 0.15,
     );
     // El día se desarrolla fuera de la ciudad: encuadrar las paradas lejanas.
-    if (near.length <= 2) {
-      const far = all.filter((c) => !near.includes(c));
-      return far.length > 0 ? far : all;
-    }
-    return near;
+    // La excursión a Florencia deja tres anclas en Roma (los dos trenes en
+    // Termini y la vuelta al Airbnb) y nueve paradas fuera, así que no basta
+    // con mirar si quedan dos o menos cerca: manda dónde está la mayoría.
+    const far = all.filter((c) => !near.includes(c));
+    if (far.length > near.length) return far;
+    return near.length > 0 ? near : all;
   }, [city.stay.coords, city.center, day.stops]);
 
   const route = useMemo<[number, number][]>(

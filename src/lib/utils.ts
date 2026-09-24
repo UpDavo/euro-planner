@@ -1,9 +1,37 @@
 import { clsx, type ClassValue } from "clsx";
+import type { CSSProperties } from "react";
 import { twMerge } from "tailwind-merge";
-import type { Day, Stop, StopType } from "./types";
+import type { City, Day, Plan, Stop, StopType } from "./types";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
+}
+
+/**
+ * Los días de la ciudad con el plan aplicado encima: cada día que el plan
+ * reemplaza sustituye al original y el resto se mantiene. Sin plan activo, o
+ * en una ciudad sin planes, devuelve los días tal cual.
+ */
+export function planDays(city: City, planId: string | null): Day[] {
+  if (!planId) return city.days;
+  const plan = city.plans?.find((p) => p.id === planId);
+  if (!plan) return city.days;
+  return city.days.map(
+    (day) => plan.days.find((d) => d.day === day.day) ?? day,
+  );
+}
+
+/** La nota de una variante, si el día activo viene de un plan. */
+export function variantNote(day: Day): string | null {
+  return "variantNote" in day ? (day as { variantNote: string }).variantNote : null;
+}
+
+/** Lo que cuesta la ciudad entera con un plan puesto, sin contar el hospedaje. */
+export function planTotal(city: City, plan: Plan | null): number {
+  return planDays(city, plan?.id ?? null).reduce(
+    (sum, day) => sum + dayTotal(day),
+    0,
+  );
 }
 
 // Tasa EUR→USD. Actualízala antes de viajar: los precios del JSON están en euros,
@@ -76,4 +104,34 @@ export const stopMeta: Record<StopType, { label: string; icon: string }> = {
 
 export function stopIndexLabel(stops: Stop[], id: string) {
   return stops.findIndex((s) => s.id === id) + 1;
+}
+
+/**
+ * Las cinco caras del acento de una ciudad. El color crudo sólo se usa donde
+ * no hay texto encima (puntos, líneas); `solid` es el fondo para texto blanco
+ * (el dorado de Roma se queda en 3,4:1 con el blanco si no se oscurece);
+ * `ink` es la versión para texto sobre blanco; `soft` es la tinta al ~10 %
+ * para chips y notas; `deep` es el acento hundido en negro para las tarjetas
+ * oscuras.
+ */
+export function accentPalette(accent: string) {
+  return {
+    accent,
+    solid: `color-mix(in oklab, ${accent} 82%, #14171a)`,
+    ink: `color-mix(in oklab, ${accent} 66%, #14171a)`,
+    soft: `color-mix(in oklab, ${accent} 11%, #ffffff)`,
+    deep: `color-mix(in oklab, ${accent} 28%, #111416)`,
+  };
+}
+
+/** Las variables CSS que alimentan `bg-accent`, `text-accent-ink`, etc. */
+export function accentVars(accent: string): CSSProperties {
+  const p = accentPalette(accent);
+  return {
+    "--accent": p.accent,
+    "--accent-solid": p.solid,
+    "--accent-ink": p.ink,
+    "--accent-soft": p.soft,
+    "--accent-deep": p.deep,
+  } as CSSProperties;
 }
