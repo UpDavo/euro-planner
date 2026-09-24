@@ -85,6 +85,23 @@ export function shortDate(iso: string) {
   });
 }
 
+/**
+ * Qué se hace entre una parada y la siguiente. Las paradas de transporte
+ * llevan las coordenadas de destino, así que el tramo a pie que sale de ellas
+ * es "al bajar", y el que llega a ellas es para ir a subir. Sin caminata real
+ * (0 min: el taxi deja en la puerta) no hay nada que mostrar.
+ */
+export function walkLabel(stop: Stop, next: Stop | null): string | null {
+  if (!next || !stop.walkToNext) return null;
+  const min = `${stop.walkToNext} min andando`;
+  const from = stop.type === "transport";
+  const to = next.type === "transport";
+  if (from && to) return `Transbordo · ${min}`;
+  if (from) return `Al bajar · ${min}`;
+  if (to) return `${min} hasta el transporte`;
+  return `${min}`;
+}
+
 export function durationLabel(minutes: number) {
   const h = Math.floor(minutes / 60);
   const m = minutes % 60;

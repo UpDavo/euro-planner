@@ -1,8 +1,12 @@
 "use client";
 
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
-  MapContainer,
+  LeafletContext,
+  createLeafletContext,
+  type LeafletContextInterface,
+} from "@react-leaflet/core";
+import {
   Marker,
   Polyline,
   TileLayer,
@@ -53,6 +57,52 @@ function stayIcon(accent: string) {
   });
 }
 
+/**
+ * Sustituye a `MapContainer` de react-leaflet 5.0.0, que al desmontar hace
+ * `map.remove()` pero conserva la instancia en un ref: cuando StrictMode o Fast
+ * Refresh vuelven a montar los efectos, las capas se añaden a un mapa ya
+ * destruido ("Cannot read properties of undefined (reading 'appendChild')").
+ * Aquí el mapa nace y muere con el efecto, y los hijos se remontan con él.
+ */
+function MapShell({
+  center,
+  zoom,
+  className,
+  children,
+}: {
+  center: [number, number];
+  zoom: number;
+  className?: string;
+  children: ReactNode;
+}) {
+  const node = useRef<HTMLDivElement>(null);
+  const [context, setContext] = useState<LeafletContextInterface | null>(null);
+
+  useEffect(() => {
+    const map = L.map(node.current!, {
+      center,
+      zoom,
+      scrollWheelZoom: true,
+      zoomControl: false,
+    });
+    setContext(createLeafletContext(map));
+    return () => {
+      setContext(null);
+      map.remove();
+    };
+    // El centro inicial sólo importa al crear el mapa; luego encuadra FitBounds.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return (
+    <div ref={node} className={className}>
+      {context ? (
+        <LeafletContext value={context}>{children}</LeafletContext>
+      ) : null}
+    </div>
+  );
+}
+
 function FitBounds({
   points,
   activeId,
@@ -63,7 +113,9 @@ function FitBounds({
   const map = useMap();
 
   useEffect(() => {
-    if (points.length === 0) return;
+    // El mapa de escritorio sigue montado en móvil con display:none: sin
+    // tamaño, Leaflet calcula un zoom NaN.
+    if (points.length === 0 || map.getSize().x === 0) return;
     const bounds = L.latLngBounds(points);
     map.fitBounds(bounds, {
       padding: [56, 56],
@@ -85,7 +137,7 @@ function FitBounds({
 function FlyToActive({ stop }: { stop: Stop | null }) {
   const map = useMap();
   useEffect(() => {
-    if (!stop) return;
+    if (!stop || map.getSize().x === 0) return;
     map.flyTo(stop.coords, Math.max(map.getZoom(), 15), { duration: 0.7 });
   }, [stop, map]);
   return null;
@@ -132,10 +184,19 @@ export default function TripMap({
     return near.length > 0 ? near : all;
   }, [city.stay.coords, city.center, day.stops]);
 
-  const route = useMemo<[number, number][]>(
-    () => day.stops.map((s) => s.coords),
-    [day.stops],
-  );
+  // Tramos a pie y en transporte por separado: el que llega a una parada de
+  // transporte es el trayecto en tren, taxi o avión, no una caminata.
+  const legs = useMemo(() => {
+    const walk: [number, number][][] = [];
+    const ride: [number, number][][] = [];
+    day.stops.slice(1).forEach((s, i) =>
+      (s.type === "transport" ? ride : walk).push([
+        day.stops[i].coords,
+        s.coords,
+      ]),
+    );
+    return { walk, ride };
+  }, [day.stops]);
 
   const stayOverlaps = useMemo(
     () =>
@@ -150,13 +211,7 @@ export default function TripMap({
   const activeStop = day.stops.find((s) => s.id === activeStopId) ?? null;
 
   return (
-    <MapContainer
-      center={city.center}
-      zoom={city.zoom}
-      scrollWheelZoom
-      zoomControl={false}
-      className="h-full w-full"
-    >
+    <MapShell center={city.center} zoom={city.zoom} className="h-full w-full">
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -167,7 +222,16 @@ export default function TripMap({
 
       {/* Halo blanco bajo la ruta: la separa de las calles de color del mapa */}
       <Polyline
-        positions={route}
+        positions={legs.ride}
+        pathOptions={{
+          color: city.accent,
+          weight: 2,
+          opacity: 0.45,
+          lineCap: "round",
+        }}
+      />
+      <Polyline
+        positions={legs.walk}
         pathOptions={{
           color: "#ffffff",
           weight: 7,
@@ -176,7 +240,7 @@ export default function TripMap({
         }}
       />
       <Polyline
-        positions={route}
+        positions={legs.walk}
         pathOptions={{
           color: city.accent,
           weight: 3,
@@ -205,6 +269,6 @@ export default function TripMap({
           zIndexOffset={stop.id === activeStopId ? 600 : 300}
         />
       ))}
-    </MapContainer>
+    </MapShell>
   );
 }

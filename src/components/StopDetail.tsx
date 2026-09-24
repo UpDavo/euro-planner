@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import type { City, Stop } from "@/lib/types";
 import {
   accentVars,
@@ -9,6 +10,8 @@ import {
   euros,
   stopMeta,
 } from "@/lib/utils";
+import PhotoHeader from "./PhotoHeader";
+import TicketBadge from "./TicketBadge";
 
 interface Props {
   stop: Stop;
@@ -26,9 +29,15 @@ export default function StopDetail({
   nextStop,
 }: Props) {
   const meta = stopMeta[stop.type];
+  const top = useRef<HTMLDivElement>(null);
+
+  // Al pasar de parada el modal conserva el scroll: volver arriba.
+  useEffect(() => {
+    top.current?.closest("[data-modal-scroll]")?.scrollTo({ top: 0 });
+  }, [stop.id]);
 
   return (
-    <div style={accentVars(city.accent)}>
+    <div ref={top} style={accentVars(city.accent)}>
       <div className="flex flex-wrap items-center gap-2 pr-10">
         <span className="inline-flex items-center gap-1.5 rounded-full bg-accent-soft py-1 pl-1 pr-3 text-[12px] font-medium text-accent-ink">
           <span
@@ -42,7 +51,10 @@ export default function StopDetail({
         <span className="rounded-full bg-well px-3 py-1 text-[12px] font-medium text-ink-soft tnum">
           Parada {index} de {total}
         </span>
+        <TicketBadge required={stop.advanceTicket} className="px-3 py-1 text-[12px]" />
       </div>
+
+      {stop.photo ? <PhotoHeader photo={stop.photo} alt={stop.name} /> : null}
 
       <h2 className="mt-4 font-display text-[1.75rem] font-semibold leading-[1.1] tracking-tight text-ink">
         {stop.name}
@@ -73,16 +85,20 @@ export default function StopDetail({
             {durationLabel(stop.duration)}
           </dd>
         </div>
-        {stop.walkToNext !== null && nextStop ? (
+        {nextStop ? (
           <div
             className={cn(
               "flex items-baseline justify-between gap-6 py-3",
               stop.booking && "border-b border-line",
             )}
           >
-            <dt className="text-ink-soft">Andando hasta</dt>
+            <dt className="text-ink-soft">
+              {stop.walkToNext ? "Andando hasta" : "Después"}
+            </dt>
             <dd className="text-right text-ink">
-              <span className="tnum font-medium">{stop.walkToNext} min</span>
+              {stop.walkToNext ? (
+                <span className="tnum font-medium">{stop.walkToNext} min</span>
+              ) : null}
               <span className="block text-xs text-ink-mute">
                 {nextStop.name}
               </span>
@@ -111,15 +127,36 @@ export default function StopDetail({
         {stop.note}
       </p>
 
-      <a
-        href={`https://www.google.com/maps/dir/?api=1&destination=${stop.coords[0]},${stop.coords[1]}&travelmode=walking`}
-        target="_blank"
-        rel="noreferrer"
-        className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent-deep px-5 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
-      >
-        <i className="ri-navigation-line text-base" aria-hidden />
-        Cómo llegar andando
-      </a>
+      <div className="mt-6 flex flex-wrap items-center gap-3">
+        {stop.ticketUrl ? (
+          <a
+            href={stop.ticketUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-accent-deep px-5 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+          >
+            <i className="ri-ticket-2-line text-base" aria-hidden />
+            Comprar ticket
+            <span className="text-white/60">
+              · {new URL(stop.ticketUrl).hostname.replace(/^www\./, "")}
+            </span>
+          </a>
+        ) : null}
+        <a
+          href={`https://www.google.com/maps/dir/?api=1&destination=${stop.coords[0]},${stop.coords[1]}&travelmode=walking`}
+          target="_blank"
+          rel="noreferrer"
+          className={cn(
+            "inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-opacity focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink",
+            stop.ticketUrl
+              ? "bg-accent-soft text-accent-ink hover:opacity-80"
+              : "bg-accent-deep text-white hover:opacity-85",
+          )}
+        >
+          <i className="ri-navigation-line text-base" aria-hidden />
+          Cómo llegar andando
+        </a>
+      </div>
     </div>
   );
 }

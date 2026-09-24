@@ -2,6 +2,7 @@
 
 import type { City } from "@/lib/types";
 import { accentVars, dollars, euros, formatDate } from "@/lib/utils";
+import PhotoHeader from "./PhotoHeader";
 
 export default function StayDetail({ city }: { city: City }) {
   const { stay } = city;
@@ -20,6 +21,8 @@ export default function StayDetail({ city }: { city: City }) {
           Hospedaje en {city.name}
         </span>
       </div>
+
+      {stay.photo ? <PhotoHeader photo={stay.photo} alt={stay.address} /> : null}
 
       <h2 className="mt-4 font-display text-[1.75rem] font-semibold leading-[1.1] tracking-tight text-ink">
         {stay.name}

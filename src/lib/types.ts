@@ -6,6 +6,13 @@ export type StopType =
   | "walk"
   | "transport";
 
+/** Foto de Wikimedia Commons. `page` es la ficha del archivo, con su licencia. */
+export interface Photo {
+  src: string;
+  page: string;
+  credit: string;
+}
+
 export interface Stop {
   id: string;
   time: string;
@@ -18,6 +25,11 @@ export interface Stop {
   walkToNext: number | null;
   note: string;
   booking?: string;
+  photo?: Photo;
+  /** Hay que comprar la entrada o el billete antes de llegar. */
+  advanceTicket: boolean;
+  /** Web oficial donde se compra. Falta si ya está comprado (vuelos). */
+  ticketUrl?: string;
 }
 
 export interface Day {
@@ -40,6 +52,7 @@ export interface Stay {
   host: string;
   /** Enlace a la reserva. Solo en los alojamientos ya reservados. */
   url?: string;
+  photo?: Photo;
 }
 
 /**

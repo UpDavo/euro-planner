@@ -12,7 +12,6 @@ import {
   dollars,
   durationLabel,
   euros,
-  formatDate,
   planDays,
   shortDate,
   variantNote,
@@ -68,6 +67,7 @@ export default function TripPlanner({ data }: { data: TripData }) {
       ? day.stops.findIndex((s) => s.id === sheet.stop.id)
       : -1;
   const nextStop = stopIndex >= 0 ? (day.stops[stopIndex + 1] ?? null) : null;
+  const prevStop = stopIndex > 0 ? day.stops[stopIndex - 1] : null;
 
   function selectCity(id: string) {
     setCityId(id);
@@ -90,13 +90,6 @@ export default function TripPlanner({ data }: { data: TripData }) {
     setPlanIds((prev) => ({ ...prev, [city.id]: id }));
     setSheet(null);
   }
-
-  // El viaje dura tantos días como el mayor número de día del itinerario.
-  const tripDays = useMemo(
-    () =>
-      Math.max(...data.cities.flatMap((c) => c.days.map((d) => d.day))),
-    [data.cities],
-  );
 
   const hasPlans = (city.plans?.length ?? 0) > 1;
 
@@ -269,25 +262,7 @@ export default function TripPlanner({ data }: { data: TripData }) {
                 </p>
               ) : null}
 
-              {/* Tarjeta oscura del día: la pieza que manda en la pantalla */}
-              <div className="rounded-card bg-accent-deep px-6 py-6 text-white shadow-card sm:px-7 sm:py-7">
-                <p className="text-[13px] text-white/60 first-letter:uppercase">
-                  {formatDate(day.date)}
-                  <span>
-                    {" "}
-                    · día <span className="tnum">{day.day}</span> de{" "}
-                    <span className="tnum">{tripDays}</span>
-                  </span>
-                </p>
-                <h2 className="mt-3 font-display text-[2rem] font-semibold leading-[1.05] tracking-tight sm:text-[2.375rem]">
-                  {day.label}
-                </h2>
-                <p className="mt-4 max-w-[52ch] text-[0.9375rem] leading-relaxed text-white/75">
-                  {day.summary}
-                </p>
-              </div>
-
-              <dl className="mt-3 grid grid-cols-3 gap-3">
+              <dl className="grid grid-cols-3 gap-3">
                 {[
                   {
                     label: "Gasto del día",
@@ -397,6 +372,8 @@ export default function TripPlanner({ data }: { data: TripData }) {
       <ResponsiveModal
         open={sheet !== null}
         onOpenChange={(open) => !open && setSheet(null)}
+        onPrev={prevStop ? () => setSheet({ kind: "stop", stop: prevStop }) : undefined}
+        onNext={nextStop ? () => setSheet({ kind: "stop", stop: nextStop }) : undefined}
         wide={sheet?.kind === "calendar" || sheet?.kind === "plans"}
         title={
           sheet?.kind === "stop"

@@ -1,7 +1,15 @@
 "use client";
 
 import type { City, Day, Stop } from "@/lib/types";
-import { cn, dollars, durationLabel, euros, stopMeta } from "@/lib/utils";
+import {
+  cn,
+  dollars,
+  durationLabel,
+  euros,
+  stopMeta,
+  walkLabel,
+} from "@/lib/utils";
+import TicketBadge from "./TicketBadge";
 
 interface Props {
   city: City;
@@ -47,6 +55,7 @@ export default function DayTimeline({
         const isActive = stop.id === activeStopId;
         const meta = stopMeta[stop.type];
         const isLast = i === day.stops.length - 1;
+        const walk = walkLabel(stop, day.stops[i + 1] ?? null);
 
         return (
           <li key={stop.id} className="relative pl-12">
@@ -79,7 +88,7 @@ export default function DayTimeline({
                 isActive ? "bg-accent-soft" : "hover:bg-well",
               )}
             >
-              <div className="flex items-center gap-2.5">
+              <div className="flex flex-wrap items-center gap-2.5">
                 <span className="font-display text-[1.375rem] font-semibold leading-none tracking-tight text-ink tnum">
                   {stop.time}
                 </span>
@@ -87,6 +96,7 @@ export default function DayTimeline({
                   <i className={cn(meta.icon, "text-[12px]")} aria-hidden />
                   {meta.label}
                 </span>
+                <TicketBadge required={stop.advanceTicket} />
               </div>
 
               <p className="mt-2 text-[1rem] font-medium leading-snug text-ink">
@@ -101,11 +111,11 @@ export default function DayTimeline({
               </p>
             </button>
 
-            {stop.walkToNext !== null && !isLast ? (
+            {walk ? (
               <p className="flex items-center py-3">
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-well px-2.5 py-1 text-[12px] font-medium text-ink-soft">
                   <i className="ri-footprint-line text-[13px]" aria-hidden />
-                  <span className="tnum">{stop.walkToNext} min andando</span>
+                  <span className="tnum">{walk}</span>
                 </span>
               </p>
             ) : (
