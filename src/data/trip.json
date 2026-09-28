@@ -6,6 +6,92 @@
     "endDate": "2026-10-12",
     "currency": "EUR"
   },
+  "travelers": [
+    {
+      "id": "alejandra",
+      "name": "Alejandra"
+    },
+    {
+      "id": "daniela",
+      "name": "Daniela"
+    },
+    {
+      "id": "anthony",
+      "name": "Anthony"
+    }
+  ],
+  "expenses": [
+    {
+      "id": "airbnb-roma",
+      "concept": "Airbnb Roma · 3 noches",
+      "amount": 583.64,
+      "currency": "USD",
+      "paidBy": "daniela",
+      "splitAmong": [
+        "alejandra",
+        "daniela",
+        "anthony"
+      ],
+      "date": "2026-10-08",
+      "note": "194,55 $ por noche · 64,85 $ por persona y noche"
+    },
+    {
+      "id": "airbnb-barcelona",
+      "concept": "Airbnb Barcelona · parte de los 3",
+      "amount": 159.71,
+      "currency": "USD",
+      "paidBy": "daniela",
+      "splitAmong": [
+        "alejandra",
+        "daniela",
+        "anthony"
+      ],
+      "date": "2026-10-02",
+      "note": "372,66 $ la noche entre 7 personas: 53,24 $ cada una"
+    },
+    {
+      "id": "ave-madrid-barcelona",
+      "concept": "AVE Madrid ⇄ Barcelona · parte de los 3",
+      "amount": 333.9,
+      "currency": "EUR",
+      "paidBy": "alejandra",
+      "splitAmong": [
+        "alejandra",
+        "daniela",
+        "anthony"
+      ],
+      "date": "2026-10-02",
+      "note": "667,80 € por 6 billetes de ida y vuelta: la mitad es de la familia de Alejandra"
+    },
+    {
+      "id": "italo-ida",
+      "concept": "Italo Roma → Florencia",
+      "amount": 47.7,
+      "currency": "EUR",
+      "paidBy": "alejandra",
+      "splitAmong": [
+        "alejandra",
+        "daniela",
+        "anthony"
+      ],
+      "date": "2026-10-10",
+      "note": "3 × 15,90 €"
+    },
+    {
+      "id": "italo-vuelta",
+      "concept": "Italo Florencia → Roma",
+      "amount": 44.7,
+      "currency": "EUR",
+      "paidBy": "alejandra",
+      "splitAmong": [
+        "alejandra",
+        "daniela",
+        "anthony"
+      ],
+      "date": "2026-10-10",
+      "note": "3 × 14,90 €"
+    }
+  ],
   "cities": [
     {
       "id": "madrid",
@@ -20,30 +106,32 @@
       "arrival": "2026-10-01",
       "departure": "2026-10-08",
       "stay": {
-        "name": "Airbnb Madrid centro",
-        "address": "Calle del Pez 22, Malasaña, 28004 Madrid",
+        "kind": "home",
+        "name": "Casa de Gina · Ciempozuelos",
+        "address": "Ciempozuelos, Madrid",
         "coords": [
-          40.4243,
-          -3.7062
+          40.1627,
+          -3.6182
         ],
-        "checkIn": "2026-10-01T11:00",
-        "checkOut": "2026-10-08T08:00",
-        "pricePerNight": 95,
+        "checkIn": "2026-10-01T07:30",
+        "checkOut": "2026-10-08T04:00",
+        "totalPrice": 0,
+        "currency": "EUR",
         "nights": 7,
-        "notes": "Base fija del viaje, incluida la noche del viernes que pasan en Barcelona. Salen de aquí a Segovia, Toledo y Barcelona.",
-        "host": "Por confirmar",
+        "notes": "Casa de Gina, familia de Alejandra, en Ciempozuelos: 35 km al sur de Madrid. Base fija del viaje, incluida la noche que pasan en Barcelona. Al centro se va en Cercanías C-3 hasta Atocha o Sol, unos 40 min.",
+        "host": "Gina · familia de Alejandra",
         "photo": {
-          "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Monumento_a_Daoiz_y_Velarde_en_la_Plaza_del_2_de_Mayo_de_Madrid.jpg/960px-Monumento_a_Daoiz_y_Velarde_en_la_Plaza_del_2_de_Mayo_de_Madrid.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-          "page": "https://commons.wikimedia.org/wiki/File:Monumento_a_Daoiz_y_Velarde_en_la_Plaza_del_2_de_Mayo_de_Madrid.jpg",
-          "credit": "Matiaest · Public domain"
+          "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Ciempozuelos_-_Plaza_de_la_Constituci%C3%B3n_02.JPG/960px-Ciempozuelos_-_Plaza_de_la_Constituci%C3%B3n_02.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Ciempozuelos_-_Plaza_de_la_Constituci%C3%B3n_02.JPG",
+          "credit": "Zarateman · CC0"
         }
       },
       "days": [
         {
           "day": 1,
           "date": "2026-10-01",
-          "label": "Llegada y Toledo",
-          "summary": "Aterrizan a las 05:00 tras noche en avión. Maletas en casa y Toledo con el día entero por delante. Si el cuerpo no da, Toledo se mueve al domingo y hoy se duerme.",
+          "label": "Llegada a Madrid",
+          "summary": "Aterrizan a las 05:00 y van directo a casa de Gina, en Ciempozuelos.",
           "stops": [
             {
               "id": "mad-d1-s1",
@@ -59,770 +147,54 @@
               "duration": 90,
               "walkToNext": 0,
               "note": "Vuelo desde Guayaquil, 11 h. Control de pasaportes y recogida de equipaje: 1 maleta de 23 kg facturada.",
-              "booking": "UX40 · localizador UX/7KK56V",
+              "booking": "UX40 · billete en «Billetes»",
               "photo": {
                 "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Terminal_4_del_aeropuerto_de_Madrid-Barajas%2C_Espa%C3%B1a%2C_2013-01-09%2C_DD_08.jpg/960px-Terminal_4_del_aeropuerto_de_Madrid-Barajas%2C_Espa%C3%B1a%2C_2013-01-09%2C_DD_08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
                 "page": "https://commons.wikimedia.org/wiki/File:Terminal_4_del_aeropuerto_de_Madrid-Barajas,_Espa%C3%B1a,_2013-01-09,_DD_08.jpg",
                 "credit": "Diego Delso · CC BY-SA 3.0"
               },
-              "advanceTicket": true
+              "advanceTicket": true,
+              "documents": [
+                "air-europa-alejandra",
+                "air-europa-daniela",
+                "air-europa-anthony"
+              ]
             },
             {
               "id": "mad-d1-s2",
               "time": "06:30",
               "endTime": "07:15",
-              "name": "Taxi al Airbnb",
+              "name": "Taxi a Ciempozuelos",
               "type": "transport",
               "coords": [
-                40.4243,
-                -3.7062
+                40.1627,
+                -3.6182
               ],
-              "price": 33,
+              "price": 18,
               "duration": 45,
               "walkToNext": 0,
-              "note": "Tarifa fija de 33 € desde el aeropuerto al centro. A esta hora no hay tráfico.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Monumento_a_Daoiz_y_Velarde_en_la_Plaza_del_2_de_Mayo_de_Madrid.jpg/960px-Monumento_a_Daoiz_y_Velarde_en_la_Plaza_del_2_de_Mayo_de_Madrid.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Monumento_a_Daoiz_y_Velarde_en_la_Plaza_del_2_de_Mayo_de_Madrid.jpg",
-                "credit": "Matiaest · Public domain"
-              },
+              "note": "Unos 40 km por la M-50 y la A-4; a esa hora, 40-45 min sin tráfico. Fuera de Madrid no hay tarifa fija: 50-60 € con taxímetro para los tres, o pedir un Uber o Cabify desde la terminal con precio cerrado. Si Gina puede recogerles, mejor. En tren hay que ir a la T4, Cercanías C-1 hasta Atocha y C-3 hasta Ciempozuelos: casi 2 h con maletas.",
+              "booking": "",
               "advanceTicket": false
             },
             {
               "id": "mad-d1-s3",
               "time": "07:15",
               "endTime": "09:30",
-              "name": "Dejar maletas y descansar",
+              "name": "Llegar a casa de Gina y descansar",
               "type": "stay",
               "coords": [
-                40.4243,
-                -3.7062
+                40.1627,
+                -3.6182
               ],
               "price": 0,
               "duration": 135,
-              "walkToNext": 12,
-              "note": "El check-in normal es a las 15:00: avisar al anfitrión de la llegada de madrugada. Ducha y un par de horas de sueño antes de Toledo.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Monumento_a_Daoiz_y_Velarde_en_la_Plaza_del_2_de_Mayo_de_Madrid.jpg/960px-Monumento_a_Daoiz_y_Velarde_en_la_Plaza_del_2_de_Mayo_de_Madrid.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Monumento_a_Daoiz_y_Velarde_en_la_Plaza_del_2_de_Mayo_de_Madrid.jpg",
-                "credit": "Matiaest · Public domain"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "mad-d1-s4",
-              "time": "10:20",
-              "endTime": "10:55",
-              "name": "Tren Atocha → Toledo",
-              "type": "transport",
-              "coords": [
-                40.4065,
-                -3.6895
-              ],
-              "price": 15,
-              "duration": 35,
-              "walkToNext": 20,
-              "note": "Avant de 33 min. Comprar ida y vuelta con antelación.",
-              "booking": "Renfe · ida y vuelta",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Estaci%C3%B3n_de_Atocha_-_felipe_gabaldon.jpg/960px-Estaci%C3%B3n_de_Atocha_-_felipe_gabaldon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Estaci%C3%B3n_de_Atocha_-_felipe_gabaldon.jpg",
-                "credit": "Felipe Gabaldón · CC BY 2.0"
-              },
-              "advanceTicket": true,
-              "ticketUrl": "https://www.renfe.com/es/es"
-            },
-            {
-              "id": "mad-d1-s5",
-              "time": "11:30",
-              "endTime": "13:30",
-              "name": "Catedral de Toledo",
-              "type": "sight",
-              "coords": [
-                39.8572,
-                -4.0238
-              ],
-              "price": 12,
-              "duration": 120,
-              "walkToNext": 8,
-              "note": "El Transparente y la sacristía con El Greco. Hacerla antes de comer, con energía.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Cathedral_of_Toledo_%287079311505%29.jpg/960px-Cathedral_of_Toledo_%287079311505%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Cathedral_of_Toledo_(7079311505).jpg",
-                "credit": "Michal Osmenda from Brussels, Belgium · CC BY 2.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "mad-d1-s6",
-              "time": "13:45",
-              "endTime": "15:15",
-              "name": "Comida: carcamusas",
-              "type": "food",
-              "coords": [
-                39.8586,
-                -4.0245
-              ],
-              "price": 22,
-              "duration": 90,
-              "walkToNext": 10,
-              "note": "Plato local. Mazapán de postre.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/CARCAMUSAS.JPG/960px-CARCAMUSAS.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:CARCAMUSAS.JPG",
-                "credit": "Adriao · CC BY 3.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "mad-d1-s7",
-              "time": "15:30",
-              "endTime": "17:30",
-              "name": "Alcázar y casco antiguo",
-              "type": "walk",
-              "coords": [
-                39.8575,
-                -4.0203
-              ],
-              "price": 5,
-              "duration": 120,
-              "walkToNext": 25,
-              "note": "Callejear sin mapa. Judería y Sinagoga del Tránsito.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/FP_Toledo_Alcazar_2025_-_Views.jpg/960px-FP_Toledo_Alcazar_2025_-_Views.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:FP_Toledo_Alcazar_2025_-_Views.jpg",
-                "credit": "Fernando · CC BY-SA 4.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "mad-d1-s8",
-              "time": "18:15",
-              "endTime": "19:30",
-              "name": "Mirador del Valle",
-              "type": "sight",
-              "coords": [
-                39.8498,
-                -4.0184
-              ],
-              "price": 10,
-              "duration": 75,
-              "walkToNext": 15,
-              "note": "La postal de Toledo. Taxi de subida 10 €, con el día encima no se sube andando.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Toledo_-_Panorama_desde_Mirador_del_Valle.jpg/960px-Toledo_-_Panorama_desde_Mirador_del_Valle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Toledo_-_Panorama_desde_Mirador_del_Valle.jpg",
-                "credit": "Rafesmar · CC BY-SA 3.0 es"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "mad-d1-s9",
-              "time": "20:25",
-              "endTime": "21:00",
-              "name": "Tren Toledo → Atocha",
-              "type": "transport",
-              "coords": [
-                39.8628,
-                -4.0161
-              ],
-              "price": 0,
-              "duration": 35,
               "walkToNext": null,
-              "note": "Incluido en el billete de ida y vuelta. Dormir temprano: llevan 40 h despiertos.",
+              "note": "Casa de familia: sin check-in ni horarios de Airbnb. Avisar a Gina de la hora de aterrizaje y de cuándo salen del aeropuerto. Ducha y a dormir un rato tras la noche en el avión.",
               "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Toledo_station_June_2016_panorama.jpg/960px-Toledo_station_June_2016_panorama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Toledo_station_June_2016_panorama.jpg",
-                "credit": "King of Hearts · CC BY-SA 4.0"
-              },
-              "advanceTicket": true,
-              "ticketUrl": "https://www.renfe.com/es/es"
-            }
-          ]
-        },
-        {
-          "day": 4,
-          "date": "2026-10-04",
-          "label": "Segovia",
-          "summary": "Acueducto, alcázar y cochinillo. Domingo tranquilo, 30 min en AVE desde Chamartín.",
-          "stops": [
-            {
-              "id": "mad-d4-s1",
-              "time": "08:45",
-              "endTime": "09:15",
-              "name": "AVE Chamartín → Segovia",
-              "type": "transport",
-              "coords": [
-                40.4722,
-                -3.6828
-              ],
-              "price": 15,
-              "duration": 30,
-              "walkToNext": 0,
-              "note": "Sale de Chamartín, no de Atocha. La estación Guiomar está a 6 km del centro.",
-              "booking": "Renfe · ida y vuelta",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Madrid_Chamartin_station_2023_04.jpg/960px-Madrid_Chamartin_station_2023_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Madrid_Chamartin_station_2023_04.jpg",
-                "credit": "Smiley.toerist · CC BY-SA 4.0"
-              },
-              "advanceTicket": true,
-              "ticketUrl": "https://www.renfe.com/es/es"
-            },
-            {
-              "id": "mad-d4-s2",
-              "time": "09:25",
-              "endTime": "09:45",
-              "name": "Bus 11 al Acueducto",
-              "type": "transport",
-              "coords": [
-                40.9481,
-                -4.1187
-              ],
-              "price": 2,
-              "duration": 20,
-              "walkToNext": 3,
-              "note": "El bus 11 espera a la llegada del AVE y deja junto al Acueducto. 2 € en efectivo.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Aqueduct_of_Segovia_02.jpg/960px-Aqueduct_of_Segovia_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Aqueduct_of_Segovia_02.jpg",
-                "credit": "Bernard Gagnon · CC BY-SA 3.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "mad-d4-s3",
-              "time": "09:50",
-              "endTime": "11:00",
-              "name": "Acueducto de Segovia",
-              "type": "sight",
-              "coords": [
-                40.9481,
-                -4.1176
-              ],
-              "price": 0,
-              "duration": 70,
-              "walkToNext": 12,
-              "note": "Gratis. Subir por la escalera lateral al mirador del Postigo para verlo desde arriba.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Aqueduct_of_Segovia_02.jpg/960px-Aqueduct_of_Segovia_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Aqueduct_of_Segovia_02.jpg",
-                "credit": "Bernard Gagnon · CC BY-SA 3.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "mad-d4-s4",
-              "time": "11:15",
-              "endTime": "12:30",
-              "name": "Catedral de Segovia",
-              "type": "sight",
-              "coords": [
-                40.9503,
-                -4.125
-              ],
-              "price": 4,
-              "duration": 75,
-              "walkToNext": 10,
-              "note": "La última catedral gótica de España. Plaza Mayor justo al lado.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/La-catedral-de-Segovia-desde-el-aire.jpg/960px-La-catedral-de-Segovia-desde-el-aire.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:La-catedral-de-Segovia-desde-el-aire.jpg",
-                "credit": "McPolu · CC BY-SA 2.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "mad-d4-s5",
-              "time": "12:45",
-              "endTime": "14:15",
-              "name": "Alcázar de Segovia",
-              "type": "sight",
-              "coords": [
-                40.9526,
-                -4.132
-              ],
-              "price": 10,
-              "duration": 90,
-              "walkToNext": 12,
-              "note": "Torre de Juan II aparte, 2,50 € y 152 escalones. La vista del valle lo justifica.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Panor%C3%A1mica_Oto%C3%B1o_Alc%C3%A1zar_de_Segovia.jpg/960px-Panor%C3%A1mica_Oto%C3%B1o_Alc%C3%A1zar_de_Segovia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Panor%C3%A1mica_Oto%C3%B1o_Alc%C3%A1zar_de_Segovia.jpg",
-                "credit": "Ángel Sanz de Andrés · CC BY-SA 4.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "mad-d4-s6",
-              "time": "14:30",
-              "endTime": "16:30",
-              "name": "Cochinillo asado",
-              "type": "food",
-              "coords": [
-                40.9481,
-                -4.1183
-              ],
-              "price": 35,
-              "duration": 120,
-              "walkToNext": 10,
-              "note": "El plato de Segovia. Reservar con antelación un domingo, los asadores del Acueducto se llenan.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Cochinillo_asado-Madrid.jpg/960px-Cochinillo_asado-Madrid.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Cochinillo_asado-Madrid.jpg",
-                "credit": "Tamorlan · CC BY 3.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "mad-d4-s7",
-              "time": "16:45",
-              "endTime": "18:30",
-              "name": "Judería y muralla",
-              "type": "walk",
-              "coords": [
-                40.9498,
-                -4.1287
-              ],
-              "price": 0,
-              "duration": 105,
-              "walkToNext": 25,
-              "note": "Bajar por la puerta de San Andrés. Mirador de la Pradera de San Marcos si quedan fuerzas.",
-              "photo": {
-                "src": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Segovia-murallas-barrio-judio-DavidDaguerro.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-                "page": "https://commons.wikimedia.org/wiki/File:Segovia-murallas-barrio-judio-DavidDaguerro.jpg",
-                "credit": "DavidDaguerro · CC BY-SA 4.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "mad-d4-s8",
-              "time": "19:15",
-              "endTime": "19:45",
-              "name": "AVE Segovia → Chamartín",
-              "type": "transport",
-              "coords": [
-                40.9074,
-                -4.0946
-              ],
-              "price": 0,
-              "duration": 30,
-              "walkToNext": null,
-              "note": "Incluido en el billete de vuelta. Coger el bus 11 al menos 40 min antes de la salida.",
-              "photo": {
-                "src": "https://upload.wikimedia.org/wikipedia/commons/1/1e/TintinSGGUIOMAR16NOV13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-                "page": "https://commons.wikimedia.org/wiki/File:TintinSGGUIOMAR16NOV13.jpg",
-                "credit": "Tintin en Tranvia.org · CC BY-SA 3.0"
-              },
-              "advanceTicket": true,
-              "ticketUrl": "https://www.renfe.com/es/es"
-            }
-          ]
-        },
-        {
-          "day": 5,
-          "date": "2026-10-05",
-          "label": "Madrid en transporte público",
-          "summary": "Recorrer la ciudad en metro y bus. Sacar la tarjeta multi el primer día y olvidarse del taxi.",
-          "stops": [
-            {
-              "id": "mad-d5-s1",
-              "time": "09:00",
-              "endTime": "09:30",
-              "name": "Tarjeta Multi en el metro",
-              "type": "transport",
-              "coords": [
-                40.4243,
-                -3.7062
-              ],
-              "price": 15,
-              "duration": 30,
-              "walkToNext": 5,
-              "note": "2,50 € la tarjeta más saldo. Una por persona. Válida en metro, bus y cercanías.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Sol_station_-_Madrid_Metro_line_2_-_2.2.2014.JPG/960px-Sol_station_-_Madrid_Metro_line_2_-_2.2.2014.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Sol_station_-_Madrid_Metro_line_2_-_2.2.2014.JPG",
-                "credit": "P h n · CC BY-SA 4.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "mad-d5-s2",
-              "time": "09:45",
-              "endTime": "11:15",
-              "name": "Mercado de San Miguel y Plaza Mayor",
-              "type": "walk",
-              "coords": [
-                40.4155,
-                -3.709
-              ],
-              "price": 12,
-              "duration": 90,
-              "walkToNext": 8,
-              "note": "Metro Sol o Ópera. Desayuno de pie en el mercado, el edificio vale más que la comida.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Plaza_Mayor_de_Madrid_06.jpg/960px-Plaza_Mayor_de_Madrid_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Plaza_Mayor_de_Madrid_06.jpg",
-                "credit": "Sebastian Dubiel · CC BY-SA 3.0 de"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "mad-d5-s3",
-              "time": "11:30",
-              "endTime": "13:00",
-              "name": "Catedral de la Almudena y Plaza de Oriente",
-              "type": "sight",
-              "coords": [
-                40.4158,
-                -3.7144
-              ],
-              "price": 1,
-              "duration": 90,
-              "walkToNext": 6,
-              "note": "Donativo de 1 €. El Palacio Real queda para el martes, hoy solo la plaza.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Almudena_2022_-_overview.jpg/960px-Almudena_2022_-_overview.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Almudena_2022_-_overview.jpg",
-                "credit": "Fernando · CC BY-SA 4.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "mad-d5-s4",
-              "time": "13:15",
-              "endTime": "15:00",
-              "name": "Comida en La Latina",
-              "type": "food",
-              "coords": [
-                40.4118,
-                -3.7095
-              ],
-              "price": 24,
-              "duration": 105,
-              "walkToNext": 15,
-              "note": "Cava Baja. Menú del día entre semana por 15-20 €.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Real-Basilica-San-Francisco-el-Grande-Madrid.jpg/960px-Real-Basilica-San-Francisco-el-Grande-Madrid.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Real-Basilica-San-Francisco-el-Grande-Madrid.jpg",
-                "credit": "Ivan Pascual Fernandez · CC BY-SA 3.0 es"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "mad-d5-s5",
-              "time": "15:30",
-              "endTime": "17:30",
-              "name": "Parque del Retiro y Palacio de Cristal",
-              "type": "walk",
-              "coords": [
-                40.4139,
-                -3.6857
-              ],
-              "price": 0,
-              "duration": 120,
-              "walkToNext": 12,
-              "note": "Metro Retiro, línea 2. Barca en el estanque 6 € por 45 min.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Palacio_de_Cristal_-_01.jpg/960px-Palacio_de_Cristal_-_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Palacio_de_Cristal_-_01.jpg",
-                "credit": "Carlos Delgado · CC BY-SA 3.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "mad-d5-s6",
-              "time": "17:45",
-              "endTime": "19:15",
-              "name": "Gran Vía y Callao",
-              "type": "walk",
-              "coords": [
-                40.42,
-                -3.7058
-              ],
-              "price": 0,
-              "duration": 90,
-              "walkToNext": 14,
-              "note": "Metro Gran Vía. Azotea del Círculo de Bellas Artes 5 € si quieren la vista.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/MADRID_100206_UDCI_019.jpg/960px-MADRID_100206_UDCI_019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:MADRID_100206_UDCI_019.jpg",
-                "credit": "Alfredo Urdaci / PromoMadrid · CC BY-SA 2.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "mad-d5-s7",
-              "time": "19:30",
-              "endTime": "21:00",
-              "name": "Templo de Debod al atardecer",
-              "type": "sight",
-              "coords": [
-                40.424,
-                -3.7178
-              ],
-              "price": 0,
-              "duration": 90,
-              "walkToNext": null,
-              "note": "Gratis. Metro Plaza de España. En octubre el ocaso es sobre las 19:45, llegar con margen.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Templo_de_Debod_in_Madrid.jpg/960px-Templo_de_Debod_in_Madrid.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Templo_de_Debod_in_Madrid.jpg",
-                "credit": "https://www.flickr.com/photos/jiuguangw · CC BY-SA 2.0"
-              },
-              "advanceTicket": false
-            }
-          ]
-        },
-        {
-          "day": 6,
-          "date": "2026-10-06",
-          "label": "Fruit Attraction y palacios",
-          "summary": "Feria por la mañana, palacios por la tarde y paella en el restaurante de la tía. Verificar las fechas oficiales de la feria.",
-          "stops": [
-            {
-              "id": "mad-d6-s1",
-              "time": "09:00",
-              "endTime": "09:40",
-              "name": "Metro a IFEMA",
-              "type": "transport",
-              "coords": [
-                40.4655,
-                -3.6156
-              ],
-              "price": 3,
-              "duration": 40,
-              "walkToNext": 5,
-              "note": "Línea 8 hasta Feria de Madrid. Desde el centro hay que transbordar en Nuevos Ministerios.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Higueras_visita_las_ferias_Fruit_Attraction_y_Meat_Attraction_%2801%29.jpg/960px-Higueras_visita_las_ferias_Fruit_Attraction_y_Meat_Attraction_%2801%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Higueras_visita_las_ferias_Fruit_Attraction_y_Meat_Attraction_(01).jpg",
-                "credit": "Diario de Madrid · CC BY 4.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "mad-d6-s2",
-              "time": "09:45",
-              "endTime": "14:30",
-              "name": "Fruit Attraction · día 1",
-              "type": "sight",
-              "coords": [
-                40.4655,
-                -3.6156
-              ],
-              "price": 55,
-              "duration": 285,
-              "walkToNext": 40,
-              "note": "Feria profesional en IFEMA. Registro online anticipado, en puerta sale más caro. Fechas 2026 sin confirmar: verificar antes de comprar vuelos.",
-              "booking": "Registro profesional · fruitattraction.com",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Higueras_visita_las_ferias_Fruit_Attraction_y_Meat_Attraction_%2803%29.jpg/960px-Higueras_visita_las_ferias_Fruit_Attraction_y_Meat_Attraction_%2803%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Higueras_visita_las_ferias_Fruit_Attraction_y_Meat_Attraction_(03).jpg",
-                "credit": "Diario de Madrid · CC BY 4.0"
-              },
-              "advanceTicket": true,
-              "ticketUrl": "https://www.ifema.es/fruit-attraction"
-            },
-            {
-              "id": "mad-d6-s3",
-              "time": "15:30",
-              "endTime": "17:30",
-              "name": "Palacio Real",
-              "type": "sight",
-              "coords": [
-                40.418,
-                -3.7143
-              ],
-              "price": 14,
-              "duration": 120,
-              "walkToNext": 8,
-              "note": "Entrada online con franja horaria. Incluye la Cocina Real. Última entrada sobre las 17:00.",
-              "booking": "Franja de tarde · patrimonionacional.es",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Palacio_Real_de_Madrid_Julio_2016_%28cropped%29.jpg/960px-Palacio_Real_de_Madrid_Julio_2016_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Palacio_Real_de_Madrid_Julio_2016_(cropped).jpg",
-                "credit": "Tim Adams · CC BY-SA 4.0"
-              },
-              "advanceTicket": true,
-              "ticketUrl": "https://tickets.patrimonionacional.es/es"
-            },
-            {
-              "id": "mad-d6-s4",
-              "time": "17:45",
-              "endTime": "19:15",
-              "name": "Jardines de Sabatini y Plaza de Oriente",
-              "type": "walk",
-              "coords": [
-                40.4203,
-                -3.7135
-              ],
-              "price": 0,
-              "duration": 90,
-              "walkToNext": 12,
-              "note": "Gratis. La fachada norte del palacio desde los jardines es la mejor foto del viaje.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Palacio_Real%2C_Madrid%2C_Espa%C3%B1a%2C_2014-12-27%2C_DD_09.JPG/960px-Palacio_Real%2C_Madrid%2C_Espa%C3%B1a%2C_2014-12-27%2C_DD_09.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Palacio_Real,_Madrid,_Espa%C3%B1a,_2014-12-27,_DD_09.JPG",
-                "credit": "Diego Delso · CC BY-SA 4.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "mad-d6-s5",
-              "time": "20:00",
-              "endTime": "22:30",
-              "name": "Paella en el restaurante de la tía",
-              "type": "food",
-              "coords": [
-                40.418,
-                -3.702
-              ],
-              "price": 0,
-              "duration": 150,
-              "walkToNext": null,
-              "note": "Cena en familia. Ajustar la ubicación en el JSON cuando confirmes la dirección exacta.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/01_Paella_Valenciana_original.jpg/960px-01_Paella_Valenciana_original.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:01_Paella_Valenciana_original.jpg",
-                "credit": "Jan Harenburg · CC BY-SA 4.0"
-              },
-              "advanceTicket": false
-            }
-          ]
-        },
-        {
-          "day": 7,
-          "date": "2026-10-07",
-          "label": "Fruit Attraction y Madrid centro",
-          "summary": "Segundo día de feria y el resto del centro: Prado, Letras y Sol. Último día antes de Roma.",
-          "stops": [
-            {
-              "id": "mad-d7-s1",
-              "time": "09:00",
-              "endTime": "09:40",
-              "name": "Metro a IFEMA",
-              "type": "transport",
-              "coords": [
-                40.4655,
-                -3.6156
-              ],
-              "price": 3,
-              "duration": 40,
-              "walkToNext": 5,
-              "note": "Misma ruta que ayer. Línea 8, Feria de Madrid.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Higueras_visita_las_ferias_Fruit_Attraction_y_Meat_Attraction_%2801%29.jpg/960px-Higueras_visita_las_ferias_Fruit_Attraction_y_Meat_Attraction_%2801%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Higueras_visita_las_ferias_Fruit_Attraction_y_Meat_Attraction_(01).jpg",
-                "credit": "Diario de Madrid · CC BY 4.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "mad-d7-s2",
-              "time": "09:45",
-              "endTime": "14:00",
-              "name": "Fruit Attraction · día 2",
-              "type": "sight",
-              "coords": [
-                40.4655,
-                -3.6156
-              ],
-              "price": 0,
-              "duration": 255,
-              "walkToNext": 40,
-              "note": "La acreditación del día anterior sirve para todos los días de feria.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Higueras_visita_las_ferias_Fruit_Attraction_y_Meat_Attraction_%2802%29.jpg/960px-Higueras_visita_las_ferias_Fruit_Attraction_y_Meat_Attraction_%2802%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Higueras_visita_las_ferias_Fruit_Attraction_y_Meat_Attraction_(02).jpg",
-                "credit": "Diario de Madrid · CC BY 4.0"
-              },
-              "advanceTicket": true,
-              "ticketUrl": "https://www.ifema.es/fruit-attraction"
-            },
-            {
-              "id": "mad-d7-s3",
-              "time": "15:00",
-              "endTime": "16:15",
-              "name": "Comida en Barrio de las Letras",
-              "type": "food",
-              "coords": [
-                40.4142,
-                -3.6975
-              ],
-              "price": 22,
-              "duration": 75,
-              "walkToNext": 9,
-              "note": "Metro Antón Martín. Calle Huertas y alrededores.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Madrid_20.JPG/960px-Madrid_20.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Madrid_20.JPG",
-                "credit": "CC BY 2.5"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "mad-d7-s4",
-              "time": "16:30",
-              "endTime": "19:00",
-              "name": "Museo del Prado",
-              "type": "museum",
-              "coords": [
-                40.4138,
-                -3.6921
-              ],
-              "price": 15,
-              "duration": 150,
-              "walkToNext": 10,
-              "note": "Velázquez, Goya y El Bosco. Gratis de 18:00 a 20:00 pero con cola larga y lleno.",
-              "booking": "Entrada online · museodelprado.es",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Museo_del_Prado_2016_%2825185969599%29.jpg/960px-Museo_del_Prado_2016_%2825185969599%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Museo_del_Prado_2016_(25185969599).jpg",
-                "credit": "Emilio J. Rodríguez Posada · CC BY-SA 2.0"
-              },
-              "advanceTicket": true,
-              "ticketUrl": "https://www.museodelprado.es/visita-museo"
-            },
-            {
-              "id": "mad-d7-s5",
-              "time": "19:15",
-              "endTime": "21:00",
-              "name": "Puerta del Sol y última vuelta",
-              "type": "walk",
-              "coords": [
-                40.4169,
-                -3.7035
-              ],
-              "price": 0,
-              "duration": 105,
-              "walkToNext": 10,
-              "note": "Kilómetro cero, el oso y el madroño. Cerrar por Gran Vía hacia el Airbnb.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/MADRID_100206_UDCI_023.jpg/960px-MADRID_100206_UDCI_023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:MADRID_100206_UDCI_023.jpg",
-                "credit": "Alfredo Urdaci / PromoMadrid · CC BY-SA 2.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "mad-d7-s6",
-              "time": "21:15",
-              "endTime": "22:30",
-              "name": "Cena de despedida y maletas",
-              "type": "food",
-              "coords": [
-                40.4243,
-                -3.7062
-              ],
-              "price": 25,
-              "duration": 75,
-              "walkToNext": null,
-              "note": "Cerca de casa. Maletas listas esta noche, mañana el vuelo a Roma sale temprano.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Monumento_a_Daoiz_y_Velarde_en_la_Plaza_del_2_de_Mayo_de_Madrid.jpg/960px-Monumento_a_Daoiz_y_Velarde_en_la_Plaza_del_2_de_Mayo_de_Madrid.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Monumento_a_Daoiz_y_Velarde_en_la_Plaza_del_2_de_Mayo_de_Madrid.jpg",
-                "credit": "Matiaest · Public domain"
+                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Ciempozuelos_-_Plaza_de_la_Constituci%C3%B3n_02.JPG/960px-Ciempozuelos_-_Plaza_de_la_Constituci%C3%B3n_02.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "page": "https://commons.wikimedia.org/wiki/File:Ciempozuelos_-_Plaza_de_la_Constituci%C3%B3n_02.JPG",
+                "credit": "Zarateman · CC0"
               },
               "advanceTicket": false
             }
@@ -832,26 +204,26 @@
           "day": 8,
           "date": "2026-10-08",
           "label": "Vuelo a Roma",
-          "summary": "UX1043 sale a las 07:00 desde Barajas T2. Madrugón: salir de casa a las 04:15.",
+          "summary": "Salida de casa de Gina de madrugada, taxi a Barajas y vuelo a Fiumicino.",
           "stops": [
             {
               "id": "mad-d8-s1",
               "time": "04:00",
               "endTime": "04:15",
-              "name": "Check-out del Airbnb",
+              "name": "Salir de casa de Gina",
               "type": "stay",
               "coords": [
-                40.4243,
-                -3.7062
+                40.1627,
+                -3.6182
               ],
               "price": 0,
               "duration": 15,
               "walkToNext": 0,
-              "note": "Maletas hechas la noche anterior. Dejar llaves donde indique el anfitrión.",
+              "note": "Maletas hechas la noche anterior. A esta hora no hay Cercanías (empiezan pasadas las 05:30): taxi reservado la víspera.",
               "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Monumento_a_Daoiz_y_Velarde_en_la_Plaza_del_2_de_Mayo_de_Madrid.jpg/960px-Monumento_a_Daoiz_y_Velarde_en_la_Plaza_del_2_de_Mayo_de_Madrid.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Monumento_a_Daoiz_y_Velarde_en_la_Plaza_del_2_de_Mayo_de_Madrid.jpg",
-                "credit": "Matiaest · Public domain"
+                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Ciempozuelos_-_Plaza_de_la_Constituci%C3%B3n_02.JPG/960px-Ciempozuelos_-_Plaza_de_la_Constituci%C3%B3n_02.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "page": "https://commons.wikimedia.org/wiki/File:Ciempozuelos_-_Plaza_de_la_Constituci%C3%B3n_02.JPG",
+                "credit": "Zarateman · CC0"
               },
               "advanceTicket": false
             },
@@ -862,18 +234,14 @@
               "name": "Taxi a Barajas T2",
               "type": "transport",
               "coords": [
-                40.4936,
-                -3.5668
+                40.4692,
+                -3.5711
               ],
-              "price": 33,
+              "price": 18,
               "duration": 45,
               "walkToNext": 0,
-              "note": "T2, no T1. A esa hora no hay metro: el primero sale sobre las 06:00 y no llega a tiempo.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Barajas_September_2016-5.jpg/960px-Barajas_September_2016-5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Barajas_September_2016-5.jpg",
-                "credit": "Alvesgaspar · CC BY-SA 4.0"
-              },
+              "note": "50-60 € para los tres. Reservarlo la noche antes (Radio Taxi, Uber o Cabify con recogida programada). Llegar a las 05:00 deja 2 h para facturar y pasar seguridad.",
+              "booking": "",
               "advanceTicket": false
             },
             {
@@ -890,13 +258,18 @@
               "duration": 150,
               "walkToNext": null,
               "note": "2 h 30 de vuelo, operado por Air Europa Express. Llega a FCO T1 a las 09:30 hora de Roma, una hora por delante de Madrid.",
-              "booking": "UX1043 · localizador UX/7KK56V",
+              "booking": "UX1043 · billete en «Billetes»",
               "photo": {
                 "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Rome_Fiumicino_Leonardo_da_Vinci_International_Airport%2C_Aeroporto_internazionale_di_Roma-Fiumicino_%22Leonardo_da_Vinci%22.jpg/960px-Rome_Fiumicino_Leonardo_da_Vinci_International_Airport%2C_Aeroporto_internazionale_di_Roma-Fiumicino_%22Leonardo_da_Vinci%22.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
                 "page": "https://commons.wikimedia.org/wiki/File:Rome_Fiumicino_Leonardo_da_Vinci_International_Airport,_Aeroporto_internazionale_di_Roma-Fiumicino_%22Leonardo_da_Vinci%22.jpg",
                 "credit": "Apaleutos25 · CC BY-SA 4.0"
               },
-              "advanceTicket": true
+              "advanceTicket": true,
+              "documents": [
+                "air-europa-alejandra",
+                "air-europa-daniela",
+                "air-europa-anthony"
+              ]
             }
           ]
         }
@@ -923,51 +296,67 @@
         ],
         "checkIn": "2026-10-02T15:00",
         "checkOut": "2026-10-03T11:00",
-        "pricePerNight": 130,
+        "totalPrice": 372.66,
+        "currency": "USD",
         "nights": 1,
-        "notes": "Reservado para 6 personas, solo la noche del viernes. El Airbnb de Madrid sigue reservado: llevar mochila de una noche, no las maletas grandes. Junto a Plaça d'Espanya, con la Font Màgica y Montjuïc al lado.",
-        "host": "Airbnb · 6 huéspedes",
-        "url": "https://www.airbnb.com.ec/rooms/1091849156695870502?check_in=2026-10-02&check_out=2026-10-03&guests=6&adults=6&s=67&unique_share_id=f7027f09-a533-45a1-aa54-6063f2696524",
+        "notes": "Reservado para 7 personas con la familia de Alejandra, solo la noche del viernes. La casa de Gina en Ciempozuelos sigue siendo la base: llevar mochila de una noche, no las maletas grandes. Junto a Plaça d'Espanya, con la Font Màgica y Montjuïc al lado.",
+        "host": "Airbnb · 7 huéspedes con la familia de Alejandra",
+        "url": "https://www.airbnb.com.ec/rooms/1091849156695870502?adults=6&check_in=2026-10-02&check_out=2026-10-03",
         "photo": {
           "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Pla%C3%A7a_Espanya.jpg/960px-Pla%C3%A7a_Espanya.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
           "page": "https://commons.wikimedia.org/wiki/File:Pla%C3%A7a_Espanya.jpg",
           "credit": "Canaan · CC BY-SA 4.0"
-        }
+        },
+        "guests": 7
       },
       "days": [
         {
           "day": 2,
           "date": "2026-10-02",
-          "label": "AVE y Camp Nou",
-          "summary": "AVE temprano desde Atocha. Camp Nou por la tarde: entran dos, el resto tiene plan aparte a pie.",
+          "label": "Airbnb en Barcelona",
+          "summary": "Madrugón: Cercanías a Atocha, AVE de las 06:57 a Barcelona Sants y mochilas al Airbnb de Plaça d'Espanya.",
           "stops": [
             {
-              "id": "bcn-d2-s1",
-              "time": "06:30",
-              "endTime": "09:15",
-              "name": "AVE Atocha → Barcelona Sants",
+              "id": "bcn-d2-s0",
+              "time": "05:30",
+              "endTime": "06:25",
+              "name": "Cercanías C-3 Ciempozuelos → Atocha",
               "type": "transport",
               "coords": [
                 40.4065,
                 -3.6895
               ],
-              "price": 75,
-              "duration": 165,
-              "walkToNext": 10,
-              "note": "2 h 45 de viaje. Estar en Atocha 30 min antes por el control de equipaje. Comprar con meses de antelación baja mucho el precio.",
-              "booking": "Renfe · ida 02 oct, vuelta 03 oct",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Estaci%C3%B3n_de_Barcelona-Sans.jpg/960px-Estaci%C3%B3n_de_Barcelona-Sans.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Estaci%C3%B3n_de_Barcelona-Sans.jpg",
-                "credit": "Danielmoreno4774 · CC BY 4.0"
-              },
+              "price": 3,
+              "duration": 55,
+              "walkToNext": 5,
+              "note": "Unos 40 min de tren más la espera. Mirar la víspera la hora del primer C-3 en la app de Renfe Cercanías: hay que estar en Atocha a las 06:30 para pasar el control del AVE. Si Gina lleva coche, esa opción es más cómoda.",
+              "booking": "",
+              "advanceTicket": false
+            },
+            {
+              "id": "bcn-d2-s1",
+              "time": "06:57",
+              "endTime": "09:45",
+              "name": "AVE Madrid Atocha → Barcelona Sants",
+              "type": "transport",
+              "coords": [
+                41.3791,
+                2.1405
+              ],
+              "price": 54.05,
+              "duration": 168,
+              "walkToNext": 15,
+              "note": "El AVE tiene control de equipaje como en el aeropuerto y cierra el acceso al andén unos minutos antes de salir. La hora de llegada es aproximada: mirarla en el billete. De Sants al Airbnb de Plaça d'Espanya son 15 min andando o una parada de L3.",
+              "booking": "6 billetes, comprados por Gina · 324,30 € la ida",
               "advanceTicket": true,
-              "ticketUrl": "https://www.renfe.com/es/es"
+              "documents": [
+                "renfe-ssz43u"
+              ]
             },
             {
               "id": "bcn-d2-s2",
-              "time": "09:30",
-              "endTime": "10:30",
+              "time": "10:05",
+              "endTime": "10:35",
               "name": "Dejar mochilas en el Airbnb",
               "type": "stay",
               "coords": [
@@ -976,130 +365,12 @@
               ],
               "price": 0,
               "duration": 60,
-              "walkToNext": 18,
+              "walkToNext": null,
               "note": "Plaça d'Espanya. La habitación no estará lista a esa hora, pero se puede dejar el equipaje. Metro L1/L3 y FGC a un paso.",
               "photo": {
                 "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Pla%C3%A7a_Espanya.jpg/960px-Pla%C3%A7a_Espanya.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
                 "page": "https://commons.wikimedia.org/wiki/File:Pla%C3%A7a_Espanya.jpg",
                 "credit": "Canaan · CC BY-SA 4.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "bcn-d2-s3",
-              "time": "10:45",
-              "endTime": "12:30",
-              "name": "Passeig de Gràcia: Casa Batlló y La Pedrera",
-              "type": "walk",
-              "coords": [
-                41.3917,
-                2.165
-              ],
-              "price": 0,
-              "duration": 105,
-              "walkToNext": 12,
-              "note": "Solo fachadas. Entrar a Casa Batlló son 35 € y una hora larga, no cabe con el Camp Nou hoy.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Casa_Batll%C3%B3%2C_Antoni_Gaud%C3%AD.jpg/960px-Casa_Batll%C3%B3%2C_Antoni_Gaud%C3%AD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Casa_Batll%C3%B3,_Antoni_Gaud%C3%AD.jpg",
-                "credit": "Canaan · CC BY-SA 4.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "bcn-d2-s4",
-              "time": "12:45",
-              "endTime": "14:15",
-              "name": "Comida antes del estadio",
-              "type": "food",
-              "coords": [
-                41.386,
-                2.142
-              ],
-              "price": 24,
-              "duration": 90,
-              "walkToNext": 12,
-              "note": "Comer en Les Corts, cerca del estadio. Los sitios pegados al Camp Nou son caros y flojos.",
-              "advanceTicket": false
-            },
-            {
-              "id": "bcn-d2-s5",
-              "time": "14:30",
-              "endTime": "17:30",
-              "name": "Camp Nou · entran dos",
-              "type": "sight",
-              "coords": [
-                41.3809,
-                2.1228
-              ],
-              "price": 60,
-              "duration": 180,
-              "walkToNext": 0,
-              "note": "Tour y museo, unas 2 h 30 dentro. Entrada con franja horaria y nominativa. Punto de reencuentro: la salida de la tienda oficial.",
-              "booking": "Franja 14:30 · 2 entradas",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Camp_Nou_aerial.jpg/960px-Camp_Nou_aerial.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Camp_Nou_aerial.jpg",
-                "credit": "Oh-Barcelona.com from Barcelona, Spain · CC BY 2.0"
-              },
-              "advanceTicket": true,
-              "ticketUrl": "https://www.fcbarcelona.es/es/entradas/camp-nou-experience"
-            },
-            {
-              "id": "bcn-d2-s6",
-              "time": "14:30",
-              "endTime": "17:30",
-              "name": "Plan del grupo: Les Corts a pie",
-              "type": "walk",
-              "coords": [
-                41.3846,
-                2.13
-              ],
-              "price": 12,
-              "duration": 180,
-              "walkToNext": 20,
-              "note": "Sin metro, todo caminable desde el estadio: Jardins de la Maternitat, plaça de la Concòrdia y cafés del barrio. A 15 min andando del punto de reencuentro.",
-              "advanceTicket": false
-            },
-            {
-              "id": "bcn-d2-s7",
-              "time": "18:00",
-              "endTime": "19:30",
-              "name": "Búnkers del Carmel",
-              "type": "sight",
-              "coords": [
-                41.4194,
-                2.162
-              ],
-              "price": 0,
-              "duration": 90,
-              "walkToNext": 25,
-              "note": "Gratis y la mejor vista de la ciudad. Subida dura, llevar agua. Si el grupo viene cansado, saltarlo.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Tur%C3%B3_Rovira.jpg/960px-Tur%C3%B3_Rovira.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Tur%C3%B3_Rovira.jpg",
-                "credit": "Canaan · CC BY-SA 3.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "bcn-d2-s8",
-              "time": "20:30",
-              "endTime": "22:30",
-              "name": "Font Màgica y cena en Plaça d'Espanya",
-              "type": "food",
-              "coords": [
-                41.3711,
-                2.1518
-              ],
-              "price": 30,
-              "duration": 120,
-              "walkToNext": null,
-              "note": "El espectáculo de la fuente es gratis y está a 5 min del alojamiento. Verificar horario, no funciona todo el año. Cenar por la zona después.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Columnas_de_la_font_magica_de_montjuic.JPG/960px-Columnas_de_la_font_magica_de_montjuic.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Columnas_de_la_font_magica_de_montjuic.JPG",
-                "credit": "PierreSelim · CC BY 3.0"
               },
               "advanceTicket": false
             }
@@ -1108,8 +379,8 @@
         {
           "day": 3,
           "date": "2026-10-03",
-          "label": "Barcelona completo",
-          "summary": "Sagrada Família, Park Güell y gótico. AVE de regreso a Madrid por la noche.",
+          "label": "Check-out en Barcelona",
+          "summary": "Check-out por la mañana, día en Barcelona y AVE de vuelta a Madrid a las 18:40.",
           "stops": [
             {
               "id": "bcn-d3-s1",
@@ -1123,8 +394,8 @@
               ],
               "price": 0,
               "duration": 60,
-              "walkToNext": 20,
-              "note": "Dejar las mochilas en consigna o en Sants, que está a 10 min. Hoy se anda todo el día.",
+              "walkToNext": null,
+              "note": "Dejar las llaves donde indique el anfitrión.",
               "photo": {
                 "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Pla%C3%A7a_Espanya.jpg/960px-Pla%C3%A7a_Espanya.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
                 "page": "https://commons.wikimedia.org/wiki/File:Pla%C3%A7a_Espanya.jpg",
@@ -1133,135 +404,41 @@
               "advanceTicket": false
             },
             {
-              "id": "bcn-d3-s2",
-              "time": "09:15",
-              "endTime": "11:15",
-              "name": "Sagrada Família",
-              "type": "sight",
-              "coords": [
-                41.4036,
-                2.1744
-              ],
-              "price": 26,
-              "duration": 120,
-              "walkToNext": 8,
-              "note": "Entrada con franja horaria, se agota semanas antes. Torre de la Natividad +10 €.",
-              "booking": "Franja 09:15 · sagradafamilia.org",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/SF_maig_2026.jpg/960px-SF_maig_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:SF_maig_2026.jpg",
-                "credit": "Canaan · CC BY-SA 4.0"
-              },
-              "advanceTicket": true,
-              "ticketUrl": "https://sagradafamilia.org/es/tickets-individuals"
-            },
-            {
-              "id": "bcn-d3-s3",
-              "time": "11:30",
-              "endTime": "12:15",
-              "name": "Desayuno tardío cerca de Sant Pau",
-              "type": "food",
-              "coords": [
-                41.4109,
-                2.1743
-              ],
-              "price": 12,
-              "duration": 45,
-              "walkToNext": 22,
-              "note": "El Recinte Modernista de Sant Pau está enfrente, 16 € aparte si hay ganas.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Hosp_Sant_Pau.jpg/960px-Hosp_Sant_Pau.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Hosp_Sant_Pau.jpg",
-                "credit": "Canaan · CC BY-SA 4.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "bcn-d3-s4",
-              "time": "12:45",
-              "endTime": "15:00",
-              "name": "Park Güell",
-              "type": "sight",
-              "coords": [
-                41.4145,
-                2.1527
-              ],
-              "price": 18,
-              "duration": 135,
-              "walkToNext": 30,
-              "note": "Zona monumental con cita previa. La parte de arriba es libre y gratis.",
-              "booking": "Franja 12:45 · parkguell.barcelona",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/G%C3%BCell_BCN_edited.jpg/960px-G%C3%BCell_BCN_edited.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:G%C3%BCell_BCN_edited.jpg",
-                "credit": "Canaan · CC BY-SA 4.0"
-              },
-              "advanceTicket": true,
-              "ticketUrl": "https://parkguell.barcelona/es/compra-entradas"
-            },
-            {
-              "id": "bcn-d3-s5",
-              "time": "15:45",
-              "endTime": "17:00",
-              "name": "Comida en el Born",
-              "type": "food",
-              "coords": [
-                41.3839,
-                2.1819
-              ],
-              "price": 26,
-              "duration": 75,
-              "walkToNext": 6,
-              "note": "Metro desde Park Güell, unos 30 min. Santa Maria del Mar está al lado.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Passeig_del_Born_Barcelona_Catalonia.JPG/960px-Passeig_del_Born_Barcelona_Catalonia.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Passeig_del_Born_Barcelona_Catalonia.JPG",
-                "credit": "1997 · CC BY-SA 3.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "bcn-d3-s6",
-              "time": "17:15",
-              "endTime": "19:00",
-              "name": "Barri Gòtic y Catedral",
-              "type": "walk",
-              "coords": [
-                41.3839,
-                2.1763
-              ],
-              "price": 9,
-              "duration": 105,
-              "walkToNext": 20,
-              "note": "Plaça del Rei y Pont del Bisbe. Catedral 9 € con acceso a la terraza.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Catedral_de_Barcelona_%289248804702%29.jpg/960px-Catedral_de_Barcelona_%289248804702%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Catedral_de_Barcelona_(9248804702).jpg",
-                "credit": "Emilio J. Rodríguez Posada · CC BY-SA 2.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "bcn-d3-s7",
-              "time": "21:00",
-              "endTime": "23:45",
-              "name": "AVE Sants → Atocha",
+              "id": "bcn-d3-s8",
+              "time": "18:40",
+              "endTime": "21:30",
+              "name": "AVE Barcelona Sants → Madrid Atocha",
               "type": "transport",
               "coords": [
-                41.3792,
-                2.14
+                40.4065,
+                -3.6895
               ],
-              "price": 0,
-              "duration": 165,
-              "walkToNext": null,
-              "note": "Incluido en el billete de ida y vuelta. Llegar a Sants 30 min antes. Verificar la hora del último AVE, no hay margen si se pierde.",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Estaci%C3%B3n_de_Barcelona-Sans.jpg/960px-Estaci%C3%B3n_de_Barcelona-Sans.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Estaci%C3%B3n_de_Barcelona-Sans.jpg",
-                "credit": "Danielmoreno4774 · CC BY 4.0"
-              },
+              "price": 57.25,
+              "duration": 170,
+              "walkToNext": 5,
+              "note": "Estar en Sants a las 18:10: hay control de equipaje antes del andén. Recoger antes las mochilas de la consigna. La hora de llegada es aproximada: mirarla en el billete.",
+              "booking": "6 billetes, comprados por Gina · 343,50 € la vuelta",
               "advanceTicket": true,
-              "ticketUrl": "https://www.renfe.com/es/es"
+              "documents": [
+                "renfe-ssz43u"
+              ]
+            },
+            {
+              "id": "bcn-d3-s9",
+              "time": "21:45",
+              "endTime": "22:30",
+              "name": "Cercanías C-3 Atocha → Ciempozuelos",
+              "type": "transport",
+              "coords": [
+                40.1627,
+                -3.6182
+              ],
+              "price": 3,
+              "duration": 45,
+              "walkToNext": null,
+              "note": "El C-3 sale desde la estación de Cercanías de Atocha, dentro del mismo complejo. Los últimos trenes van pasadas las 23:00; si algo se retrasa, taxi.",
+              "booking": "",
+              "advanceTicket": false
             }
           ]
         }
@@ -1288,11 +465,12 @@
         ],
         "checkIn": "2026-10-08T15:00",
         "checkOut": "2026-10-11T11:00",
-        "pricePerNight": 105,
+        "totalPrice": 583.64,
+        "currency": "USD",
         "nights": 3,
         "notes": "Reservado del 8 al 11 de octubre para 3 personas. Entre Monti y Esquilino: Coliseo a 10 min andando, Termini a 12 min. Zona ZTL, entrar en taxi tiene recargo.",
         "host": "Airbnb · 3 huéspedes",
-        "url": "https://www.airbnb.com.ec/rooms/1594300622093226793?check_in=2026-10-08&check_out=2026-10-11&guests=1&adults=3&s=67&unique_share_id=e6dcd913-e52e-4779-b80d-dd279c8d1f6f",
+        "url": "https://www.airbnb.com.ec/rooms/1594300622093226793?adults=3&check_in=2026-10-08&check_out=2026-10-11",
         "photo": {
           "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/San_Pietro_in_Vincoli_-_esterno.jpg/960px-San_Pietro_in_Vincoli_-_esterno.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
           "page": "https://commons.wikimedia.org/wiki/File:San_Pietro_in_Vincoli_-_esterno.jpg",
@@ -1320,13 +498,18 @@
               "duration": 45,
               "walkToNext": 12,
               "note": "Vuelo desde Madrid. Control de pasaportes ya hecho en Barajas: es vuelo interior Schengen, sólo hay que recoger la maleta facturada.",
-              "booking": "UX1043 · localizador UX/7KK56V",
+              "booking": "UX1043 · billete en «Billetes»",
               "photo": {
                 "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Rome_Fiumicino_Leonardo_da_Vinci_International_Airport%2C_Aeroporto_internazionale_di_Roma-Fiumicino_%22Leonardo_da_Vinci%22.jpg/960px-Rome_Fiumicino_Leonardo_da_Vinci_International_Airport%2C_Aeroporto_internazionale_di_Roma-Fiumicino_%22Leonardo_da_Vinci%22.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
                 "page": "https://commons.wikimedia.org/wiki/File:Rome_Fiumicino_Leonardo_da_Vinci_International_Airport,_Aeroporto_internazionale_di_Roma-Fiumicino_%22Leonardo_da_Vinci%22.jpg",
                 "credit": "Apaleutos25 · CC BY-SA 4.0"
               },
-              "advanceTicket": true
+              "advanceTicket": true,
+              "documents": [
+                "air-europa-alejandra",
+                "air-europa-daniela",
+                "air-europa-anthony"
+              ]
             },
             {
               "id": "rom-d1-s2",
@@ -1415,7 +598,7 @@
                 "credit": "European Parliament · CC BY 2.0"
               },
               "advanceTicket": true,
-              "ticketUrl": "https://ticketing.colosseo.it/"
+              "ticketUrl": "https://ticketing.colosseo.it/es/eventi/full-experience-sotterranei-e-arena/"
             },
             {
               "id": "rom-d1-s6",
@@ -1460,7 +643,8 @@
                 "credit": "This Photo was taken by Wolfgang Moroder."
               },
               "advanceTicket": true,
-              "ticketUrl": "https://ticketing.colosseo.it/"
+              "includedIn": "rom-d1-s5",
+              "ticketUrl": "https://ticketing.colosseo.it/es/eventi/full-experience-sotterranei-e-arena/"
             },
             {
               "id": "rom-d1-s8",
@@ -1555,218 +739,11 @@
         {
           "day": 9,
           "date": "2026-10-09",
-          "label": "Centro histórico",
-          "summary": "El día 2 de la ruta: del Vittoriano al Ghetto, Navona, el Panteón y las plazas barrocas. Termina de noche en la Fontana di Trevi.",
-          "stops": [
-            {
-              "id": "rom-d2-s1",
-              "time": "09:00",
-              "endTime": "10:45",
-              "name": "Monumento a Vittorio Emanuele II",
-              "type": "sight",
-              "coords": [
-                41.89475,
-                12.483194
-              ],
-              "price": 12,
-              "duration": 105,
-              "walkToNext": 9,
-              "note": "El edificio de mármol blanco que domina Piazza Venezia. Subir al ascensor panorámico de la terraza (12 €) da la mejor vista del centro, y desde ahí se entiende el plano de la ciudad antes de meterse en ella.",
-              "booking": "",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Altar_della_Patria_September_2015-1.jpg/960px-Altar_della_Patria_September_2015-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Altar_della_Patria_September_2015-1.jpg",
-                "credit": "Alvesgaspar · CC BY-SA 4.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "rom-d2-s2",
-              "time": "10:55",
-              "endTime": "12:15",
-              "name": "Antiguo barrio judío",
-              "type": "walk",
-              "coords": [
-                41.892536,
-                12.47815
-              ],
-              "price": 0,
-              "duration": 80,
-              "walkToNext": 11,
-              "note": "El Ghetto: el Portico d'Ottavia, la Gran Sinagoga y las calles estrechas del barrio más antiguo en pie de Roma. Es también donde se come el carciofo alla giudia, si sobra hambre a media mañana.",
-              "booking": "",
-              "photo": {
-                "src": "https://upload.wikimedia.org/wikipedia/commons/5/55/ArcoDelleAzimelleInGhettoByRoeslerFranz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-                "page": "https://commons.wikimedia.org/wiki/File:ArcoDelleAzimelleInGhettoByRoeslerFranz.jpg",
-                "credit": "Ettore Roesler Franz · Public domain"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "rom-d2-s3",
-              "time": "12:30",
-              "endTime": "13:45",
-              "name": "Piazza Navona y la Fuente de los Cuatro Ríos",
-              "type": "sight",
-              "coords": [
-                41.89906,
-                12.47308
-              ],
-              "price": 0,
-              "duration": 75,
-              "walkToNext": 2,
-              "note": "La plaza conserva la forma del estadio de Domiciano que hay enterrado debajo. En el centro, la fuente de Bernini con los cuatro ríos; a los lados, Sant'Agnese in Agone y San Giacomo degli Spagnoli, ambas gratis.",
-              "booking": "",
-              "photo": {
-                "src": "https://upload.wikimedia.org/wikipedia/commons/7/76/Lazio_Roma_Navona2_tango7174.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-                "page": "https://commons.wikimedia.org/wiki/File:Lazio_Roma_Navona2_tango7174.jpg",
-                "credit": "Tango7174 · CC BY-SA 4.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "rom-d2-s4",
-              "time": "13:45",
-              "endTime": "15:00",
-              "name": "Comida en Piazza Navona",
-              "type": "food",
-              "coords": [
-                41.8983,
-                12.4729
-              ],
-              "price": 28,
-              "duration": 75,
-              "walkToNext": 6,
-              "note": "Comer en la plaza se paga caro. Una calle hacia dentro, por Via del Governo Vecchio, hay lo mismo por la mitad.",
-              "booking": "",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Piazza_Navona_%28Rome%29_at_night.jpg/960px-Piazza_Navona_%28Rome%29_at_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Piazza_Navona_(Rome)_at_night.jpg",
-                "credit": "NikonZ7II · CC BY-SA 4.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "rom-d2-s5",
-              "time": "15:10",
-              "endTime": "16:30",
-              "name": "Panteón de Agripa",
-              "type": "sight",
-              "coords": [
-                41.89861,
-                12.476873
-              ],
-              "price": 5,
-              "duration": 80,
-              "walkToNext": 5,
-              "note": "Visita interior con la cúpula: sigue siendo la mayor de hormigón sin armar del mundo y el óculo está abierto al cielo, así que si llueve, llueve dentro. Desde 2023 se paga entrada y conviene reservar franja.",
-              "booking": "Franja 15:15 · museiitaliani.it",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Pantheon_Rom_1_cropped.jpg/960px-Pantheon_Rom_1_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Pantheon_Rom_1_cropped.jpg",
-                "credit": "Rabax63 · CC BY-SA 4.0"
-              },
-              "advanceTicket": true,
-              "ticketUrl": "https://portale.museiitaliani.it/b2c/"
-            },
-            {
-              "id": "rom-d2-s6",
-              "time": "16:35",
-              "endTime": "17:15",
-              "name": "Templo de Adriano",
-              "type": "sight",
-              "coords": [
-                41.8997,
-                12.4796
-              ],
-              "price": 0,
-              "duration": 40,
-              "walkToNext": 4,
-              "note": "En Piazza di Pietra: once columnas corintias de quince metros incrustadas en la fachada de un edificio posterior. Se ve desde la plaza, sin entrada.",
-              "booking": "",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Tempio_di_Adriano_-_esterno.jpg/960px-Tempio_di_Adriano_-_esterno.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Tempio_di_Adriano_-_esterno.jpg",
-                "credit": "Labicanense · CC BY 4.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "rom-d2-s7",
-              "time": "17:20",
-              "endTime": "18:00",
-              "name": "Piazza Colonna",
-              "type": "sight",
-              "coords": [
-                41.9008,
-                12.4798
-              ],
-              "price": 0,
-              "duration": 40,
-              "walkToNext": 8,
-              "note": "La columna de Marco Aurelio, treinta metros de relieves en espiral contando sus campañas. Detrás, el Palazzo Chigi, sede del gobierno italiano.",
-              "booking": "",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Columna_de_Marco_Aurelio%2C_plaza_Colonna%2C_Roma%2C_Italia%2C_2022-09-14%2C_DD_24-26_HDR.jpg/960px-Columna_de_Marco_Aurelio%2C_plaza_Colonna%2C_Roma%2C_Italia%2C_2022-09-14%2C_DD_24-26_HDR.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Columna_de_Marco_Aurelio,_plaza_Colonna,_Roma,_Italia,_2022-09-14,_DD_24-26_HDR.jpg",
-                "credit": "Diego Delso · CC BY-SA 4.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "rom-d2-s8",
-              "time": "18:10",
-              "endTime": "19:15",
-              "name": "Fontana di Trevi",
-              "type": "sight",
-              "coords": [
-                41.900932,
-                12.483313
-              ],
-              "price": 0,
-              "duration": 65,
-              "walkToNext": 14,
-              "note": "La última parada del día, ya con luz de tarde y las farolas encendidas. Está siempre llena: la foto sin gente no existe. La moneda se tira de espaldas con la mano derecha por encima del hombro izquierdo.",
-              "booking": "",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Trevi_Fountain_-_Roma.jpg/960px-Trevi_Fountain_-_Roma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Trevi_Fountain_-_Roma.jpg",
-                "credit": "NikonZ7II · CC BY-SA 4.0"
-              },
-              "advanceTicket": false
-            },
-            {
-              "id": "rom-d2-s9",
-              "time": "19:40",
-              "endTime": "21:40",
-              "name": "Cena en Monti",
-              "type": "food",
-              "coords": [
-                41.894536,
-                12.491276
-              ],
-              "price": 30,
-              "duration": 120,
-              "walkToNext": null,
-              "note": "De Trevi a Monti son 15 min andando. Cenar en el barrio y dormir cerca: mañana o toca madrugón del Vaticano o tren a Florencia.",
-              "booking": "",
-              "photo": {
-                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Rione_I_Monti%2C_Roma%2C_Italy_-_panoramio_%2825%29.jpg/960px-Rione_I_Monti%2C_Roma%2C_Italy_-_panoramio_%2825%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                "page": "https://commons.wikimedia.org/wiki/File:Rione_I_Monti,_Roma,_Italy_-_panoramio_(25).jpg",
-                "credit": "Vadim Zhivotovsky · CC BY 3.0"
-              },
-              "advanceTicket": false
-            }
-          ]
-        },
-        {
-          "day": 10,
-          "date": "2026-10-10",
           "label": "Vaticano",
-          "summary": "Madrugón: museos a las 8, Capilla Sixtina, San Pedro y la cúpula. Por la tarde se cruza el Tíber por el puente Umberto I hasta la Via del Corso.",
+          "summary": "Madrugón: museos a las 8, Capilla Sixtina, San Pedro y la cúpula. Por la tarde se cruza el Tíber por el puente Umberto I, Via del Corso y la Fontana di Trevi iluminada antes de cenar. A dormir pronto: mañana el tren sale a las 05:35.",
           "stops": [
             {
-              "id": "rom-d3-s0",
+              "id": "rom-fi10-s0",
               "time": "07:15",
               "endTime": "07:40",
               "name": "Taxi al Vaticano",
@@ -1778,7 +755,7 @@
               "price": 20,
               "duration": 25,
               "walkToNext": 0,
-              "note": "Unos 20 min un sábado temprano, sin tráfico: 18-22 € para los tres. Pedirlo desde casa por la app FreeNow o itTaxi, o al Radiotaxi 06 3570. Que deje en Viale Vaticano, en la entrada de los museos: hay que llegar con 20 min de margen para el control de seguridad antes de la franja de las 08:00. Alternativa barata: metro B en Cavour, cambio a la línea A en Termini hasta Ottaviano y 10 min andando; 1,50 € por persona y 35-40 min puerta a puerta.",
+              "note": "Unos 20-25 min un viernes temprano, antes de la hora punta: 18-24 € para los tres. Pedirlo desde casa por la app FreeNow o itTaxi, o al Radiotaxi 06 3570. Que deje en Viale Vaticano, en la entrada de los museos: hay que llegar con 20 min de margen para el control de seguridad antes de la franja de las 08:00. Alternativa barata: metro B en Cavour, cambio a la línea A en Termini hasta Ottaviano y 10 min andando; 1,50 € por persona y 35-40 min puerta a puerta.",
               "photo": {
                 "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Saint_Peter%27s_Basilica_facade%2C_Rome%2C_Italy.jpg/960px-Saint_Peter%27s_Basilica_facade%2C_Rome%2C_Italy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
                 "page": "https://commons.wikimedia.org/wiki/File:Saint_Peter%27s_Basilica_facade,_Rome,_Italy.jpg",
@@ -1807,7 +784,7 @@
                 "credit": "Colin · CC BY-SA 3.0"
               },
               "advanceTicket": true,
-              "ticketUrl": "https://tickets.museivaticani.va/home/"
+              "ticketUrl": "https://tickets.museivaticani.va/home/visit/3/1791522000000/1/1"
             },
             {
               "id": "rom-d3-s2",
@@ -1830,7 +807,8 @@
                 "credit": "The original uploader was Snowdog at Italian Wikipedia. · CC BY-SA 3.0"
               },
               "advanceTicket": true,
-              "ticketUrl": "https://tickets.museivaticani.va/home/"
+              "includedIn": "rom-d3-s1",
+              "ticketUrl": "https://tickets.museivaticani.va/home/visit/3/1791522000000/1/1"
             },
             {
               "id": "rom-d3-s3",
@@ -1921,9 +899,9 @@
               "advanceTicket": false
             },
             {
-              "id": "rom-d3-s7",
+              "id": "rom-fi10-s7",
               "time": "17:35",
-              "endTime": "18:45",
+              "endTime": "18:30",
               "name": "Via del Corso",
               "type": "walk",
               "coords": [
@@ -1931,9 +909,9 @@
                 12.4796
               ],
               "price": 0,
-              "duration": 70,
-              "walkToNext": 16,
-              "note": "La calle comercial que atraviesa el centro en línea recta. Un kilómetro y medio de tiendas y palacios para bajar la comida y comprar lo que falte.",
+              "duration": 55,
+              "walkToNext": 5,
+              "note": "La calle comercial que atraviesa el centro en línea recta. Tiendas y palacios para bajar la comida; a la altura de Piazza Colonna se tuerce a la derecha hacia Trevi.",
               "booking": "",
               "photo": {
                 "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Via_del_Corso_%28cropped%29.jpg/960px-Via_del_Corso_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -1943,9 +921,326 @@
               "advanceTicket": false
             },
             {
-              "id": "rom-d3-s8",
-              "time": "19:15",
-              "endTime": "21:45",
+              "id": "rom-fi10-s8",
+              "time": "18:35",
+              "endTime": "19:10",
+              "name": "Fontana di Trevi",
+              "type": "sight",
+              "coords": [
+                41.900932,
+                12.483313
+              ],
+              "price": 0,
+              "duration": 35,
+              "walkToNext": 14,
+              "note": "A esta hora se hace de noche y la encienden: la mejor luz para verla. Está siempre llena, la foto sin gente no existe. La moneda se tira de espaldas con la mano derecha por encima del hombro izquierdo.",
+              "booking": "",
+              "photo": {
+                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Trevi_Fountain_-_Roma.jpg/960px-Trevi_Fountain_-_Roma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "page": "https://commons.wikimedia.org/wiki/File:Trevi_Fountain_-_Roma.jpg",
+                "credit": "NikonZ7II · CC BY-SA 4.0"
+              },
+              "advanceTicket": false
+            },
+            {
+              "id": "rom-fi10-s9",
+              "time": "19:25",
+              "endTime": "21:15",
+              "name": "Cena en Monti",
+              "type": "food",
+              "coords": [
+                41.894536,
+                12.491276
+              ],
+              "price": 35,
+              "duration": 110,
+              "walkToNext": null,
+              "note": "Cena sin alargar: mañana suena el despertador a las 04:30. Reservar, en Monti las trattorias buenas se llenan los viernes.",
+              "booking": "",
+              "photo": {
+                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Rione_I_Monti%2C_Roma%2C_Italy_-_panoramio_%2825%29.jpg/960px-Rione_I_Monti%2C_Roma%2C_Italy_-_panoramio_%2825%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "page": "https://commons.wikimedia.org/wiki/File:Rione_I_Monti,_Roma,_Italy_-_panoramio_(25).jpg",
+                "credit": "Vadim Zhivotovsky · CC BY 3.0"
+              },
+              "advanceTicket": false
+            }
+          ]
+        },
+        {
+          "day": 10,
+          "date": "2026-10-10",
+          "label": "Florencia",
+          "summary": "Excursión de día completo a Florencia en Italo, trenes ya comprados. Salen de Termini a las 05:35 y vuelven a las 20:05, a tiempo para la cena de despedida en Monti. Duomo, Uffizi, Ponte Vecchio, la Signoria y el David en la Accademia.",
+          "stops": [
+            {
+              "id": "rom-fi-s1",
+              "time": "05:05",
+              "endTime": "05:35",
+              "name": "Termini · andén de Italo",
+              "type": "transport",
+              "coords": [
+                41.900979,
+                12.501454
+              ],
+              "price": 0,
+              "duration": 30,
+              "walkToNext": 12,
+              "note": "Salir del Airbnb a las 04:50: el metro abre a las 05:30, así que andando por Via Cavour (12 min). Buscar el andén del Italo 9904 en las pantallas; se puede subir hasta 2 min antes de la salida. Billete en el móvil, no hace falta validar.",
+              "booking": "Italo · Smart · billete en el móvil o impreso",
+              "photo": {
+                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Piazzadeicinquecento.jpg/960px-Piazzadeicinquecento.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "page": "https://commons.wikimedia.org/wiki/File:Piazzadeicinquecento.jpg",
+                "credit": "Markos90 · CC BY-SA 3.0"
+              },
+              "advanceTicket": true,
+              "includedIn": "rom-fi-s2",
+              "documents": [
+                "italo-xbfkfi"
+              ]
+            },
+            {
+              "id": "rom-fi-s2",
+              "time": "05:35",
+              "endTime": "07:17",
+              "name": "Italo 9904 Roma → Firenze S.M.N.",
+              "type": "transport",
+              "coords": [
+                43.776432,
+                11.248201
+              ],
+              "price": 15.9,
+              "duration": 102,
+              "walkToNext": 10,
+              "note": "1 h 42 min. A dormir en el tren. Firenze Santa Maria Novella deja en el centro: el Duomo está a 10 min andando.",
+              "booking": "Italo · Smart",
+              "photo": {
+                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/%E3%83%95%E3%83%AC%E3%83%83%E3%83%81%E3%83%A3%E3%83%AD%E3%83%83%E3%82%B5_%2836309438424%29.jpg/960px-%E3%83%95%E3%83%AC%E3%83%83%E3%83%81%E3%83%A3%E3%83%AD%E3%83%83%E3%82%B5_%2836309438424%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "page": "https://commons.wikimedia.org/wiki/File:%E3%83%95%E3%83%AC%E3%83%83%E3%83%81%E3%83%A3%E3%83%AD%E3%83%83%E3%82%B5_(36309438424).jpg",
+                "credit": "nimame · CC BY 2.0"
+              },
+              "advanceTicket": true,
+              "documents": [
+                "italo-xbfkfi"
+              ],
+              "seats": {
+                "alejandra": "Coche 9 · asiento 30",
+                "daniela": "Coche 9 · asiento 31",
+                "anthony": "Coche 9 · asiento 32"
+              }
+            },
+            {
+              "id": "rom-fi-s13",
+              "time": "07:27",
+              "endTime": "08:05",
+              "name": "Desayuno junto al Duomo",
+              "type": "food",
+              "coords": [
+                43.77245,
+                11.25525
+              ],
+              "price": 8,
+              "duration": 38,
+              "walkToNext": 2,
+              "note": "Cappuccino y cornetto de pie en la barra, como los florentinos. A esta hora la plaza del Duomo está vacía: la mejor foto de la fachada es ahora.",
+              "booking": "",
+              "photo": {
+                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/View_of_Santa_Maria_del_Fiore_in_Florence.jpg/960px-View_of_Santa_Maria_del_Fiore_in_Florence.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "page": "https://commons.wikimedia.org/wiki/File:View_of_Santa_Maria_del_Fiore_in_Florence.jpg",
+                "credit": "Bruce Stokes on Flickr · CC BY-SA 2.0"
+              },
+              "advanceTicket": false
+            },
+            {
+              "id": "rom-fi-s3",
+              "time": "08:10",
+              "endTime": "10:15",
+              "name": "Duomo, Campanile y Battistero",
+              "type": "sight",
+              "coords": [
+                43.773254,
+                11.256777
+              ],
+              "price": 30,
+              "duration": 125,
+              "walkToNext": 8,
+              "note": "Entrar a la catedral es gratis pero abre a las 10:15; el pase Brunelleschi (30 €) cubre cúpula, campanile, baptisterio y museo, que abren antes. Pedir la primera franja de la cúpula (08:15): son 463 escalones sin ascensor.",
+              "booking": "Pase Brunelleschi con franja 08:15 para la cúpula · duomo.firenze.it",
+              "photo": {
+                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/View_of_Santa_Maria_del_Fiore_in_Florence.jpg/960px-View_of_Santa_Maria_del_Fiore_in_Florence.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "page": "https://commons.wikimedia.org/wiki/File:View_of_Santa_Maria_del_Fiore_in_Florence.jpg",
+                "credit": "Bruce Stokes on Flickr · CC BY-SA 2.0"
+              },
+              "advanceTicket": true,
+              "ticketUrl": "https://tickets.duomo.firenze.it/it/negozio#/it/acquista?skugroup_id=3006"
+            },
+            {
+              "id": "rom-fi-s4",
+              "time": "10:25",
+              "endTime": "12:45",
+              "name": "Galería Uffizi",
+              "type": "museum",
+              "coords": [
+                43.76846,
+                11.255415
+              ],
+              "price": 29,
+              "duration": 140,
+              "walkToNext": 5,
+              "note": "Botticelli, Leonardo, Caravaggio. Con reserva se entra por la puerta 3 sin cola. Dos horas largas es el mínimo honesto.",
+              "booking": "Billete único nominativo comprado con antelación (29 €) · franja 10:30 · uffizi.it",
+              "photo": {
+                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Florence%2C_Italy_Uffizi_Museum_-_panoramio_%285%29.jpg/960px-Florence%2C_Italy_Uffizi_Museum_-_panoramio_%285%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "page": "https://commons.wikimedia.org/wiki/File:Florence,_Italy_Uffizi_Museum_-_panoramio_(5).jpg",
+                "credit": "Michelle Maria · CC BY 3.0"
+              },
+              "advanceTicket": true,
+              "ticketUrl": "https://tickets.uffizi.it/event/D43F5443-D676-F857-0904-0199CA8D9B74"
+            },
+            {
+              "id": "rom-fi-s5",
+              "time": "12:55",
+              "endTime": "14:15",
+              "name": "Comida junto al Ponte Vecchio",
+              "type": "food",
+              "coords": [
+                43.768013,
+                11.253156
+              ],
+              "price": 28,
+              "duration": 80,
+              "walkToNext": 4,
+              "note": "Trattoria en Oltrarno, cruzando el puente: mismo plato, la mitad de precio que en la orilla de los Uffizi. Bistecca alla fiorentina si el hambre acompaña.",
+              "booking": "",
+              "photo": {
+                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Ponte_Vecchio_%28Florencia%29.jpg/960px-Ponte_Vecchio_%28Florencia%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "page": "https://commons.wikimedia.org/wiki/File:Ponte_Vecchio_(Florencia).jpg",
+                "credit": "Canaan · CC BY-SA 4.0"
+              },
+              "advanceTicket": false
+            },
+            {
+              "id": "rom-fi-s6",
+              "time": "14:20",
+              "endTime": "14:50",
+              "name": "Ponte Vecchio y Oltrarno",
+              "type": "walk",
+              "coords": [
+                43.767961,
+                11.253216
+              ],
+              "price": 0,
+              "duration": 30,
+              "walkToNext": 5,
+              "note": "El puente con las joyerías y el corredor vasariano encima. Se cruza de vuelta desde Oltrarno y en 5 min se está en la Piazza della Signoria.",
+              "booking": "",
+              "photo": {
+                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Ponte_Vecchio_%28Florencia%29.jpg/960px-Ponte_Vecchio_%28Florencia%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "page": "https://commons.wikimedia.org/wiki/File:Ponte_Vecchio_(Florencia).jpg",
+                "credit": "Canaan · CC BY-SA 4.0"
+              },
+              "advanceTicket": false
+            },
+            {
+              "id": "rom-fi-s7",
+              "time": "14:55",
+              "endTime": "15:50",
+              "name": "Piazza della Signoria y Palazzo Vecchio",
+              "type": "sight",
+              "coords": [
+                43.76956,
+                11.255814
+              ],
+              "price": 12,
+              "duration": 55,
+              "walkToNext": 12,
+              "note": "La Loggia dei Lanzi es un museo de escultura al aire libre y gratis. El David de la plaza es copia: el original se ve dentro de un rato en la Accademia. Entrar al Palazzo Vecchio no da tiempo hoy.",
+              "booking": "",
+              "photo": {
+                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Piazza_della_signoria%2C_palazzo_vecchio%2C_veduta_01.jpg/960px-Piazza_della_signoria%2C_palazzo_vecchio%2C_veduta_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "page": "https://commons.wikimedia.org/wiki/File:Piazza_della_signoria,_palazzo_vecchio,_veduta_01.jpg",
+                "credit": "Francesco Bini · CC BY-SA 4.0"
+              },
+              "advanceTicket": false
+            },
+            {
+              "id": "rom-fi-s14",
+              "time": "16:05",
+              "endTime": "17:20",
+              "name": "Galleria dell'Accademia · el David",
+              "type": "museum",
+              "coords": [
+                43.776845,
+                11.258794
+              ],
+              "price": 20,
+              "duration": 75,
+              "walkToNext": 12,
+              "note": "El David original de Miguel Ángel, 5 m de mármol al fondo de la Tribuna. Antes, los Prisioneros sin terminar, que parecen salir de la piedra. Con una hora larga se ve bien; el resto del museo es opcional. Desde aquí a Santa Maria Novella son 12 min andando.",
+              "booking": "Entrada con hora a las 16:00-16:15 · b-ticket.com, la venta oficial de la Accademia · unos 20 € con la reserva",
+              "photo": {
+                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/%27David%27_by_Michelangelo_Fir_JBU005_denoised.jpg/960px-%27David%27_by_Michelangelo_Fir_JBU005_denoised.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "page": "https://commons.wikimedia.org/wiki/File:%27David%27_by_Michelangelo_Fir_JBU005_denoised.jpg",
+                "credit": "Jörg Bittner Unna · CC BY-SA 3.0"
+              },
+              "advanceTicket": true,
+              "ticketUrl": "https://webshop.b-ticket.com/webshop/webticket/timeslot?tsproduction=4&language=it"
+            },
+            {
+              "id": "rom-fi-s10",
+              "time": "17:35",
+              "endTime": "18:15",
+              "name": "Gelato y panino junto a la estación",
+              "type": "food",
+              "coords": [
+                43.774678,
+                11.249126
+              ],
+              "price": 8,
+              "duration": 40,
+              "walkToNext": 5,
+              "note": "Algo rápido cerca de Santa Maria Novella para el tren: la cena de verdad es en Roma. Estar en el andén a las 18:20; el tren no espera y no hay margen para alargar la tarde.",
+              "booking": "",
+              "photo": {
+                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Stazione_Santa_Maria_Novella_2.JPG/960px-Stazione_Santa_Maria_Novella_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "page": "https://commons.wikimedia.org/wiki/File:Stazione_Santa_Maria_Novella_2.JPG",
+                "credit": "Freepenguin · CC BY-SA 3.0"
+              },
+              "advanceTicket": false
+            },
+            {
+              "id": "rom-fi-s11",
+              "time": "18:28",
+              "endTime": "20:05",
+              "name": "Italo 8923 Firenze S.M.N. → Roma Termini",
+              "type": "transport",
+              "coords": [
+                41.900979,
+                12.501454
+              ],
+              "price": 14.9,
+              "duration": 97,
+              "walkToNext": 12,
+              "note": "1 h 37 min. Italo sale de Santa Maria Novella: mirar el andén en las pantallas; se puede subir hasta 2 min antes de la salida.",
+              "booking": "Italo · Smart",
+              "photo": {
+                "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Stazione_Santa_Maria_Novella_2.JPG/960px-Stazione_Santa_Maria_Novella_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "page": "https://commons.wikimedia.org/wiki/File:Stazione_Santa_Maria_Novella_2.JPG",
+                "credit": "Freepenguin · CC BY-SA 3.0"
+              },
+              "advanceTicket": true,
+              "documents": [
+                "italo-xbfkfi"
+              ],
+              "seats": {
+                "alejandra": "Coche 5 · asiento 47",
+                "daniela": "Coche 5 · asiento 48",
+                "anthony": "Coche 5 · asiento 49"
+              }
+            },
+            {
+              "id": "rom-fi-s12",
+              "time": "20:25",
+              "endTime": "22:25",
               "name": "Cena de despedida en Monti",
               "type": "food",
               "coords": [
@@ -1953,9 +1248,9 @@
                 12.491276
               ],
               "price": 35,
-              "duration": 150,
+              "duration": 120,
               "walkToNext": null,
-              "note": "Última noche entera en Roma. Reservar: en Monti las trattorias buenas se llenan los sábados.",
+              "note": "Última noche entera en Roma, a 12 min andando de Termini por Via Cavour. Reservar para las 20:30: en Monti las trattorias buenas se llenan los sábados, y en Italia a esa hora es lo normal.",
               "booking": "",
               "photo": {
                 "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Rione_I_Monti%2C_Roma%2C_Italy_-_panoramio_%2825%29.jpg/960px-Rione_I_Monti%2C_Roma%2C_Italy_-_panoramio_%2825%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -2112,13 +1407,18 @@
               "duration": 160,
               "walkToNext": null,
               "note": "2 h 40 de vuelo. Llega a Barajas T2 a las 21:05. Ojo: el vuelo a Guayaquil sale de T1 a la 01:40, hay que cambiar de terminal.",
-              "booking": "UX1048 · localizador UX/7KK56V",
+              "booking": "UX1048 · billete en «Billetes»",
               "photo": {
                 "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Rome_Fiumicino_Leonardo_da_Vinci_International_Airport%2C_Aeroporto_internazionale_di_Roma-Fiumicino_%22Leonardo_da_Vinci%22.jpg/960px-Rome_Fiumicino_Leonardo_da_Vinci_International_Airport%2C_Aeroporto_internazionale_di_Roma-Fiumicino_%22Leonardo_da_Vinci%22.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
                 "page": "https://commons.wikimedia.org/wiki/File:Rome_Fiumicino_Leonardo_da_Vinci_International_Airport,_Aeroporto_internazionale_di_Roma-Fiumicino_%22Leonardo_da_Vinci%22.jpg",
                 "credit": "Apaleutos25 · CC BY-SA 4.0"
               },
-              "advanceTicket": true
+              "advanceTicket": true,
+              "documents": [
+                "air-europa-alejandra",
+                "air-europa-daniela",
+                "air-europa-anthony"
+              ]
             }
           ]
         },
@@ -2184,1127 +1484,17 @@
               "duration": 690,
               "walkToNext": null,
               "note": "11 h 30 de vuelo. Llega a Guayaquil el mismo 12 de octubre a las 06:10, hora local.",
-              "booking": "UX39 · localizador UX/7KK56V",
+              "booking": "UX39 · billete en «Billetes»",
               "photo": {
                 "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Aeropuertojosejoaquindeolmedo.jpg/960px-Aeropuertojosejoaquindeolmedo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
                 "page": "https://commons.wikimedia.org/wiki/File:Aeropuertojosejoaquindeolmedo.jpg",
                 "credit": "Alfredo Molina · CC BY-SA 3.0"
               },
-              "advanceTicket": true
-            }
-          ]
-        }
-      ],
-      "plans": [
-        {
-          "id": "florencia",
-          "name": "Roma + Florencia",
-          "tagline": "El día 2 se va a la Toscana",
-          "description": "Igual que la clásica, pero el viernes se cambia el centro histórico por una excursión de día completo a Florencia en alta velocidad. Se gana una ciudad y se pierden Navona y el Panteón. La Fontana di Trevi se pasa al sábado, a la vuelta del Vaticano.",
-          "days": [
-            {
-              "day": 9,
-              "date": "2026-10-09",
-              "label": "Florencia",
-              "variantNote": "El centro histórico de Roma se cae de la ruta, salvo la Fontana di Trevi, que pasa al sábado.",
-              "summary": "Excursión de día completo a Florencia en alta velocidad. Salen de Termini al amanecer y están de vuelta en casa sobre las 21:00. Duomo, Uffizi, Ponte Vecchio y la vista desde el Piazzale Michelangelo.",
-              "stops": [
-                {
-                  "id": "rom-fi-s1",
-                  "time": "06:20",
-                  "endTime": "06:50",
-                  "name": "Termini · andén del Frecciarossa",
-                  "type": "transport",
-                  "coords": [
-                    41.900979,
-                    12.501454
-                  ],
-                  "price": 0,
-                  "duration": 30,
-                  "walkToNext": 12,
-                  "note": "Andén a 12 min a pie desde el Airbnb. Billete en el móvil, no hace falta validar. Desayuno en la estación o en el tren.",
-                  "booking": "Comprar en trenitalia.com o italotreno.it con 2-3 meses de antelación: 29-39 € por persona. A última hora sube a 90 €.",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Piazzadeicinquecento.jpg/960px-Piazzadeicinquecento.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Piazzadeicinquecento.jpg",
-                    "credit": "Markos90 · CC BY-SA 3.0"
-                  },
-                  "advanceTicket": true,
-                  "ticketUrl": "https://www.trenitalia.com/es.html"
-                },
-                {
-                  "id": "rom-fi-s2",
-                  "time": "06:50",
-                  "endTime": "08:25",
-                  "name": "Frecciarossa Roma → Firenze S.M.N.",
-                  "type": "transport",
-                  "coords": [
-                    43.776432,
-                    11.248201
-                  ],
-                  "price": 35,
-                  "duration": 95,
-                  "walkToNext": 10,
-                  "note": "1 h 35 min a 300 km/h. Firenze Santa Maria Novella deja en el centro: el Duomo está a 10 min andando.",
-                  "booking": "Frecciarossa 9509 o similar · trenitalia.com",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/%E3%83%95%E3%83%AC%E3%83%83%E3%83%81%E3%83%A3%E3%83%AD%E3%83%83%E3%82%B5_%2836309438424%29.jpg/960px-%E3%83%95%E3%83%AC%E3%83%83%E3%83%81%E3%83%A3%E3%83%AD%E3%83%83%E3%82%B5_%2836309438424%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:%E3%83%95%E3%83%AC%E3%83%83%E3%83%81%E3%83%A3%E3%83%AD%E3%83%83%E3%82%B5_(36309438424).jpg",
-                    "credit": "nimame · CC BY 2.0"
-                  },
-                  "advanceTicket": true,
-                  "ticketUrl": "https://www.trenitalia.com/es.html"
-                },
-                {
-                  "id": "rom-fi-s3",
-                  "time": "08:35",
-                  "endTime": "10:30",
-                  "name": "Duomo, Campanile y Battistero",
-                  "type": "sight",
-                  "coords": [
-                    43.773254,
-                    11.256777
-                  ],
-                  "price": 30,
-                  "duration": 115,
-                  "walkToNext": 8,
-                  "note": "Entrar a la catedral es gratis pero la cola es larga; el pase Brunelleschi (30 €) cubre cúpula, campanile, baptisterio y museo. La cúpula exige reserva de hora exacta y son 463 escalones sin ascensor.",
-                  "booking": "Pase Brunelleschi con franja para la cúpula · duomo.firenze.it",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/View_of_Santa_Maria_del_Fiore_in_Florence.jpg/960px-View_of_Santa_Maria_del_Fiore_in_Florence.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:View_of_Santa_Maria_del_Fiore_in_Florence.jpg",
-                    "credit": "Bruce Stokes on Flickr · CC BY-SA 2.0"
-                  },
-                  "advanceTicket": true,
-                  "ticketUrl": "https://duomo.firenze.it/es/"
-                },
-                {
-                  "id": "rom-fi-s4",
-                  "time": "10:40",
-                  "endTime": "13:00",
-                  "name": "Galería Uffizi",
-                  "type": "museum",
-                  "coords": [
-                    43.76846,
-                    11.255415
-                  ],
-                  "price": 25,
-                  "duration": 140,
-                  "walkToNext": 5,
-                  "note": "Botticelli, Leonardo, Caravaggio. Con reserva se entra por la puerta 3 sin cola. Dos horas largas es el mínimo honesto.",
-                  "booking": "Franja 10:45 · uffizi.it · reserva obligatoria en temporada",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Florence%2C_Italy_Uffizi_Museum_-_panoramio_%285%29.jpg/960px-Florence%2C_Italy_Uffizi_Museum_-_panoramio_%285%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Florence,_Italy_Uffizi_Museum_-_panoramio_(5).jpg",
-                    "credit": "Michelle Maria · CC BY 3.0"
-                  },
-                  "advanceTicket": true,
-                  "ticketUrl": "https://www.uffizi.it/biglietti"
-                },
-                {
-                  "id": "rom-fi-s5",
-                  "time": "13:10",
-                  "endTime": "14:30",
-                  "name": "Comida junto al Ponte Vecchio",
-                  "type": "food",
-                  "coords": [
-                    43.768013,
-                    11.253156
-                  ],
-                  "price": 28,
-                  "duration": 80,
-                  "walkToNext": 4,
-                  "note": "Trattoria en Oltrarno, cruzando el puente: mismo plato, la mitad de precio que en la orilla de los Uffizi. Bistecca alla fiorentina si el hambre acompaña.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Ponte_Vecchio_%28Florencia%29.jpg/960px-Ponte_Vecchio_%28Florencia%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Ponte_Vecchio_(Florencia).jpg",
-                    "credit": "Canaan · CC BY-SA 4.0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-fi-s6",
-                  "time": "14:35",
-                  "endTime": "15:05",
-                  "name": "Ponte Vecchio y Oltrarno",
-                  "type": "walk",
-                  "coords": [
-                    43.767961,
-                    11.253216
-                  ],
-                  "price": 0,
-                  "duration": 30,
-                  "walkToNext": 25,
-                  "note": "El puente con las joyerías y el corredor vasariano encima. Se sale ya por el lado de Oltrarno, que es desde donde se sube al Piazzale.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Ponte_Vecchio_%28Florencia%29.jpg/960px-Ponte_Vecchio_%28Florencia%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Ponte_Vecchio_(Florencia).jpg",
-                    "credit": "Canaan · CC BY-SA 4.0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-fi-s9",
-                  "time": "15:30",
-                  "endTime": "16:15",
-                  "name": "Piazzale Michelangelo",
-                  "type": "sight",
-                  "coords": [
-                    43.762932,
-                    11.265059
-                  ],
-                  "price": 0,
-                  "duration": 45,
-                  "walkToNext": 25,
-                  "note": "La postal de Florencia, con luz de tarde en vez de atardecer: así se puede coger un tren temprano. 25 min de subida por las escaleras de San Niccolò; si pesan las piernas, bus 12 o 13. La bajada al centro cruza el Ponte alle Grazie.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/David_piazzale_michelangelo.jpg/960px-David_piazzale_michelangelo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:David_piazzale_michelangelo.jpg",
-                    "credit": "CC BY-SA 3.0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-fi-s7",
-                  "time": "16:40",
-                  "endTime": "17:40",
-                  "name": "Piazza della Signoria y Palazzo Vecchio",
-                  "type": "sight",
-                  "coords": [
-                    43.76956,
-                    11.255814
-                  ],
-                  "price": 12,
-                  "duration": 60,
-                  "walkToNext": 13,
-                  "note": "La Loggia dei Lanzi es un museo de escultura al aire libre y gratis. El David de la plaza es copia; el original está en la Accademia, que hoy no da tiempo. Entrar al Palazzo Vecchio es opcional: con una hora da para el Salón de los Quinientos.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Piazza_della_signoria%2C_palazzo_vecchio%2C_veduta_01.jpg/960px-Piazza_della_signoria%2C_palazzo_vecchio%2C_veduta_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Piazza_della_signoria,_palazzo_vecchio,_veduta_01.jpg",
-                    "credit": "Francesco Bini · CC BY-SA 4.0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-fi-s10",
-                  "time": "17:55",
-                  "endTime": "18:50",
-                  "name": "Cena temprana junto a la estación",
-                  "type": "food",
-                  "coords": [
-                    43.774678,
-                    11.249126
-                  ],
-                  "price": 22,
-                  "duration": 55,
-                  "walkToNext": 5,
-                  "note": "Algo cerca de Santa Maria Novella para no jugársela con el tren. Un panino de lampredotto o pizza al taglio sirve; en Italia se cena tarde, así que a esta hora hay sitio.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Stazione_Santa_Maria_Novella_2.JPG/960px-Stazione_Santa_Maria_Novella_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Stazione_Santa_Maria_Novella_2.JPG",
-                    "credit": "Freepenguin · CC BY-SA 3.0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-fi-s11",
-                  "time": "19:10",
-                  "endTime": "20:45",
-                  "name": "Frecciarossa Firenze → Roma Termini",
-                  "type": "transport",
-                  "coords": [
-                    41.900979,
-                    12.501454
-                  ],
-                  "price": 35,
-                  "duration": 95,
-                  "walkToNext": 12,
-                  "note": "Hay trenes cada 20-30 min hasta pasadas las 21:00, así que si algo se alarga hay margen: cambiar el billete en la app antes de la salida. Estar en el andén 15 min antes.",
-                  "booking": "Frecciarossa de las 19:10 o similar · comprar la vuelta a la vez que la ida",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Stazione_Santa_Maria_Novella_2.JPG/960px-Stazione_Santa_Maria_Novella_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Stazione_Santa_Maria_Novella_2.JPG",
-                    "credit": "Freepenguin · CC BY-SA 3.0"
-                  },
-                  "advanceTicket": true,
-                  "ticketUrl": "https://www.trenitalia.com/es.html"
-                },
-                {
-                  "id": "rom-fi-s12",
-                  "time": "20:45",
-                  "endTime": "21:10",
-                  "name": "Vuelta al Airbnb en Monti",
-                  "type": "stay",
-                  "coords": [
-                    41.892499,
-                    12.505376
-                  ],
-                  "price": 0,
-                  "duration": 25,
-                  "walkToNext": null,
-                  "note": "Andando por Via Cavour, con la zona todavía animada. Si el cuerpo no da, taxi desde la parada oficial de Termini (recargo ZTL).",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Rione_I_Monti%2C_Roma%2C_Italy_-_panoramio_%2825%29.jpg/960px-Rione_I_Monti%2C_Roma%2C_Italy_-_panoramio_%2825%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Rione_I_Monti,_Roma,_Italy_-_panoramio_(25).jpg",
-                    "credit": "Vadim Zhivotovsky · CC BY 3.0"
-                  },
-                  "advanceTicket": false
-                }
-              ]
-            },
-            {
-              "day": 10,
-              "date": "2026-10-10",
-              "label": "Vaticano",
-              "summary": "Madrugón: museos a las 8, Capilla Sixtina, San Pedro y la cúpula. Por la tarde se cruza el Tíber por el puente Umberto I, Via del Corso y la Fontana di Trevi iluminada antes de cenar.",
-              "variantNote": "Con Florencia el viernes, la Fontana di Trevi se pasa aquí: queda a 5 min de la Via del Corso.",
-              "stops": [
-                {
-                  "id": "rom-fi10-s0",
-                  "time": "07:15",
-                  "endTime": "07:40",
-                  "name": "Taxi al Vaticano",
-                  "type": "transport",
-                  "coords": [
-                    41.9066,
-                    12.4545
-                  ],
-                  "price": 20,
-                  "duration": 25,
-                  "walkToNext": 0,
-                  "note": "Unos 20 min un sábado temprano, sin tráfico: 18-22 € para los tres. Pedirlo desde casa por la app FreeNow o itTaxi, o al Radiotaxi 06 3570. Que deje en Viale Vaticano, en la entrada de los museos: hay que llegar con 20 min de margen para el control de seguridad antes de la franja de las 08:00. Alternativa barata: metro B en Cavour, cambio a la línea A en Termini hasta Ottaviano y 10 min andando; 1,50 € por persona y 35-40 min puerta a puerta.",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Saint_Peter%27s_Basilica_facade%2C_Rome%2C_Italy.jpg/960px-Saint_Peter%27s_Basilica_facade%2C_Rome%2C_Italy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Saint_Peter%27s_Basilica_facade,_Rome,_Italy.jpg",
-                    "credit": "Jebulon · CC0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-d3-s1",
-                  "time": "08:00",
-                  "endTime": "11:30",
-                  "name": "Museos Vaticanos",
-                  "type": "museum",
-                  "coords": [
-                    41.906487,
-                    12.453601
-                  ],
-                  "price": 25,
-                  "duration": 210,
-                  "walkToNext": 2,
-                  "note": "Tres horas y media y aun así hay que elegir. Lo imprescindible: la galería de los Mapas, las Estancias de Rafael, la escalera de Bramante, el museo Pío Clementino con sus doce salas de escultura griega y romana, y la Pinacoteca con Leonardo, Rafael y Caravaggio.",
-                  "booking": "Franja 08:00 · museivaticani.va · reserva obligatoria, se agota con meses",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Vatican_Museums_Spiral_Staircase_2012.jpg/960px-Vatican_Museums_Spiral_Staircase_2012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Vatican_Museums_Spiral_Staircase_2012.jpg",
-                    "credit": "Colin · CC BY-SA 3.0"
-                  },
-                  "advanceTicket": true,
-                  "ticketUrl": "https://tickets.museivaticani.va/home/"
-                },
-                {
-                  "id": "rom-d3-s2",
-                  "time": "11:30",
-                  "endTime": "12:15",
-                  "name": "Capilla Sixtina",
-                  "type": "museum",
-                  "coords": [
-                    41.902946,
-                    12.454519
-                  ],
-                  "price": 0,
-                  "duration": 45,
-                  "walkToNext": 8,
-                  "note": "El final del recorrido de los museos, incluida en la entrada. Prohibido hablar y hacer fotos, y lo hacen cumplir. Desde la Sixtina hay un paso directo a San Pedro que ahorra media hora de cola, aunque no siempre lo dejan usar a los que van por libre.",
-                  "booking": "Incluida en los Museos Vaticanos",
-                  "photo": {
-                    "src": "https://upload.wikimedia.org/wikipedia/commons/8/82/Sistina-interno.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-                    "page": "https://commons.wikimedia.org/wiki/File:Sistina-interno.jpg",
-                    "credit": "The original uploader was Snowdog at Italian Wikipedia. · CC BY-SA 3.0"
-                  },
-                  "advanceTicket": true,
-                  "ticketUrl": "https://tickets.museivaticani.va/home/"
-                },
-                {
-                  "id": "rom-d3-s3",
-                  "time": "12:25",
-                  "endTime": "14:00",
-                  "name": "Basílica de San Pedro",
-                  "type": "sight",
-                  "coords": [
-                    41.902168,
-                    12.453937
-                  ],
-                  "price": 0,
-                  "duration": 95,
-                  "walkToNext": 2,
-                  "note": "El templo más grande de la cristiandad y la entrada es gratis; lo que cuesta es el control de seguridad. Dentro, el baldaquino de Bernini sobre la tumba de San Pedro y la Piedad de Miguel Ángel, a la derecha nada más entrar, tras un cristal. Hombros y rodillas cubiertos o no se pasa.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Saint_Peter%27s_Basilica_facade%2C_Rome%2C_Italy.jpg/960px-Saint_Peter%27s_Basilica_facade%2C_Rome%2C_Italy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Saint_Peter%27s_Basilica_facade,_Rome,_Italy.jpg",
-                    "credit": "Jebulon · CC0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-d3-s4",
-                  "time": "14:05",
-                  "endTime": "15:15",
-                  "name": "Cúpula de San Pedro",
-                  "type": "sight",
-                  "coords": [
-                    41.9024,
-                    12.4536
-                  ],
-                  "price": 10,
-                  "duration": 70,
-                  "walkToNext": 5,
-                  "note": "551 escalones, u 8 € y 320 escalones si se coge el ascensor hasta la terraza. El tramo final va entre las dos capas de la cúpula y la pared se inclina: estrecho y no apto para claustrofobia. Arriba, toda Roma y la plaza de Bernini desde el eje.",
-                  "booking": "Se compra allí mismo, a la derecha del atrio",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/St_Peter%27s_Square%2C_Vatican_City_-_April_2007.jpg/960px-St_Peter%27s_Square%2C_Vatican_City_-_April_2007.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:St_Peter%27s_Square,_Vatican_City_-_April_2007.jpg",
-                    "credit": "Diliff · CC BY-SA 3.0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-d3-s5",
-                  "time": "15:25",
-                  "endTime": "16:40",
-                  "name": "Comida en Prati",
-                  "type": "food",
-                  "coords": [
-                    41.907243,
-                    12.463832
-                  ],
-                  "price": 26,
-                  "duration": 75,
-                  "walkToNext": 12,
-                  "note": "Barrio residencial a dos calles del Vaticano: precios normales y clientela local. Huir de las terrazas de Via della Conciliazione.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Roma_2011_08_07_Lungotevere_Prati_e_ponte_Cavour.jpg/960px-Roma_2011_08_07_Lungotevere_Prati_e_ponte_Cavour.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Roma_2011_08_07_Lungotevere_Prati_e_ponte_Cavour.jpg",
-                    "credit": "Blackcat · CC BY-SA 3.0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-d3-s6",
-                  "time": "16:55",
-                  "endTime": "17:25",
-                  "name": "Puente Umberto I",
-                  "type": "walk",
-                  "coords": [
-                    41.9014,
-                    12.4692
-                  ],
-                  "price": 0,
-                  "duration": 30,
-                  "walkToNext": 10,
-                  "note": "Se vuelve al centro cruzando el Tíber. Desde el puente, la vista del Castel Sant'Angelo río arriba y la cúpula de San Pedro al fondo: es la postal clásica de Roma con el río.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Bridge_Umberto_I_in_Rome.jpg/960px-Bridge_Umberto_I_in_Rome.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Bridge_Umberto_I_in_Rome.jpg",
-                    "credit": "Livioandronico2013 · CC BY-SA 4.0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-fi10-s7",
-                  "time": "17:35",
-                  "endTime": "18:30",
-                  "name": "Via del Corso",
-                  "type": "walk",
-                  "coords": [
-                    41.9017,
-                    12.4796
-                  ],
-                  "price": 0,
-                  "duration": 55,
-                  "walkToNext": 5,
-                  "note": "La calle comercial que atraviesa el centro en línea recta. Tiendas y palacios para bajar la comida; a la altura de Piazza Colonna se tuerce a la derecha hacia Trevi.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Via_del_Corso_%28cropped%29.jpg/960px-Via_del_Corso_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Via_del_Corso_(cropped).jpg",
-                    "credit": "Gil · CC BY 2.0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-fi10-s8",
-                  "time": "18:35",
-                  "endTime": "19:10",
-                  "name": "Fontana di Trevi",
-                  "type": "sight",
-                  "coords": [
-                    41.900932,
-                    12.483313
-                  ],
-                  "price": 0,
-                  "duration": 35,
-                  "walkToNext": 14,
-                  "note": "A esta hora se hace de noche y la encienden: la mejor luz para verla. Está siempre llena, la foto sin gente no existe. La moneda se tira de espaldas con la mano derecha por encima del hombro izquierdo.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Trevi_Fountain_-_Roma.jpg/960px-Trevi_Fountain_-_Roma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Trevi_Fountain_-_Roma.jpg",
-                    "credit": "NikonZ7II · CC BY-SA 4.0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-fi10-s9",
-                  "time": "19:25",
-                  "endTime": "21:45",
-                  "name": "Cena de despedida en Monti",
-                  "type": "food",
-                  "coords": [
-                    41.894536,
-                    12.491276
-                  ],
-                  "price": 35,
-                  "duration": 150,
-                  "walkToNext": null,
-                  "note": "Última noche entera en Roma. Reservar: en Monti las trattorias buenas se llenan los sábados.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Rione_I_Monti%2C_Roma%2C_Italy_-_panoramio_%2825%29.jpg/960px-Rione_I_Monti%2C_Roma%2C_Italy_-_panoramio_%2825%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Rione_I_Monti,_Roma,_Italy_-_panoramio_(25).jpg",
-                    "credit": "Vadim Zhivotovsky · CC BY 3.0"
-                  },
-                  "advanceTicket": false
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "clasica",
-          "name": "Roma clásica",
-          "tagline": "Los 3 días completos en la ciudad",
-          "description": "La ruta de referencia, sin salir de Roma: Roma antigua el primer día, el centro histórico el segundo y el Vaticano con la cúpula el tercero. Es la que más cosas mete y la que más camina.",
-          "days": []
-        },
-        {
-          "id": "suave",
-          "name": "Roma sin prisa",
-          "tagline": "Menos paradas, más tiempo en cada una",
-          "description": "Para llegar vivos al final. El día de la llegada no se fuerza, la Roma antigua se reparte con calma y suma los Museos Capitolinos, y el Vaticano se hace sin subir la cúpula para dejar la tarde libre.",
-          "days": [
-            {
-              "day": 8,
-              "date": "2026-10-08",
-              "label": "Llegada y nada más",
-              "variantNote": "Tras la noche en avión y la escala en Madrid, el primer día no pelea: Coliseo por fuera y a dormir.",
-              "summary": "Llegan rotos de un vuelo de once horas más la escala. Maletas, comida, una vuelta corta por el barrio con el Coliseo de fondo y dormir pronto.",
-              "stops": [
-                {
-                  "id": "rom-s8-s1",
-                  "time": "09:30",
-                  "endTime": "10:15",
-                  "name": "Llegada UX1043 · Fiumicino T1",
-                  "type": "transport",
-                  "coords": [
-                    41.800277,
-                    12.246667
-                  ],
-                  "price": 0,
-                  "duration": 45,
-                  "walkToNext": 12,
-                  "note": "Vuelo interior Schengen desde Madrid: sólo queda recoger la maleta facturada.",
-                  "booking": "UX1043 · localizador UX/7KK56V",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Rome_Fiumicino_Leonardo_da_Vinci_International_Airport%2C_Aeroporto_internazionale_di_Roma-Fiumicino_%22Leonardo_da_Vinci%22.jpg/960px-Rome_Fiumicino_Leonardo_da_Vinci_International_Airport%2C_Aeroporto_internazionale_di_Roma-Fiumicino_%22Leonardo_da_Vinci%22.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Rome_Fiumicino_Leonardo_da_Vinci_International_Airport,_Aeroporto_internazionale_di_Roma-Fiumicino_%22Leonardo_da_Vinci%22.jpg",
-                    "credit": "Apaleutos25 · CC BY-SA 4.0"
-                  },
-                  "advanceTicket": true
-                },
-                {
-                  "id": "rom-s8-s2",
-                  "time": "10:30",
-                  "endTime": "11:10",
-                  "name": "Leonardo Express a Termini",
-                  "type": "transport",
-                  "coords": [
-                    41.900979,
-                    12.501454
-                  ],
-                  "price": 14,
-                  "duration": 40,
-                  "walkToNext": 12,
-                  "note": "Cada 15 min desde la terminal, directo a Termini. Validar el billete antes de subir.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Piazzadeicinquecento.jpg/960px-Piazzadeicinquecento.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Piazzadeicinquecento.jpg",
-                    "credit": "Markos90 · CC BY-SA 3.0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-s8-s3",
-                  "time": "11:30",
-                  "endTime": "13:00",
-                  "name": "Airbnb: maletas y descanso",
-                  "type": "stay",
-                  "coords": [
-                    41.892499,
-                    12.505376
-                  ],
-                  "price": 0,
-                  "duration": 90,
-                  "walkToNext": 10,
-                  "note": "Dejar el equipaje y parar de verdad un rato. El check-in formal es a las 15:00, pero el anfitrión suele dejar entrar antes si está libre.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/San_Pietro_in_Vincoli_-_esterno.jpg/960px-San_Pietro_in_Vincoli_-_esterno.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:San_Pietro_in_Vincoli_-_esterno.jpg",
-                    "credit": "Rione I Monti · CC BY 4.0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-s8-s4",
-                  "time": "13:15",
-                  "endTime": "14:45",
-                  "name": "Comida larga en Monti",
-                  "type": "food",
-                  "coords": [
-                    41.894536,
-                    12.491276
-                  ],
-                  "price": 25,
-                  "duration": 90,
-                  "walkToNext": 10,
-                  "note": "Sin prisa. Monti es el barrio de casa: trattorias de siempre a dos calles del Coliseo.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Rione_I_Monti%2C_Roma%2C_Italy_-_panoramio_%2825%29.jpg/960px-Rione_I_Monti%2C_Roma%2C_Italy_-_panoramio_%2825%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Rione_I_Monti,_Roma,_Italy_-_panoramio_(25).jpg",
-                    "credit": "Vadim Zhivotovsky · CC BY 3.0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-s8-s5",
-                  "time": "15:00",
-                  "endTime": "16:30",
-                  "name": "Siesta",
-                  "type": "stay",
-                  "coords": [
-                    41.892499,
-                    12.505376
-                  ],
-                  "price": 0,
-                  "duration": 90,
-                  "walkToNext": 10,
-                  "note": "Hora y media de cama. Suena a tiempo perdido, pero es lo que salva los dos días siguientes.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/San_Pietro_in_Vincoli_-_esterno.jpg/960px-San_Pietro_in_Vincoli_-_esterno.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:San_Pietro_in_Vincoli_-_esterno.jpg",
-                    "credit": "Rione I Monti · CC BY 4.0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-s8-s6",
-                  "time": "16:45",
-                  "endTime": "18:15",
-                  "name": "Coliseo y Arco de Constantino por fuera",
-                  "type": "walk",
-                  "coords": [
-                    41.89021,
-                    12.492231
-                  ],
-                  "price": 0,
-                  "duration": 90,
-                  "walkToNext": 12,
-                  "note": "Sin entrar: dar la vuelta completa al anfiteatro, el Arco de Constantino al lado y la vista desde Via Nicola Salvi. La visita de dentro es mañana, con el cuerpo entero.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Arch_of_Constantine_at_Night_%28Rome%29.jpg/960px-Arch_of_Constantine_at_Night_%28Rome%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Arch_of_Constantine_at_Night_(Rome).jpg",
-                    "credit": "Livioandronico2013 · CC BY-SA 4.0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-s8-s7",
-                  "time": "18:30",
-                  "endTime": "19:30",
-                  "name": "Paseo por Monti",
-                  "type": "walk",
-                  "coords": [
-                    41.8949,
-                    12.49
-                  ],
-                  "price": 0,
-                  "duration": 60,
-                  "walkToNext": 5,
-                  "note": "Via del Boschetto, Piazza della Madonna dei Monti y sus escalones, que a esta hora son el salón del barrio.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Rione_I_Monti%2C_Roma%2C_Italy_-_panoramio_%2825%29.jpg/960px-Rione_I_Monti%2C_Roma%2C_Italy_-_panoramio_%2825%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Rione_I_Monti,_Roma,_Italy_-_panoramio_(25).jpg",
-                    "credit": "Vadim Zhivotovsky · CC BY 3.0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-s8-s8",
-                  "time": "19:45",
-                  "endTime": "21:15",
-                  "name": "Cena temprana y a dormir",
-                  "type": "food",
-                  "coords": [
-                    41.894536,
-                    12.491276
-                  ],
-                  "price": 28,
-                  "duration": 90,
-                  "walkToNext": null,
-                  "note": "Cenar pronto y acostarse pronto: mañana hay Coliseo a primera hora.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Rione_I_Monti%2C_Roma%2C_Italy_-_panoramio_%2825%29.jpg/960px-Rione_I_Monti%2C_Roma%2C_Italy_-_panoramio_%2825%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Rione_I_Monti,_Roma,_Italy_-_panoramio_(25).jpg",
-                    "credit": "Vadim Zhivotovsky · CC BY 3.0"
-                  },
-                  "advanceTicket": false
-                }
-              ]
-            },
-            {
-              "day": 9,
-              "date": "2026-10-09",
-              "label": "Roma antigua sin prisa",
-              "variantNote": "El día 1 de la ruta clásica, repartido con calma y sin cruzar a Trastevere de noche.",
-              "summary": "Coliseo por la mañana con arena y subterráneos, Foro y Palatino con tiempo, y la tarde en el Campidoglio y el Circo Máximo sin correr.",
-              "stops": [
-                {
-                  "id": "rom-s9-s1",
-                  "time": "09:00",
-                  "endTime": "11:30",
-                  "name": "Coliseo · arena y subterráneos",
-                  "type": "sight",
-                  "coords": [
-                    41.89021,
-                    12.492231
-                  ],
-                  "price": 24,
-                  "duration": 150,
-                  "walkToNext": 4,
-                  "note": "A primera hora, con el cuerpo descansado y menos gente que por la tarde. Gradas 1 y 2, el suelo de la arena y los subterráneos. Hay que estar en la entrada 30 min antes de la franja: es obligatorio para los subterráneos y si se llega tarde no dejan pasar.",
-                  "booking": "Franja 09:00 · 'Full Experience – Underground Levels and Arena' en ticketing.colosseo.it · 3 entradas nominativas",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Europe_Day_2024_-_53718129954.jpg/960px-Europe_Day_2024_-_53718129954.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Europe_Day_2024_-_53718129954.jpg",
-                    "credit": "European Parliament · CC BY 2.0"
-                  },
-                  "advanceTicket": true,
-                  "ticketUrl": "https://ticketing.colosseo.it/"
-                },
-                {
-                  "id": "rom-s9-s2",
-                  "time": "11:35",
-                  "endTime": "12:00",
-                  "name": "Arco de Constantino",
-                  "type": "sight",
-                  "coords": [
-                    41.889765,
-                    12.490524
-                  ],
-                  "price": 0,
-                  "duration": 25,
-                  "walkToNext": 5,
-                  "note": "Al salir del Coliseo, a pie de calle y gratis.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Arch_of_Constantine_at_Night_%28Rome%29.jpg/960px-Arch_of_Constantine_at_Night_%28Rome%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Arch_of_Constantine_at_Night_(Rome).jpg",
-                    "credit": "Livioandronico2013 · CC BY-SA 4.0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-s9-s3",
-                  "time": "12:05",
-                  "endTime": "14:15",
-                  "name": "Foro Romano y Palatino",
-                  "type": "sight",
-                  "coords": [
-                    41.892426,
-                    12.485325
-                  ],
-                  "price": 0,
-                  "duration": 130,
-                  "walkToNext": 12,
-                  "note": "Con el mismo billete del Coliseo y más de dos horas por delante: templo de Saturno, basílica Emilia, arco de Tito, Santa Maria Antiqua, y arriba los Dominios Flavios, la casa de Augusto y la de Livia. Sombra escasa: gorra y agua.",
-                  "booking": "Incluido en el billete del Coliseo",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Foro_Romano_Musei_Capitolini_Roma.jpg/960px-Foro_Romano_Musei_Capitolini_Roma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Foro_Romano_Musei_Capitolini_Roma.jpg",
-                    "credit": "This Photo was taken by Wolfgang Moroder."
-                  },
-                  "advanceTicket": true,
-                  "ticketUrl": "https://ticketing.colosseo.it/"
-                },
-                {
-                  "id": "rom-s9-s4",
-                  "time": "14:30",
-                  "endTime": "16:00",
-                  "name": "Comida larga cerca del Campidoglio",
-                  "type": "food",
-                  "coords": [
-                    41.894,
-                    12.482
-                  ],
-                  "price": 28,
-                  "duration": 90,
-                  "walkToNext": 6,
-                  "note": "Hora y media sentados después de una mañana entera de pie.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/0_Cordonata_-_Dioscuri_-_Palazzo_Senatorio_%282%29.JPG/960px-0_Cordonata_-_Dioscuri_-_Palazzo_Senatorio_%282%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:0_Cordonata_-_Dioscuri_-_Palazzo_Senatorio_(2).JPG",
-                    "credit": "Jean-Pol GRANDMONT · CC BY-SA 3.0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-s9-s5",
-                  "time": "16:10",
-                  "endTime": "18:30",
-                  "name": "Piazza del Campidoglio y Museos Capitolinos",
-                  "type": "museum",
-                  "coords": [
-                    41.893333,
-                    12.482778
-                  ],
-                  "price": 16,
-                  "duration": 140,
-                  "walkToNext": 6,
-                  "note": "La plaza de Miguel Ángel y, dentro, el museo público más antiguo del mundo: la loba capitolina, el Marco Aurelio original y la galería subterránea que cruza al Tabularium, con la mejor vista del Foro que existe. En la ruta clásica esto se cae por falta de horas.",
-                  "booking": "museicapitolini.org",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Palazzo_dei_Conservatori_Capitol_Roma_BW_1.JPG/960px-Palazzo_dei_Conservatori_Capitol_Roma_BW_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Palazzo_dei_Conservatori_Capitol_Roma_BW_1.JPG",
-                    "credit": "Berthold Werner · Public domain"
-                  },
-                  "advanceTicket": true,
-                  "ticketUrl": "https://www.museicapitolini.org/es/informazioni_pratiche/biglietti_e_videoguide"
-                },
-                {
-                  "id": "rom-s9-s6",
-                  "time": "18:40",
-                  "endTime": "19:05",
-                  "name": "Teatro de Marcelo",
-                  "type": "sight",
-                  "coords": [
-                    41.892072,
-                    12.479881
-                  ],
-                  "price": 0,
-                  "duration": 25,
-                  "walkToNext": 14,
-                  "note": "Un teatro romano del siglo I con pisos renacentistas encima y vecinos dentro. Desde la calle.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Teatro_de_Marcelo%2C_Roma%2C_Italia%2C_2022-09-16%2C_DD_34.jpg/960px-Teatro_de_Marcelo%2C_Roma%2C_Italia%2C_2022-09-16%2C_DD_34.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Teatro_de_Marcelo,_Roma,_Italia,_2022-09-16,_DD_34.jpg",
-                    "credit": "Diego Delso · CC BY-SA 4.0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-s9-s7",
-                  "time": "19:20",
-                  "endTime": "20:00",
-                  "name": "Circo Máximo al atardecer",
-                  "type": "walk",
-                  "coords": [
-                    41.886111,
-                    12.485278
-                  ],
-                  "price": 0,
-                  "duration": 40,
-                  "walkToNext": 18,
-                  "note": "No queda casi nada en pie, pero el hueco del estadio con el Palatino encima a contraluz vale la parada.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/CircusMaximusSO.jpg/960px-CircusMaximusSO.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:CircusMaximusSO.jpg",
-                    "credit": "Rabax63 · CC BY-SA 4.0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-s9-s8",
-                  "time": "20:20",
-                  "endTime": "22:20",
-                  "name": "Cena en Monti",
-                  "type": "food",
-                  "coords": [
-                    41.894536,
-                    12.491276
-                  ],
-                  "price": 30,
-                  "duration": 120,
-                  "walkToNext": null,
-                  "note": "Vuelta al barrio en vez de cruzar a Trastevere: 20 min menos de caminata y la cama al lado.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Rione_I_Monti%2C_Roma%2C_Italy_-_panoramio_%2825%29.jpg/960px-Rione_I_Monti%2C_Roma%2C_Italy_-_panoramio_%2825%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Rione_I_Monti,_Roma,_Italy_-_panoramio_(25).jpg",
-                    "credit": "Vadim Zhivotovsky · CC BY 3.0"
-                  },
-                  "advanceTicket": false
-                }
-              ]
-            },
-            {
-              "day": 10,
-              "date": "2026-10-10",
-              "label": "Vaticano y centro",
-              "variantNote": "Sin los 551 escalones de la cúpula: el día cunde igual y las piernas terminan enteras.",
-              "summary": "Museos a las 9, Sixtina y San Pedro sin subir a la cúpula. La tarde queda libre para el Panteón, Navona y la Fontana di Trevi.",
-              "stops": [
-                {
-                  "id": "rom-s10-s0",
-                  "time": "08:15",
-                  "endTime": "08:40",
-                  "name": "Taxi al Vaticano",
-                  "type": "transport",
-                  "coords": [
-                    41.9066,
-                    12.4545
-                  ],
-                  "price": 20,
-                  "duration": 25,
-                  "walkToNext": 0,
-                  "note": "Unos 20 min un sábado temprano, sin tráfico: 18-22 € para los tres. Pedirlo desde casa por la app FreeNow o itTaxi, o al Radiotaxi 06 3570. Que deje en Viale Vaticano, en la entrada de los museos: hay que llegar con 20 min de margen para el control de seguridad antes de la franja de las 09:00. Alternativa barata: metro B en Cavour, cambio a la línea A en Termini hasta Ottaviano y 10 min andando; 1,50 € por persona y 35-40 min puerta a puerta.",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Saint_Peter%27s_Basilica_facade%2C_Rome%2C_Italy.jpg/960px-Saint_Peter%27s_Basilica_facade%2C_Rome%2C_Italy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Saint_Peter%27s_Basilica_facade,_Rome,_Italy.jpg",
-                    "credit": "Jebulon · CC0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-s10-s1",
-                  "time": "09:00",
-                  "endTime": "12:00",
-                  "name": "Museos Vaticanos",
-                  "type": "museum",
-                  "coords": [
-                    41.906487,
-                    12.453601
-                  ],
-                  "price": 25,
-                  "duration": 180,
-                  "walkToNext": 2,
-                  "note": "Una hora más tarde que en la ruta clásica, a cambio de algo más de cola. Lo imprescindible: galería de los Mapas, Estancias de Rafael, escalera de Bramante, Pío Clementino y Pinacoteca.",
-                  "booking": "Franja 09:00 · museivaticani.va · reserva obligatoria",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Vatican_Museums_Spiral_Staircase_2012.jpg/960px-Vatican_Museums_Spiral_Staircase_2012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Vatican_Museums_Spiral_Staircase_2012.jpg",
-                    "credit": "Colin · CC BY-SA 3.0"
-                  },
-                  "advanceTicket": true,
-                  "ticketUrl": "https://tickets.museivaticani.va/home/"
-                },
-                {
-                  "id": "rom-s10-s2",
-                  "time": "12:00",
-                  "endTime": "12:45",
-                  "name": "Capilla Sixtina",
-                  "type": "museum",
-                  "coords": [
-                    41.902946,
-                    12.454519
-                  ],
-                  "price": 0,
-                  "duration": 45,
-                  "walkToNext": 8,
-                  "note": "Final del recorrido, incluida en la entrada. Ni fotos ni conversación, y lo hacen cumplir.",
-                  "booking": "Incluida en los Museos Vaticanos",
-                  "photo": {
-                    "src": "https://upload.wikimedia.org/wikipedia/commons/8/82/Sistina-interno.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-                    "page": "https://commons.wikimedia.org/wiki/File:Sistina-interno.jpg",
-                    "credit": "The original uploader was Snowdog at Italian Wikipedia. · CC BY-SA 3.0"
-                  },
-                  "advanceTicket": true,
-                  "ticketUrl": "https://tickets.museivaticani.va/home/"
-                },
-                {
-                  "id": "rom-s10-s3",
-                  "time": "12:55",
-                  "endTime": "14:30",
-                  "name": "Basílica de San Pedro",
-                  "type": "sight",
-                  "coords": [
-                    41.902168,
-                    12.453937
-                  ],
-                  "price": 0,
-                  "duration": 95,
-                  "walkToNext": 12,
-                  "note": "Gratis; la cola es el control de seguridad. El baldaquino de Bernini y la Piedad de Miguel Ángel, a la derecha nada más entrar. Hombros y rodillas cubiertos.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Saint_Peter%27s_Basilica_facade%2C_Rome%2C_Italy.jpg/960px-Saint_Peter%27s_Basilica_facade%2C_Rome%2C_Italy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Saint_Peter%27s_Basilica_facade,_Rome,_Italy.jpg",
-                    "credit": "Jebulon · CC0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-s10-s4",
-                  "time": "14:45",
-                  "endTime": "16:00",
-                  "name": "Comida en Prati",
-                  "type": "food",
-                  "coords": [
-                    41.907243,
-                    12.463832
-                  ],
-                  "price": 26,
-                  "duration": 75,
-                  "walkToNext": 14,
-                  "note": "A dos calles del Vaticano y con precios de barrio.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Roma_2011_08_07_Lungotevere_Prati_e_ponte_Cavour.jpg/960px-Roma_2011_08_07_Lungotevere_Prati_e_ponte_Cavour.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Roma_2011_08_07_Lungotevere_Prati_e_ponte_Cavour.jpg",
-                    "credit": "Blackcat · CC BY-SA 3.0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-s10-s5",
-                  "time": "16:15",
-                  "endTime": "16:45",
-                  "name": "Puente Umberto I",
-                  "type": "walk",
-                  "coords": [
-                    41.9014,
-                    12.4692
-                  ],
-                  "price": 0,
-                  "duration": 30,
-                  "walkToNext": 9,
-                  "note": "De vuelta al centro cruzando el Tíber, con Castel Sant'Angelo río arriba.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Bridge_Umberto_I_in_Rome.jpg/960px-Bridge_Umberto_I_in_Rome.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Bridge_Umberto_I_in_Rome.jpg",
-                    "credit": "Livioandronico2013 · CC BY-SA 4.0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-s10-s6",
-                  "time": "16:55",
-                  "endTime": "18:05",
-                  "name": "Piazza Navona",
-                  "type": "sight",
-                  "coords": [
-                    41.89906,
-                    12.47308
-                  ],
-                  "price": 0,
-                  "duration": 70,
-                  "walkToNext": 7,
-                  "note": "La Fuente de los Cuatro Ríos de Bernini y las dos iglesias de la plaza, gratis las dos.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Piazza_Navona_%28Rome%29_at_night.jpg/960px-Piazza_Navona_%28Rome%29_at_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Piazza_Navona_(Rome)_at_night.jpg",
-                    "credit": "NikonZ7II · CC BY-SA 4.0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-s10-s7",
-                  "time": "18:15",
-                  "endTime": "19:20",
-                  "name": "Panteón de Agripa",
-                  "type": "sight",
-                  "coords": [
-                    41.89861,
-                    12.476873
-                  ],
-                  "price": 5,
-                  "duration": 65,
-                  "walkToNext": 8,
-                  "note": "Visita interior. Al caer la tarde la luz entra por el óculo en diagonal y es cuando mejor se ve la cúpula.",
-                  "booking": "Franja 18:15 · museiitaliani.it",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Pantheon_Rom_1_cropped.jpg/960px-Pantheon_Rom_1_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Pantheon_Rom_1_cropped.jpg",
-                    "credit": "Rabax63 · CC BY-SA 4.0"
-                  },
-                  "advanceTicket": true,
-                  "ticketUrl": "https://portale.museiitaliani.it/b2c/"
-                },
-                {
-                  "id": "rom-s10-s8",
-                  "time": "19:30",
-                  "endTime": "20:20",
-                  "name": "Fontana di Trevi de noche",
-                  "type": "sight",
-                  "coords": [
-                    41.900932,
-                    12.483313
-                  ],
-                  "price": 0,
-                  "duration": 50,
-                  "walkToNext": 14,
-                  "note": "Iluminada y a reventar, como siempre. La moneda, de espaldas y con la derecha por encima del hombro izquierdo.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Trevi_Fountain_-_Roma.jpg/960px-Trevi_Fountain_-_Roma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Trevi_Fountain_-_Roma.jpg",
-                    "credit": "NikonZ7II · CC BY-SA 4.0"
-                  },
-                  "advanceTicket": false
-                },
-                {
-                  "id": "rom-s10-s9",
-                  "time": "20:40",
-                  "endTime": "22:40",
-                  "name": "Cena de despedida en Monti",
-                  "type": "food",
-                  "coords": [
-                    41.894536,
-                    12.491276
-                  ],
-                  "price": 35,
-                  "duration": 120,
-                  "walkToNext": null,
-                  "note": "Última noche entera en Roma. Reservar: los sábados Monti se llena.",
-                  "booking": "",
-                  "photo": {
-                    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Rione_I_Monti%2C_Roma%2C_Italy_-_panoramio_%2825%29.jpg/960px-Rione_I_Monti%2C_Roma%2C_Italy_-_panoramio_%2825%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-                    "page": "https://commons.wikimedia.org/wiki/File:Rione_I_Monti,_Roma,_Italy_-_panoramio_(25).jpg",
-                    "credit": "Vadim Zhivotovsky · CC BY 3.0"
-                  },
-                  "advanceTicket": false
-                }
+              "advanceTicket": true,
+              "documents": [
+                "air-europa-alejandra",
+                "air-europa-daniela",
+                "air-europa-anthony"
               ]
             }
           ]

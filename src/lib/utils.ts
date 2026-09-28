@@ -1,7 +1,7 @@
 import { clsx, type ClassValue } from "clsx";
 import type { CSSProperties } from "react";
 import { twMerge } from "tailwind-merge";
-import type { City, Day, Plan, Stop, StopType } from "./types";
+import type { City, Currency, Day, Plan, Stay, Stop, StopType } from "./types";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -47,9 +47,58 @@ export function dollars(n: number) {
   return n === 0 ? "Gratis" : `$${usd(n)}`;
 }
 
+/** Pasa un importe a dólares, venga en la moneda que venga. */
+export function toUsd(amount: number, currency: Currency) {
+  return currency === "USD" ? amount : amount * EUR_TO_USD;
+}
+
+/** Pasa un importe a euros, venga en la moneda que venga. */
+export function toEur(amount: number, currency: Currency) {
+  return currency === "EUR" ? amount : amount / EUR_TO_USD;
+}
+
+/**
+ * Un importe con céntimos en su propia moneda, para lo que se paga y se
+ * reparte: "$194,55" o "15,90 €".
+ */
+export function money(amount: number, currency: Currency) {
+  // es-EC agrupa ya desde los miles (1.203,75); es-ES esperaría a 10.000.
+  const n = (Math.round(amount * 100) / 100).toLocaleString("es-EC", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+  return currency === "USD" ? `$${n}` : `${n} €`;
+}
+
+/**
+ * Lo que cuesta un alojamiento, en su moneda: el total, por noche, y la parte
+ * de los viajeros cuando se comparte con más gente.
+ */
+export function stayCost(stay: Stay, travelers: number) {
+  const guests = stay.guests ?? travelers;
+  const perPerson = stay.totalPrice / guests;
+  const share = perPerson * travelers;
+  return {
+    total: stay.totalPrice,
+    perNight: stay.totalPrice / stay.nights,
+    guests,
+    perPerson,
+    /** Lo que pagan los viajeros entre todos. */
+    share,
+    perPersonPerNight: perPerson / stay.nights,
+  };
+}
+
 /** Referencia en euros, para acompañar a la cifra en dólares. */
 export function euros(n: number) {
-  return n === 0 ? "Gratis" : `${n} €`;
+  if (n === 0) return "Gratis";
+  // Los billetes de tren traen céntimos (15,90 €); sumarlos arrastra decimales
+  // de coma flotante, así que se redondea al céntimo y se escribe en español.
+  const cents = Math.round(n * 100);
+  return `${(cents / 100).toLocaleString("es-ES", {
+    minimumFractionDigits: cents % 100 === 0 ? 0 : 2,
+    maximumFractionDigits: 2,
+  })} €`;
 }
 
 export function dayTotal(day: Day) {
@@ -118,6 +167,37 @@ export const stopMeta: Record<StopType, { label: string; icon: string }> = {
   walk: { label: "Paseo", icon: "ri-footprint-line" },
   transport: { label: "Traslado", icon: "ri-train-line" },
 };
+
+export interface TicketGroup {
+  stop: Stop;
+  /** Posición de la parada en el día, empezando en 0. */
+  index: number;
+  /** Paradas que entran con el mismo billete que `stop`. */
+  included: { stop: Stop; index: number }[];
+}
+
+/**
+ * Las paradas del día con ticket previo, una por entrada: las cubiertas por el
+ * billete de otra (el Foro con el del Coliseo) cuelgan de ella en vez de salir
+ * sueltas. Si la parada que las cubre no está en el día, salen solas.
+ */
+export function ticketGroups(stops: Stop[]): TicketGroup[] {
+  const groups: TicketGroup[] = [];
+  const byId = new Map<string, TicketGroup>();
+  stops.forEach((stop, index) => {
+    if (!stop.advanceTicket || stop.includedIn) return;
+    const group = { stop, index, included: [] };
+    groups.push(group);
+    byId.set(stop.id, group);
+  });
+  stops.forEach((stop, index) => {
+    if (!stop.advanceTicket || !stop.includedIn) return;
+    const parent = byId.get(stop.includedIn);
+    if (parent) parent.included.push({ stop, index });
+    else groups.push({ stop, index, included: [] });
+  });
+  return groups.sort((a, b) => a.index - b.index);
+}
 
 export function stopIndexLabel(stops: Stop[], id: string) {
   return stops.findIndex((s) => s.id === id) + 1;

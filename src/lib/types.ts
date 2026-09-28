@@ -1,3 +1,6 @@
+/** Los precios del itinerario van en euros; lo pagado desde Ecuador, en dólares. */
+export type Currency = "EUR" | "USD";
+
 export type StopType =
   | "stay"
   | "sight"
@@ -28,6 +31,12 @@ export interface Stop {
   photo?: Photo;
   /** Hay que comprar la entrada o el billete antes de llegar. */
   advanceTicket: boolean;
+  /** Id de la parada del mismo día cuya entrada o billete ya cubre esta. */
+  includedIn?: string;
+  /** Ids de `TripData.documents` que hay que llevar en esta parada. */
+  documents?: string[];
+  /** Plaza de cada viajero, por id de viajero ("coche 9 · asiento 30"). */
+  seats?: Record<string, string>;
   /** Web oficial donde se compra. Falta si ya está comprado (vuelos). */
   ticketUrl?: string;
 }
@@ -41,13 +50,22 @@ export interface Day {
 }
 
 export interface Stay {
+  /** Airbnb reservado o casa de familia, que no se paga. Por defecto, airbnb. */
+  kind?: "airbnb" | "home";
   name: string;
   address: string;
   coords: [number, number];
   checkIn: string;
   checkOut: string;
-  pricePerNight: number;
+  /** Lo que costó el alojamiento entero, en `currency`, tal como se pagó. */
+  totalPrice: number;
+  currency: Currency;
   nights: number;
+  /**
+   * Personas que se reparten el precio, contando a los viajeros. Falta cuando
+   * sólo lo pagan ellos (Barcelona se comparte con la familia de Alejandra).
+   */
+  guests?: number;
   notes: string;
   host: string;
   /** Enlace a la reserva. Solo en los alojamientos ya reservados. */
@@ -100,7 +118,59 @@ export interface Trip {
   currency: string;
 }
 
+export interface Traveler {
+  id: string;
+  name: string;
+}
+
+/**
+ * Un billete o reserva, en PDF o captura. Llegan del backend (`/api/private/`)
+ * y no del JSON: el repositorio del frontend es público.
+ */
+export interface TripDocument {
+  id: string;
+  title: string;
+  kind: "flight" | "train";
+  /** URL completa para abrirlo, con la clave del viaje ya puesta. */
+  file: string;
+  format: "pdf" | "image";
+  /** Una línea con lo que cubre, para reconocerlo sin abrirlo. */
+  detail: string;
+  /** De quién es. Sin viajero, es un documento conjunto de los tres. */
+  travelerId?: string;
+}
+
+/** Un gasto del viaje que se reparte a partes iguales entre algunos viajeros. */
+export interface Expense {
+  id: string;
+  concept: string;
+  amount: number;
+  currency: Currency;
+  /** Id del viajero que lo pagó. `null` mientras no se sepa: no cuenta en el saldo. */
+  paidBy: string | null;
+  /** Ids de los viajeros que se lo reparten. */
+  splitAmong: string[];
+  /** Día del gasto, `YYYY-MM-DD`. */
+  date: string;
+  note?: string;
+}
+
+/** Una transferencia entre viajeros para saldar lo que uno le debe al otro. */
+export interface Payment {
+  id: string;
+  from: string;
+  to: string;
+  /** En dólares, como las cuentas. */
+  amount: number;
+  /** `YYYY-MM-DD`. */
+  date: string;
+}
+
 export interface TripData {
   trip: Trip;
+  travelers: Traveler[];
+  documents: TripDocument[];
+  /** Gastos de partida. Los que se anotan en la app se guardan aparte. */
+  expenses: Expense[];
   cities: City[];
 }

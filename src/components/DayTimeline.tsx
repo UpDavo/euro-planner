@@ -39,16 +39,31 @@ export default function DayTimeline({
         >
           <i className="ri-home-4-fill text-[15px]" />
         </span>
-        <button
-          type="button"
-          onClick={onSelectStay}
-          className="group block w-full rounded-xl text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
-        >
-          <p className="text-[12px] text-ink-mute">Base · Airbnb</p>
-          <p className="mt-0.5 text-[15px] font-medium text-ink group-hover:text-accent-ink">
-            {city.stay.name}
-          </p>
-        </button>
+        <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={onSelectStay}
+            className="group block min-w-0 flex-1 rounded-xl text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+          >
+            <p className="text-[12px] text-ink-mute">
+              {city.stay.kind === "home" ? "Base · Casa familiar" : "Base · Airbnb"}
+            </p>
+            <p className="mt-0.5 text-[15px] font-medium text-ink group-hover:text-accent-ink">
+              {city.stay.name}
+            </p>
+          </button>
+          {city.stay.url ? (
+            <a
+              href={city.stay.url}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-accent-soft px-3 py-1.5 text-[12px] font-medium text-accent-ink transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+            >
+              <i className="ri-home-heart-line text-[13px]" aria-hidden />
+              Ver Airbnb
+            </a>
+          ) : null}
+        </div>
       </li>
 
       {day.stops.map((stop, i) => {

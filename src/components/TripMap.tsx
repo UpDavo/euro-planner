@@ -177,9 +177,12 @@ export default function TripMap({
     );
     // El día se desarrolla fuera de la ciudad: encuadrar las paradas lejanas.
     // La excursión a Florencia deja tres anclas en Roma (los dos trenes en
-    // Termini y la vuelta al Airbnb) y nueve paradas fuera, así que no basta
+    // Termini y la cena en Monti) y diez paradas fuera, así que no basta
     // con mirar si quedan dos o menos cerca: manda dónde está la mayoría.
     const far = all.filter((c) => !near.includes(c));
+    // Con la base fuera de la ciudad (Ciempozuelos, a 30 km de Madrid) el día
+    // es justamente el trayecto entre ella y lo de dentro: encuadrar todo.
+    if (!near.includes(city.stay.coords)) return all;
     if (far.length > near.length) return far;
     return near.length > 0 ? near : all;
   }, [city.stay.coords, city.center, day.stops]);

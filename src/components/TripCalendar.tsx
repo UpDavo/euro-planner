@@ -8,6 +8,8 @@ import {
   dollars,
   euros,
   planDays,
+  stayCost,
+  toEur,
   weekdayShort,
 } from "@/lib/utils";
 
@@ -46,8 +48,11 @@ export default function TripCalendar({
   const totalDays = new Set(entries.map((e) => e.day.date)).size;
 
   const grandTotal = entries.reduce((sum, e) => sum + dayTotal(e.day), 0);
+  // Lo que le toca a cada viajero de los alojamientos, en euros como el resto.
   const stayTotal = data.cities.reduce(
-    (sum, c) => sum + c.stay.pricePerNight * c.stay.nights,
+    (sum, c) =>
+      sum +
+      toEur(stayCost(c.stay, data.travelers.length).perPerson, c.stay.currency),
     0,
   );
 

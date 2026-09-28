@@ -1,12 +1,29 @@
 "use client";
 
 import type { City } from "@/lib/types";
-import { accentVars, dollars, euros, formatDate } from "@/lib/utils";
+import {
+  accentVars,
+  euros,
+  formatDate,
+  money,
+  stayCost,
+  toEur,
+} from "@/lib/utils";
 import PhotoHeader from "./PhotoHeader";
 
-export default function StayDetail({ city }: { city: City }) {
+export default function StayDetail({
+  city,
+  travelers,
+}: {
+  city: City;
+  /** Cuántos viajan: su parte cuando el alojamiento se comparte. */
+  travelers: number;
+}) {
   const { stay } = city;
-  const total = stay.pricePerNight * stay.nights;
+  const cost = stayCost(stay, travelers);
+  const shared = cost.guests > travelers;
+  const cur = stay.currency;
+  const isHome = stay.kind === "home";
 
   return (
     <div style={accentVars(city.accent)}>
@@ -18,7 +35,7 @@ export default function StayDetail({ city }: { city: City }) {
           >
             <i className="ri-home-4-fill text-[13px]" />
           </span>
-          Hospedaje en {city.name}
+          {isHome ? "Casa familiar" : "Hospedaje"} en {city.name}
         </span>
       </div>
 
@@ -32,18 +49,41 @@ export default function StayDetail({ city }: { city: City }) {
         {stay.address}
       </p>
 
-      <div className="mt-6 rounded-2xl bg-accent-deep px-5 py-5 text-white">
-        <p className="text-[12px] text-white/60">
-          Total <span className="tnum">{stay.nights}</span>{" "}
-          {stay.nights === 1 ? "noche" : "noches"}
-        </p>
-        <p className="mt-1.5 font-display text-[2.25rem] font-semibold leading-none tracking-tight tnum">
-          {dollars(total)}
-        </p>
-        <p className="mt-2 text-[13px] text-white/60 tnum">
-          {euros(total)} · {dollars(stay.pricePerNight)} por noche
-        </p>
-      </div>
+      {isHome ? (
+        <div className="mt-6 rounded-2xl bg-accent-deep px-5 py-5 text-white">
+          <p className="text-[12px] text-white/60">
+            <span className="tnum">{stay.nights}</span>{" "}
+            {stay.nights === 1 ? "noche" : "noches"} en casa de familia
+          </p>
+          <p className="mt-1.5 font-display text-[2.25rem] font-semibold leading-none tracking-tight">
+            Sin coste
+          </p>
+        </div>
+      ) : (
+        <div className="mt-6 rounded-2xl bg-accent-deep px-5 py-5 text-white">
+          <p className="text-[12px] text-white/60">
+            Total <span className="tnum">{stay.nights}</span>{" "}
+            {stay.nights === 1 ? "noche" : "noches"}
+            {shared ? ` · entre ${cost.guests} personas` : ""}
+          </p>
+          <p className="mt-1.5 font-display text-[2.25rem] font-semibold leading-none tracking-tight tnum">
+            {money(cost.total, cur)}
+          </p>
+          <p className="mt-2 text-[13px] text-white/60 tnum">
+            {cur === "USD" ? `≈ ${euros(toEur(cost.total, cur))} · ` : ""}
+            {money(cost.perNight, cur)} por noche
+          </p>
+          {shared ? (
+            <p className="mt-3 border-t border-white/15 pt-3 text-[13px] text-white/80 tnum">
+              La parte de los {travelers}:{" "}
+              <span className="font-semibold text-white">
+                {money(cost.share, cur)}
+              </span>{" "}
+              · {money(cost.perPerson, cur)} cada uno
+            </p>
+          ) : null}
+        </div>
+      )}
 
       <dl className="mt-3 rounded-2xl bg-well px-4 text-sm">
         <div className="flex items-baseline justify-between border-b border-line py-3">
@@ -66,19 +106,22 @@ export default function StayDetail({ city }: { city: City }) {
             </span>
           </dd>
         </div>
-        <div className="flex items-baseline justify-between border-b border-line py-3">
-          <dt className="text-ink-soft">Por noche</dt>
-          <dd className="text-right">
-            <span className="tnum font-medium text-ink">
-              {dollars(stay.pricePerNight)}
-            </span>
-            <span className="block text-xs text-ink-mute tnum">
-              {euros(stay.pricePerNight)}
-            </span>
-          </dd>
-        </div>
+        {isHome ? null : (
+          <div className="flex items-baseline justify-between border-b border-line py-3">
+            <dt className="text-ink-soft">Por persona y noche</dt>
+            <dd className="text-right">
+              <span className="tnum font-medium text-ink">
+                {money(cost.perPersonPerNight, cur)}
+              </span>
+              <span className="block text-xs text-ink-mute tnum">
+                {money(cost.perPerson, cur)} las {stay.nights}{" "}
+                {stay.nights === 1 ? "noche" : "noches"}
+              </span>
+            </dd>
+          </div>
+        )}
         <div className="flex items-baseline justify-between py-3">
-          <dt className="text-ink-soft">Anfitrión</dt>
+          <dt className="text-ink-soft">{isHome ? "Les recibe" : "Anfitrión"}</dt>
           <dd className="font-medium text-ink">{stay.host}</dd>
         </div>
       </dl>
@@ -95,6 +138,7 @@ export default function StayDetail({ city }: { city: City }) {
             rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-accent-deep px-5 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
           >
+            <i className="ri-home-heart-line text-base" aria-hidden />
             Ver en Airbnb
           </a>
         ) : null}

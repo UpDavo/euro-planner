@@ -18,6 +18,10 @@ import {
   weekdayShort,
 } from "@/lib/utils";
 import DayTimeline from "./DayTimeline";
+import TicketStops from "./TicketStops";
+import ExpensesSheet from "./ExpensesSheet";
+import TripDocuments from "./TripDocuments";
+import { usePrivateData, withPrivateData } from "@/lib/private";
 import PlanPicker from "./PlanPicker";
 import ResponsiveModal from "./ResponsiveModal";
 import StayDetail from "./StayDetail";
@@ -38,13 +42,20 @@ type Sheet =
   | { kind: "stay" }
   | { kind: "calendar" }
   | { kind: "plans" }
+  | { kind: "docs" }
+  | { kind: "expenses" }
   | null;
 
-export default function TripPlanner({ data }: { data: TripData }) {
+export default function TripPlanner({ data: trip }: { data: TripData }) {
+  // Billetes, localizadores y direcciones llegan del backend: el JSON es público.
+  const { data: priv, loading: privLoading } = usePrivateData();
+  const data = useMemo(() => withPrivateData(trip, priv), [trip, priv]);
   const [cityId, setCityId] = useState(data.cities[0].id);
   const [dayIndex, setDayIndex] = useState(0);
   const [sheet, setSheet] = useState<Sheet>(null);
   const [mapOpenMobile, setMapOpenMobile] = useState(false);
+  // Ver el día entero o sólo lo que pide ticket previo. Se mantiene al cambiar de día.
+  const [ticketsOnly, setTicketsOnly] = useState(false);
   // La ruta elegida en cada ciudad que ofrece varias. Se recuerda al ir y
   // volver entre ciudades.
   const [planIds, setPlanIds] = useState<Record<string, string>>({});
@@ -94,7 +105,7 @@ export default function TripPlanner({ data }: { data: TripData }) {
   const hasPlans = (city.plans?.length ?? 0) > 1;
 
   // Los días de una ciudad pueden no ser consecutivos: el viernes y el sábado
-  // se pasan en Barcelona, así que Madrid salta del día 1 al 4.
+  // se pasan en Barcelona, así que Madrid salta del día 1 al 8.
   const gapNote = useMemo(() => {
     const other = data.cities.find(
       (c) => c.id !== city.id && c.days.some((d) => d.day === day.day + 1),
@@ -103,10 +114,13 @@ export default function TripPlanner({ data }: { data: TripData }) {
     if (!other || isLastOfCity) return null;
     const nextHere = days.find((d) => d.day > day.day);
     if (!nextHere || nextHere.day === day.day + 1) return null;
+    if (!other.days.some((d) => d.day === nextHere.day - 1))
+      return `Aquí se retoma el día ${nextHere.day}.`;
     return `Los días ${day.day + 1} y ${nextHere.day - 1} se pasan en ${other.name}. Aquí se retoma el día ${nextHere.day}.`;
   }, [data.cities, city, day, days]);
 
   const total = dayTotal(day);
+  const people = data.travelers.length;
   const walking = dayWalking(day);
 
   return (
@@ -120,6 +134,36 @@ export default function TripPlanner({ data }: { data: TripData }) {
           <p className="rounded-full bg-card px-3 py-1 text-[12px] font-medium text-ink-soft shadow-card tnum">
             {shortDate(data.trip.startDate)} – {shortDate(data.trip.endDate)}
           </p>
+          <button
+            type="button"
+            onClick={() => setSheet({ kind: "docs" })}
+            className="flex items-center gap-2 rounded-full bg-card py-1 pl-1 pr-3 text-[12px] font-medium text-ink-soft shadow-card transition-colors hover:bg-well hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+            title="Billetes de los tres"
+          >
+            <span className="flex -space-x-1.5" aria-hidden>
+              {data.travelers.map((t) => (
+                <span
+                  key={t.id}
+                  className="flex h-6 w-6 items-center justify-center rounded-full bg-accent-deep text-[10px] font-semibold text-white ring-2 ring-card"
+                >
+                  {t.name[0]}
+                </span>
+              ))}
+            </span>
+            {data.travelers.map((t) => t.name).join(", ")}
+            <span className="flex items-center gap-1 border-l border-line pl-2">
+              <i className="ri-file-list-3-line text-[13px]" aria-hidden />
+              Billetes
+            </span>
+          </button>
+          <button
+            type="button"
+            onClick={() => setSheet({ kind: "expenses" })}
+            className="flex items-center gap-1.5 rounded-full bg-card px-3 py-1 text-[12px] font-medium text-ink-soft shadow-card transition-colors hover:bg-well hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+          >
+            <i className="ri-wallet-3-line text-[13px]" aria-hidden />
+            Gastos
+          </button>
           <nav
             className="ml-auto flex gap-1 rounded-full bg-card p-1 shadow-card"
             aria-label="Ciudades"
@@ -265,19 +309,25 @@ export default function TripPlanner({ data }: { data: TripData }) {
               <dl className="grid grid-cols-3 gap-3">
                 {[
                   {
-                    label: "Gasto del día",
+                    label: "Gasto por persona",
                     value: dollars(total),
                     sub: total > 0 ? euros(total) : null,
+                    group:
+                      total > 0
+                        ? `Los ${people}: ${dollars(total * people)}`
+                        : null,
                   },
                   {
                     label: "A pie",
                     value: durationLabel(walking),
                     sub: null,
+                    group: null,
                   },
                   {
                     label: "Paradas",
                     value: String(day.stops.length),
                     sub: null,
+                    group: null,
                   },
                 ].map((item, i) => (
                   <div
@@ -296,6 +346,11 @@ export default function TripPlanner({ data }: { data: TripData }) {
                     {item.sub ? (
                       <p className="mt-1.5 text-[12px] text-ink-mute tnum">
                         {item.sub}
+                      </p>
+                    ) : null}
+                    {item.group ? (
+                      <p className="mt-0.5 text-[12px] font-medium text-ink-soft tnum">
+                        {item.group}
                       </p>
                     ) : null}
                   </div>
@@ -341,13 +396,50 @@ export default function TripPlanner({ data }: { data: TripData }) {
               ) : null}
             </div>
 
-            <DayTimeline
-              city={city}
-              day={day}
-              activeStopId={activeStopId}
-              onSelectStop={(stop) => setSheet({ kind: "stop", stop })}
-              onSelectStay={() => setSheet({ kind: "stay" })}
-            />
+            <div
+              className="mb-3 flex gap-1 rounded-full bg-card p-1 shadow-card"
+              role="group"
+              aria-label="Qué paradas mostrar"
+            >
+              {[
+                { value: false, label: "Todo el día", icon: "ri-list-check-2" },
+                { value: true, label: "Solo ticket previo", icon: "ri-ticket-2-line" },
+              ].map((opt) => (
+                <button
+                  key={opt.label}
+                  type="button"
+                  onClick={() => setTicketsOnly(opt.value)}
+                  aria-pressed={ticketsOnly === opt.value}
+                  className={cn(
+                    "flex flex-1 items-center justify-center gap-1.5 rounded-full px-3 py-1.5 text-[13px] font-medium transition-colors",
+                    "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink",
+                    ticketsOnly === opt.value
+                      ? "bg-accent-deep text-white"
+                      : "text-ink-soft hover:bg-well hover:text-ink",
+                  )}
+                >
+                  <i className={cn(opt.icon, "text-[14px]")} aria-hidden />
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+
+            {ticketsOnly ? (
+              <TicketStops
+                day={day}
+                people={people}
+                activeStopId={activeStopId}
+                onSelectStop={(stop) => setSheet({ kind: "stop", stop })}
+              />
+            ) : (
+              <DayTimeline
+                city={city}
+                day={day}
+                activeStopId={activeStopId}
+                onSelectStop={(stop) => setSheet({ kind: "stop", stop })}
+                onSelectStay={() => setSheet({ kind: "stay" })}
+              />
+            )}
             </div>
           </div>
         </section>
@@ -374,7 +466,12 @@ export default function TripPlanner({ data }: { data: TripData }) {
         onOpenChange={(open) => !open && setSheet(null)}
         onPrev={prevStop ? () => setSheet({ kind: "stop", stop: prevStop }) : undefined}
         onNext={nextStop ? () => setSheet({ kind: "stop", stop: nextStop }) : undefined}
-        wide={sheet?.kind === "calendar" || sheet?.kind === "plans"}
+        wide={
+          sheet?.kind === "calendar" ||
+          sheet?.kind === "plans" ||
+          sheet?.kind === "docs" ||
+          sheet?.kind === "expenses"
+        }
         title={
           sheet?.kind === "stop"
             ? sheet.stop.name
@@ -384,7 +481,11 @@ export default function TripPlanner({ data }: { data: TripData }) {
                 ? "El viaje completo"
                 : sheet?.kind === "plans"
                   ? `Rutas en ${city.name}`
-                  : ""
+                  : sheet?.kind === "docs"
+                    ? "Billetes"
+                    : sheet?.kind === "expenses"
+                      ? "Gastos compartidos"
+                      : ""
         }
       >
         {sheet?.kind === "stop" ? (
@@ -394,9 +495,14 @@ export default function TripPlanner({ data }: { data: TripData }) {
             total={day.stops.length}
             city={city}
             nextStop={nextStop}
+            travelers={data.travelers}
+            documents={data.documents.filter((d) =>
+              sheet.stop.documents?.includes(d.id),
+            )}
+            documentsLoading={privLoading}
           />
         ) : sheet?.kind === "stay" ? (
-          <StayDetail city={city} />
+          <StayDetail city={city} travelers={people} />
         ) : sheet?.kind === "calendar" ? (
           <TripCalendar
             data={data}
@@ -405,6 +511,10 @@ export default function TripPlanner({ data }: { data: TripData }) {
             planIds={planIds}
             onPick={pickFromCalendar}
           />
+        ) : sheet?.kind === "docs" ? (
+          <TripDocuments data={data} loading={privLoading} />
+        ) : sheet?.kind === "expenses" ? (
+          <ExpensesSheet data={data} accent={city.accent} />
         ) : sheet?.kind === "plans" && planId ? (
           <PlanPicker city={city} planId={planId} onPick={selectPlan} />
         ) : null}

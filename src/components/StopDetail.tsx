@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import type { City, Stop } from "@/lib/types";
+import type { City, Stop, Traveler, TripDocument } from "@/lib/types";
 import {
   accentVars,
   cn,
@@ -10,6 +10,8 @@ import {
   euros,
   stopMeta,
 } from "@/lib/utils";
+import DocumentLink from "./DocumentLink";
+import Skeleton from "./Skeleton";
 import PhotoHeader from "./PhotoHeader";
 import TicketBadge from "./TicketBadge";
 
@@ -19,6 +21,11 @@ interface Props {
   total: number;
   city: City;
   nextStop: Stop | null;
+  travelers: Traveler[];
+  /** Los documentos de `stop.documents`, ya resueltos. */
+  documents: TripDocument[];
+  /** Los billetes aún llegan del backend. */
+  documentsLoading: boolean;
 }
 
 export default function StopDetail({
@@ -27,7 +34,11 @@ export default function StopDetail({
   total,
   city,
   nextStop,
+  travelers,
+  documents,
+  documentsLoading,
 }: Props) {
+  const docCount = documentsLoading ? (stop.documents?.length ?? 0) : documents.length;
   const meta = stopMeta[stop.type];
   const top = useRef<HTMLDivElement>(null);
 
@@ -67,14 +78,15 @@ export default function StopDetail({
 
       <dl className="mt-6 rounded-2xl bg-well px-4 text-sm">
         <div className="flex items-baseline justify-between border-b border-line py-3">
-          <dt className="text-ink-soft">Precio aprox.</dt>
+          <dt className="text-ink-soft">Precio por persona</dt>
           <dd className="text-right">
             <span className="tnum font-semibold text-accent-ink">
               {dollars(stop.price)}
             </span>
             {stop.price > 0 ? (
               <span className="block text-xs text-ink-mute tnum">
-                {euros(stop.price)}
+                {euros(stop.price)} por persona · los {travelers.length}:{" "}
+                {dollars(stop.price * travelers.length)}
               </span>
             ) : null}
           </dd>
@@ -122,6 +134,50 @@ export default function StopDetail({
           </div>
         ) : null}
       </dl>
+
+      {stop.seats ? (
+        <div className="mt-5">
+          <h3 className="mb-2 text-[12px] font-medium uppercase tracking-wide text-ink-mute">
+            Asientos
+          </h3>
+          <dl className="rounded-2xl bg-well px-4 text-sm">
+            {travelers
+              .filter((t) => stop.seats?.[t.id])
+              .map((t) => (
+                <div
+                  key={t.id}
+                  className="flex items-baseline justify-between border-b border-line py-2.5 last:border-b-0"
+                >
+                  <dt className="text-ink-soft">{t.name}</dt>
+                  <dd className="font-medium text-ink tnum">{stop.seats?.[t.id]}</dd>
+                </div>
+              ))}
+          </dl>
+        </div>
+      ) : null}
+
+      {docCount > 0 ? (
+        <div className="mt-5">
+          <h3 className="mb-2 text-[12px] font-medium uppercase tracking-wide text-ink-mute">
+            {docCount === 1 ? "Billete" : "Billetes"}
+          </h3>
+          <div className="grid gap-2" aria-busy={documentsLoading}>
+            {documentsLoading
+              ? stop.documents?.map((id) => <Skeleton key={id} className="h-[3.25rem]" />)
+              : null}
+            {documents.map((doc) => (
+              <DocumentLink
+                key={doc.id}
+                doc={doc}
+                label={
+                  travelers.find((t) => t.id === doc.travelerId)?.name ??
+                  doc.title
+                }
+              />
+            ))}
+          </div>
+        </div>
+      ) : null}
 
       <p className="mt-5 text-[0.9375rem] leading-relaxed text-ink-soft">
         {stop.note}
