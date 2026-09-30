@@ -19,6 +19,12 @@ export const metadata: Metadata = {
   title: "Europa 2026 · Madrid, Barcelona, Roma",
   description:
     "Itinerario día a día con mapa, horarios, precios aproximados y hospedaje.",
+  // Nombre bajo el icono al guardarla en la pantalla de inicio del iPhone.
+  appleWebApp: {
+    title: "Europa 2026",
+    capable: true,
+    statusBarStyle: "default",
+  },
   // Web privada del viaje: que ningún buscador la guarde. `public/_headers`
   // manda lo mismo como cabecera X-Robots-Tag para todo lo que sirve Pages.
   robots: {
