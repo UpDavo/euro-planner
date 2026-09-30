@@ -117,10 +117,12 @@ function FitBounds({
     // tamaño, Leaflet calcula un zoom NaN.
     if (points.length === 0 || map.getSize().x === 0) return;
     const bounds = L.latLngBounds(points);
+    // Animar sólo dentro de la misma zona: saltar de Madrid a Roma animado
+    // mezcla tiles de dos zooms a la vez y el navegador deja huecos sin pintar.
     map.fitBounds(bounds, {
       padding: [56, 56],
       maxZoom: 15,
-      animate: true,
+      animate: map.getBounds().intersects(bounds),
     });
     // Sólo re-encuadra al cambiar de día, no al seleccionar una parada.
     // eslint-disable-next-line react-hooks/exhaustive-deps

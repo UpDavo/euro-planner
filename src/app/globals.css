@@ -71,7 +71,10 @@ body {
   outline: none;
 }
 
-.leaflet-tile-pane {
+/* El filtro va en cada tile y no en el panel: un filtro sobre el panel entero
+   obliga a re-rasterizar una capa enorme en cada fotograma del zoom, y Edge/Chrome
+   se quedan sin memoria de GPU (rectángulos sin pintar al cambiar de ciudad). */
+.leaflet-tile {
   filter: saturate(0.6) contrast(0.96) brightness(1.03);
 }
 

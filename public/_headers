@@ -1,0 +1,4 @@
+# Cloudflare Pages: ningún buscador indexa nada de este sitio, incluidas las
+# previews (*.euro-planner.pages.dev).
+/*
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet, noimageindex

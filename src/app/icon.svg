@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- La ruta del viaje: Madrid → Barcelona → Roma, como las paradas del mapa. -->
+  <rect width="64" height="64" rx="15" fill="#14171a"/>
+  <path d="M15 43 Q22 24 32 21 Q44 20 49 41" fill="none" stroke="#ffffff" stroke-opacity=".55" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 6.2"/>
+  <circle cx="15" cy="43" r="7.5" fill="#c8102e" stroke="#ffffff" stroke-width="2.5"/>
+  <circle cx="32" cy="21" r="7.5" fill="#2b86ad" stroke="#ffffff" stroke-width="2.5"/>
+  <circle cx="49" cy="41" r="7.5" fill="#c9974f" stroke="#ffffff" stroke-width="2.5"/>
+</svg>
