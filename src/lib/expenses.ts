@@ -16,6 +16,7 @@ export type LedgerOp =
   | { type: "updateExpense"; id: string; patch: Partial<Expense> }
   | { type: "removeExpense"; id: string }
   | { type: "addPayment"; payment: Payment }
+  | { type: "updatePayment"; id: string; patch: Partial<Payment> }
   | { type: "removePayment"; id: string };
 
 /**
@@ -75,6 +76,12 @@ export const apiLedgerStore: LedgerStore = {
       case "addPayment":
         await api("payments/", { method: "POST", body: body(op.payment) });
         return;
+      case "updatePayment":
+        await api(`payments/${encodeURIComponent(op.id)}/`, {
+          method: "PATCH",
+          body: body(op.patch),
+        });
+        return;
       case "removePayment":
         await api(`payments/${encodeURIComponent(op.id)}/`, { method: "DELETE" });
         return;
@@ -100,6 +107,13 @@ function reduce(ledger: Ledger, op: LedgerOp): Ledger {
       return { ...ledger, expenses: ledger.expenses.filter((e) => e.id !== op.id) };
     case "addPayment":
       return { ...ledger, payments: [...ledger.payments, op.payment] };
+    case "updatePayment":
+      return {
+        ...ledger,
+        payments: ledger.payments.map((p) =>
+          p.id === op.id ? { ...p, ...op.patch } : p,
+        ),
+      };
     case "removePayment":
       return { ...ledger, payments: ledger.payments.filter((p) => p.id !== op.id) };
   }
@@ -182,6 +196,8 @@ export function useLedger(seed: Expense[]) {
       commit({ type: "updateExpense", id, patch }),
     removeExpense: (id: string) => commit({ type: "removeExpense", id }),
     addPayment: (payment: Payment) => commit({ type: "addPayment", payment }),
+    updatePayment: (id: string, patch: Partial<Payment>) =>
+      commit({ type: "updatePayment", id, patch }),
     removePayment: (id: string) => commit({ type: "removePayment", id }),
   };
 }

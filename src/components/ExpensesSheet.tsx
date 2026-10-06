@@ -88,6 +88,7 @@ export default function ExpensesSheet({
             debt={d}
             name={name}
             onPay={(amount, date) => pay(d, amount, date)}
+            onEditPayment={ledger.updatePayment}
             onRemovePayment={ledger.removePayment}
           />
         ))}
@@ -153,6 +154,7 @@ export default function ExpensesSheet({
                       expense={e}
                       data={data}
                       onPaidBy={(paidBy) => ledger.updateExpense(e.id, { paidBy })}
+                      onEdit={(patch) => ledger.updateExpense(e.id, patch)}
                       onRemove={() => ledger.removeExpense(e.id)}
                     />
                   ))}
@@ -162,7 +164,7 @@ export default function ExpensesSheet({
 
           <section>
             <h3 className={sectionTitle}>Anotar un gasto</h3>
-            <ExpenseForm data={data} onAdd={ledger.addExpense} />
+            <ExpenseForm data={data} onSubmit={ledger.addExpense} />
           </section>
         </div>
       ) : (
@@ -342,17 +344,20 @@ function DebtCard({
   debt: d,
   name,
   onPay,
+  onEditPayment,
   onRemovePayment,
 }: {
   debt: Debt;
   name: (id: string | null) => string;
   onPay: (amount: number, date: string) => void;
+  onEditPayment: (id: string, patch: Partial<Payment>) => void;
   onRemovePayment: (id: string) => void;
 }) {
   const [open, setOpen] = useState(false);
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState(today);
   const [error, setError] = useState<string | null>(null);
+  const [editingId, setEditingId] = useState<string | null>(null);
   const done = d.pending < 0.005;
   const progress = d.amount > 0 ? Math.min(d.paid / d.amount, 1) : 0;
   const formId = `pago-${d.from}-${d.to}`;
@@ -425,24 +430,44 @@ function DebtCard({
 
       {d.payments.length > 0 ? (
         <ul className="mt-2 grid gap-1 border-t border-line pt-2 text-[12px]">
-          {d.payments.map((p: Payment) => (
-            <li key={p.id} className="flex items-center gap-2 text-ink-soft">
-              <i className="ri-exchange-dollar-line text-[13px] text-accent-ink" aria-hidden />
-              <span className="tnum">{shortDate(p.date)}</span>
-              <span>· transferencia</span>
-              <span className="ml-auto font-medium text-ink tnum">
-                {money(p.amount, "USD")}
-              </span>
-              <button
-                type="button"
-                onClick={() => onRemovePayment(p.id)}
-                className="flex h-6 w-6 items-center justify-center rounded-full text-ink-mute transition-colors hover:bg-card hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-ink"
-                aria-label={`Quitar la transferencia del ${shortDate(p.date)}`}
-              >
-                <i className="ri-close-line text-[14px]" aria-hidden />
-              </button>
-            </li>
-          ))}
+          {d.payments.map((p: Payment) =>
+            editingId === p.id ? (
+              <PaymentEditForm
+                key={p.id}
+                payment={p}
+                onSave={(patch) => {
+                  onEditPayment(p.id, patch);
+                  setEditingId(null);
+                }}
+                onCancel={() => setEditingId(null)}
+              />
+            ) : (
+              <li key={p.id} className="flex items-center gap-2 text-ink-soft">
+                <i className="ri-exchange-dollar-line text-[13px] text-accent-ink" aria-hidden />
+                <span className="tnum">{shortDate(p.date)}</span>
+                <span>· transferencia</span>
+                <span className="ml-auto font-medium text-ink tnum">
+                  {money(p.amount, "USD")}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setEditingId(p.id)}
+                  className="flex h-6 w-6 items-center justify-center rounded-full text-ink-mute transition-colors hover:bg-card hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-ink"
+                  aria-label={`Editar la transferencia del ${shortDate(p.date)}`}
+                >
+                  <i className="ri-pencil-line text-[14px]" aria-hidden />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => onRemovePayment(p.id)}
+                  className="flex h-6 w-6 items-center justify-center rounded-full text-ink-mute transition-colors hover:bg-card hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-ink"
+                  aria-label={`Quitar la transferencia del ${shortDate(p.date)}`}
+                >
+                  <i className="ri-close-line text-[14px]" aria-hidden />
+                </button>
+              </li>
+            ),
+          )}
         </ul>
       ) : null}
 
@@ -513,6 +538,87 @@ function DebtCard({
   );
 }
 
+/** Edita el importe y la fecha de una transferencia ya anotada. */
+function PaymentEditForm({
+  payment: p,
+  onSave,
+  onCancel,
+}: {
+  payment: Payment;
+  onSave: (patch: Partial<Payment>) => void;
+  onCancel: () => void;
+}) {
+  const [amount, setAmount] = useState(p.amount.toFixed(2).replace(".", ","));
+  const [date, setDate] = useState(p.date);
+  const [error, setError] = useState<string | null>(null);
+
+  function submit(ev: FormEvent) {
+    ev.preventDefault();
+    const value = Math.round(Number(amount.replace(",", ".")) * 100) / 100;
+    if (!Number.isFinite(value) || value <= 0)
+      return setError("El importe tiene que ser un número mayor que cero.");
+    if (!date) return setError("Elige una fecha.");
+    onSave({ amount: value, date });
+  }
+
+  return (
+    <li>
+      <form
+        onSubmit={submit}
+        className="grid gap-2 rounded-xl bg-card p-3"
+        aria-label="Editar transferencia"
+      >
+        <div className="grid grid-cols-2 gap-2">
+          <div>
+            <label htmlFor={`${p.id}-importe`} className={labelClass}>
+              Importe en $
+            </label>
+            <input
+              id={`${p.id}-importe`}
+              inputMode="decimal"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+              className={cn(fieldClass, "tnum")}
+            />
+          </div>
+          <div>
+            <label htmlFor={`${p.id}-fecha`} className={labelClass}>
+              Fecha
+            </label>
+            <input
+              id={`${p.id}-fecha`}
+              type="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              className={fieldClass}
+            />
+          </div>
+        </div>
+        {error ? (
+          <p className="text-[13px] font-medium text-accent-ink" role="alert">
+            {error}
+          </p>
+        ) : null}
+        <div className="flex gap-2">
+          <button
+            type="submit"
+            className="rounded-full bg-accent-deep px-4 py-2 text-[13px] font-medium text-white transition-opacity hover:opacity-85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+          >
+            Guardar cambios
+          </button>
+          <button
+            type="button"
+            onClick={onCancel}
+            className="rounded-full px-4 py-2 text-[13px] font-medium text-ink-soft hover:bg-well focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+          >
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </li>
+  );
+}
+
 function splitLabel(e: Expense, data: TripData) {
   if (e.splitAmong.length === data.travelers.length) {
     return `Entre los ${e.splitAmong.length}`;
@@ -527,15 +633,42 @@ function ExpenseRow({
   expense: e,
   data,
   onPaidBy,
+  onEdit,
   onRemove,
 }: {
   expense: Expense;
   data: TripData;
   onPaidBy: (id: string | null) => void;
+  onEdit: (patch: Partial<Expense>) => void;
   onRemove: () => void;
 }) {
   const [confirming, setConfirming] = useState(false);
+  const [editing, setEditing] = useState(false);
   const each = e.amount / Math.max(e.splitAmong.length, 1);
+
+  if (editing) {
+    return (
+      <li>
+        <ExpenseForm
+          data={data}
+          initial={e}
+          submitLabel="Guardar cambios"
+          onSubmit={(next) => {
+            onEdit({
+              concept: next.concept,
+              amount: next.amount,
+              currency: next.currency,
+              paidBy: next.paidBy,
+              splitAmong: next.splitAmong,
+              date: next.date,
+            });
+            setEditing(false);
+          }}
+          onCancel={() => setEditing(false)}
+        />
+      </li>
+    );
+  }
 
   return (
     <li className="rounded-2xl border border-line bg-card px-4 py-3">
@@ -604,6 +737,15 @@ function ExpenseRow({
               </button>
             </>
           ) : (
+            <>
+            <button
+              type="button"
+              onClick={() => setEditing(true)}
+              className="flex h-7 w-7 items-center justify-center rounded-full text-ink-mute transition-colors hover:bg-well hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+              aria-label={`Editar ${e.concept}`}
+            >
+              <i className="ri-pencil-line text-[14px]" aria-hidden />
+            </button>
             <button
               type="button"
               onClick={() => setConfirming(true)}
@@ -612,6 +754,7 @@ function ExpenseRow({
             >
               <i className="ri-delete-bin-6-line text-[14px]" aria-hidden />
             </button>
+            </>
           )}
         </span>
       </div>
@@ -619,20 +762,30 @@ function ExpenseRow({
   );
 }
 
+/** Alta de un gasto nuevo o, con `initial`, edición de uno existente. */
 function ExpenseForm({
   data,
-  onAdd,
+  initial,
+  submitLabel = "Anotar gasto",
+  onSubmit,
+  onCancel,
 }: {
   data: TripData;
-  onAdd: (e: Expense) => void;
+  initial?: Expense;
+  submitLabel?: string;
+  onSubmit: (e: Expense) => void;
+  onCancel?: () => void;
 }) {
   const all = data.travelers.map((t) => t.id);
-  const [concept, setConcept] = useState("");
-  const [amount, setAmount] = useState("");
-  const [currency, setCurrency] = useState<Currency>("EUR");
-  const [paidBy, setPaidBy] = useState("");
-  const [splitAmong, setSplitAmong] = useState<string[]>(all);
-  const [date, setDate] = useState(data.trip.startDate);
+  const [concept, setConcept] = useState(initial?.concept ?? "");
+  const [amount, setAmount] = useState(
+    initial ? String(initial.amount).replace(".", ",") : "",
+  );
+  const [currency, setCurrency] = useState<Currency>(initial?.currency ?? "EUR");
+  const [paidBy, setPaidBy] = useState(initial?.paidBy ?? "");
+  const [splitAmong, setSplitAmong] = useState<string[]>(initial?.splitAmong ?? all);
+  const [date, setDate] = useState(initial?.date ?? today());
+  const idPrefix = initial ? `gasto-${initial.id}` : "gasto";
   const [error, setError] = useState<string | null>(null);
 
   function submit(ev: FormEvent) {
@@ -643,17 +796,21 @@ function ExpenseForm({
       return setError("El importe tiene que ser un número mayor que cero.");
     if (splitAmong.length === 0)
       return setError("Elige al menos una persona para repartir el gasto.");
-    onAdd({
-      id: crypto.randomUUID(),
+    onSubmit({
+      id: initial?.id ?? crypto.randomUUID(),
       concept: concept.trim(),
       amount: Math.round(value * 100) / 100,
       currency,
       paidBy: paidBy || null,
       splitAmong,
       date,
+      ...(initial?.note ? { note: initial.note } : {}),
     });
-    setConcept("");
-    setAmount("");
+    if (!initial) {
+      setConcept("");
+      setAmount("");
+      setDate(today());
+    }
     setError(null);
   }
 
@@ -666,11 +823,11 @@ function ExpenseForm({
   return (
     <form onSubmit={submit} className="grid gap-3 rounded-2xl bg-well p-4">
       <div>
-        <label htmlFor="gasto-concepto" className={labelClass}>
+        <label htmlFor={`${idPrefix}-concepto`} className={labelClass}>
           Concepto
         </label>
         <input
-          id="gasto-concepto"
+          id={`${idPrefix}-concepto`}
           value={concept}
           onChange={(e) => setConcept(e.target.value)}
           placeholder="Cena en Trastevere"
@@ -679,11 +836,11 @@ function ExpenseForm({
       </div>
       <div className="grid grid-cols-[minmax(0,1fr)_auto] gap-2">
         <div>
-          <label htmlFor="gasto-importe" className={labelClass}>
+          <label htmlFor={`${idPrefix}-importe`} className={labelClass}>
             Importe
           </label>
           <input
-            id="gasto-importe"
+            id={`${idPrefix}-importe`}
             inputMode="decimal"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
@@ -692,11 +849,11 @@ function ExpenseForm({
           />
         </div>
         <div>
-          <label htmlFor="gasto-moneda" className={labelClass}>
+          <label htmlFor={`${idPrefix}-moneda`} className={labelClass}>
             Moneda
           </label>
           <select
-            id="gasto-moneda"
+            id={`${idPrefix}-moneda`}
             value={currency}
             onChange={(e) => setCurrency(e.target.value as Currency)}
             className={fieldClass}
@@ -708,11 +865,11 @@ function ExpenseForm({
       </div>
       <div className="grid gap-2 sm:grid-cols-2">
         <div>
-          <label htmlFor="gasto-pago" className={labelClass}>
+          <label htmlFor={`${idPrefix}-pago`} className={labelClass}>
             Pagó
           </label>
           <select
-            id="gasto-pago"
+            id={`${idPrefix}-pago`}
             value={paidBy}
             onChange={(e) => setPaidBy(e.target.value)}
             className={fieldClass}
@@ -726,11 +883,11 @@ function ExpenseForm({
           </select>
         </div>
         <div>
-          <label htmlFor="gasto-fecha" className={labelClass}>
+          <label htmlFor={`${idPrefix}-fecha`} className={labelClass}>
             Fecha
           </label>
           <input
-            id="gasto-fecha"
+            id={`${idPrefix}-fecha`}
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
@@ -752,7 +909,7 @@ function ExpenseForm({
                 )}
               >
                 <input
-                  id={`gasto-entre-${t.id}`}
+                  id={`${idPrefix}-entre-${t.id}`}
                   type="checkbox"
                   checked={on}
                   onChange={() => toggle(t.id)}
@@ -777,9 +934,18 @@ function ExpenseForm({
         type="submit"
         className="inline-flex items-center justify-center gap-2 rounded-full bg-accent-deep px-5 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
       >
-        <i className="ri-add-line text-base" aria-hidden />
-        Anotar gasto
+        <i className={initial ? "ri-check-line text-base" : "ri-add-line text-base"} aria-hidden />
+        {submitLabel}
       </button>
+      {onCancel ? (
+        <button
+          type="button"
+          onClick={onCancel}
+          className="rounded-full px-5 py-2.5 text-sm font-medium text-ink-soft hover:bg-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+        >
+          Cancelar
+        </button>
+      ) : null}
     </form>
   );
 }
